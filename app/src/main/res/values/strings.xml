@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">LautechMobileApp</string>
+
+    <!-- Onboarding -->
+    <string name="studServices">Student Services</string>
+    <string name="studServicesdes">Admissions, Clearance and Result Verification,
+        Semester Enrollment, Course Registration, Results, CGPA Calculator, Electronic ID, Exam Pass and more.</string>
+    <string name="next">Next</string>
+    <string name="tm">TM</string>
+    <string name="getStart">Get Started</string>
+</resources>
