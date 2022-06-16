@@ -138,7 +138,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="256dp"
-            android:layout_marginTop="83dp"
+            android:layout_marginTop="103dp"
             android:lineSpacingExtra="6sp"
             android:text="@string/forgotPass"
             android:textAppearance="@style/loginDesc"
