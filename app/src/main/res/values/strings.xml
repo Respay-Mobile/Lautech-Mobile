@@ -28,6 +28,9 @@
     <string name="signIn">Sign in</string>
     <string name="dontHaveAcct">Dont have an account? Create Here</string>
     <string name="createHere">Create Here</string>
+    <string name="sureToExit">Sure To Exit ?</string>
+    <string name="no">No</string>
+    <string name="yesToExit">Yes, Exit</string>
 
 
 

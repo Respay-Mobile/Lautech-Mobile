@@ -7,7 +7,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 
-import com.example.lautechmobileapp.LoginActivity;
+import com.example.lautechmobileapp.Users.LoginActivity;
 import com.example.lautechmobileapp.R;
 
 public class MainActivity extends AppCompatActivity {

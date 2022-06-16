@@ -14,7 +14,7 @@
         android:theme="@style/Theme.LautechMobileApp"
         tools:targetApi="31">
         <activity
-            android:name=".LoginActivity"
+            android:name=".Users.LoginActivity"
             android:exported="false"
             android:screenOrientation="portrait"/>
         <activity
