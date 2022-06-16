@@ -5,7 +5,15 @@
     <string name="studServices">Student Services</string>
     <string name="studServicesdes">Admissions, Clearance and Result Verification,
         Semester Enrollment, Course Registration, Results, CGPA Calculator, Electronic ID, Exam Pass and more.</string>
+
+    <string name="schoolServ">School Services</string>
+    <string name="schoolServdes">Improved student connection with real-time access to latest news, time-tables, important dates, public notices, fee payment options, and other paid services.</string>
+    <string name="schoolServdes2">Learn everything to improve your skills taught by the best mentors.</string>
+
+    <string name="eduWall">Meet the payment and fund saving needs of students and other members of the university community.</string>
+    <string name="eduWalldes">eduWalletᵀᴹ</string>
+
+
     <string name="next">Next</string>
-    <string name="tm">TM</string>
     <string name="getStart">Get Started</string>
 </resources>

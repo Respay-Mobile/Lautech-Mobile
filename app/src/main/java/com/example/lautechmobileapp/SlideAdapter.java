@@ -1,6 +1,14 @@
 package com.example.lautechmobileapp;
 
 import android.content.Context;
+import android.os.Bundle;
+import android.text.Html;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.SpannableStringBuilder;
+import android.text.Spanned;
+import android.text.style.StyleSpan;
+import android.text.style.SuperscriptSpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,16 +17,20 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.core.text.HtmlCompat;
 import androidx.viewpager.widget.PagerAdapter;
 
 public class SlideAdapter extends PagerAdapter {
 
-    public SlideAdapter (Context context1){
+    public SlideAdapter(Context context1) {
         this.context = context1;
     }
 
-    Context context;
+
+        Context context;
     LayoutInflater layoutInflater;
+
+  //  Spanned s = Html.fromHtml("eduWallet<small>ᵀᴹ</small>");
 
     //Images for the onboarding page
     public int[] sliders = {
@@ -28,11 +40,12 @@ public class SlideAdapter extends PagerAdapter {
             R.drawable.frame4
     };
 
+
     //Heading for the onboarding page
     public String[] headings = {
             "Student Services",
             "School Services",
-            "eduWallet",
+            "eduwalletᵀᴹ",
             "School Services"
     };
 
@@ -88,6 +101,7 @@ public class SlideAdapter extends PagerAdapter {
         header.setText(headings[position]);
         subHeader.setText(subheadings[position]);
 
+        container.addView(view);
         return view;
     }
 

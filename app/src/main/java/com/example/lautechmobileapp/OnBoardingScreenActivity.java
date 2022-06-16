@@ -19,8 +19,9 @@ public class OnBoardingScreenActivity extends AppCompatActivity {
     private SlideAdapter slideAdapter;
     private TabLayout tabLayout;
     private int currentPage;
-    private TextView text1;
     private Button btnNext;
+
+    MainClass mainClass = new MainClass(this);
 
 
     @Override
@@ -31,7 +32,6 @@ public class OnBoardingScreenActivity extends AppCompatActivity {
         viewPager = findViewById(R.id.pager);
         btnNext = findViewById(R.id.onbButton);
         tabLayout = findViewById(R.id.tab_layout);
-        //text1 = findViewById(R.id.onbMini);
 
 
         //adapter for viewpager
@@ -45,7 +45,7 @@ public class OnBoardingScreenActivity extends AppCompatActivity {
         viewPager.addOnPageChangeListener(viewListener);
 
         //change the size of the skip and next button based on the size of the screen
-        MainClass mainClass = new MainClass(this);
+
         if(mainClass.getWidth() >= 720){
             if(mainClass.getSize() <= 1){
                 btnNext.setTextSize(18f);
@@ -98,7 +98,6 @@ public class OnBoardingScreenActivity extends AppCompatActivity {
 
                 case 2:
                     btnNext.setText(R.string.next);
-                   // text1.setVisibility(View.VISIBLE);
                     break;
 
                 case 3:
