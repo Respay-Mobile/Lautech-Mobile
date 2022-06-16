@@ -16,4 +16,19 @@
 
     <string name="next">Next</string>
     <string name="getStart">Get Started</string>
+
+    <!-- Login Activity -->
+    <string name="loginTitle">Welcome Back!</string>
+    <string name="loginDesc">Log in with credentials that you entered during registration.</string>
+    <string name="userIdTextView">User ID</string>
+    <string name="userIdHelper">Email/Matric No/Staff ID</string>
+    <string name="passwordTextView">Password</string>
+    <string name="passwordHelper">********</string>
+    <string name="forgotPass">Forgot password?</string>
+    <string name="signIn">Sign in</string>
+    <string name="dontHaveAcct">Dont have an account? Create Here</string>
+    <string name="createHere">Create Here</string>
+
+
+
 </resources>

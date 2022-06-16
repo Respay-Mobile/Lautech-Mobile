@@ -1,4 +1,4 @@
-package com.example.lautechmobileapp;
+package com.example.lautechmobileapp.SplashScreens;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
@@ -8,10 +8,10 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.TableLayout;
-import android.widget.TextView;
 
+import com.example.lautechmobileapp.LoginActivity;
+import com.example.lautechmobileapp.MainClass;
+import com.example.lautechmobileapp.R;
 import com.google.android.material.tabs.TabLayout;
 
 public class OnBoardingScreenActivity extends AppCompatActivity {
@@ -69,7 +69,7 @@ public class OnBoardingScreenActivity extends AppCompatActivity {
                     SharedPreferences.Editor editor = sharedPreferences.edit();
                     editor.putString("on_boarding", "shown");
                     editor.apply();
-                    //TODO: activity to move to startActivity(new Intent(getApplicationContext(), OnBoardingEnd.class));
+                    startActivity(new Intent(getApplicationContext(), LoginActivity.class));
                 }
 
             }
@@ -87,23 +87,12 @@ public class OnBoardingScreenActivity extends AppCompatActivity {
         public void onPageSelected(int position) {
             currentPage = position;
 
-            switch (position){
-                case 0:
-                    btnNext.setText(R.string.next);
-                    break;
-
-                case 1:
-                    btnNext.setText(R.string.next);
-                    break;
-
-                case 2:
-                    btnNext.setText(R.string.next);
-                    break;
-
-                case 3:
-                    btnNext.setText(R.string.getStart);
-                    break;
-
+            if(position == 0){
+                btnNext.setText(R.string.next);
+            } else if(position == 3){
+                btnNext.setText(R.string.getStart);
+            } else {
+                btnNext.setText(R.string.next);
             }
         }
 

@@ -1,4 +1,4 @@
-package com.example.lautechmobileapp;
+package com.example.lautechmobileapp.SplashScreens;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -19,6 +19,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.core.text.HtmlCompat;
 import androidx.viewpager.widget.PagerAdapter;
+
+import com.example.lautechmobileapp.MainClass;
+import com.example.lautechmobileapp.R;
 
 public class SlideAdapter extends PagerAdapter {
 

@@ -1,4 +1,4 @@
-package com.example.lautechmobileapp;
+package com.example.lautechmobileapp.SplashScreens;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,9 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+
+import com.example.lautechmobileapp.LoginActivity;
+import com.example.lautechmobileapp.R;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -45,7 +48,8 @@ public class MainActivity extends AppCompatActivity {
             //If this is not user's first time check if user has signed in before and has their email saved
             SharedPreferences sharedPreferences1 = getSharedPreferences("LOGIN-STATE", MODE_PRIVATE);
             String loginState = sharedPreferences1.getString("login_state", "");
-            startActivity(new Intent(getApplicationContext(), OnBoardingScreenActivity.class));
+           // startActivity(new Intent(getApplicationContext(), OnBoardingScreenActivity.class));
+            startActivity(new Intent(getApplicationContext(), LoginActivity.class));
 
             /*
             TODO: handle login later

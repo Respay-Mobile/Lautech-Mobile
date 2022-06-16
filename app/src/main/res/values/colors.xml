@@ -12,4 +12,12 @@
     <color name="onbTitle">#18130A</color>
     <color name="onbDesc">#797671</color>
     <color name="onbBtn">#BF9F61</color>
+
+    <!-- Login color -->
+    <color name="loginTop">#F9F5EF</color>
+    <color name="loginTitle">#75613B</color>
+    <color name="loginDesc">#CAAF7C</color>
+    <color name="loginTextView">#3F3B34</color>
+    <color name="loginTextHelperColor">#A7A7A7</color>
+
 </resources>

@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="411dp"
+        android:layout_height="133dp"
+        android:background="@color/loginTop">
+
+        <TextView
+            android:id="@+id/loginTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="23dp"
+            android:lineSpacingExtra="-1sp"
+            android:text="@string/loginTitle"
+            android:textAppearance="@style/loginTitle" />
+
+        <TextView
+            android:id="@+id/loginDesc"
+            android:layout_width="243dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="63dp"
+            android:gravity="top"
+            android:lineSpacingExtra="4sp"
+            android:text="@string/loginDesc"
+            android:textAppearance="@style/loginDesc"
+            android:textColor="@color/loginDesc"
+            android:translationY="-1.96sp" />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout2"
+        android:layout_width="411dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="154dp">
+
+        <TextView
+            android:id="@+id/emailTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="20dp"
+            android:lineSpacingExtra="6sp"
+            android:text="@string/userIdTextView"
+            android:textAppearance="@style/loginDesc"
+            android:textColor="@color/loginTextView"
+            android:translationY="-2.92sp"
+
+            />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/emailOutlinedTextField"
+            style="@style/TextInputLayoutStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="22dp"
+            android:layout_marginEnd="20dp"
+            app:startIconContentDescription="LoginPerson"
+            app:startIconDrawable="@drawable/ic_person_icon">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/emailTextInputEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/userIdHelper"
+                android:inputType="text"
+                android:maxLength="100"
+
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout3"
+        android:layout_width="411dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="278dp">
+
+        <TextView
+            android:id="@+id/passwordTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="20dp"
+            android:lineSpacingExtra="6sp"
+            android:text="@string/passwordTextView"
+            android:textAppearance="@style/loginDesc"
+            android:textColor="@color/loginTextView"
+            android:translationY="-2.92sp"
+
+            />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/passwordOutlinedTextField"
+            style="@style/TextInputLayoutStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="22dp"
+            android:layout_marginEnd="20dp"
+            app:endIconMode="password_toggle"
+            app:startIconContentDescription="LoginPassword"
+            app:startIconDrawable="@drawable/ic_password_icon">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/passwordTextInputEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/passwordHelper"
+                android:inputType="textPassword"
+                android:maxLength="100"
+
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <TextView
+            android:id="@+id/forgotPasswordTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="256dp"
+            android:layout_marginTop="83dp"
+            android:lineSpacingExtra="6sp"
+            android:text="@string/forgotPass"
+            android:textAppearance="@style/loginDesc"
+            android:textColor="@color/loginDesc"
+            android:translationY="-2.92sp" />
+
+    </RelativeLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/onbButton"
+        style="@style/onbBtn"
+        android:layout_width="335dp"
+        android:layout_height="67dp"
+        android:text="@string/signIn"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="19dp"
+        android:layout_marginRight="19dp"
+        android:layout_marginTop="430dp"/>
+
+
+    <TextView
+        android:id="@+id/dontHaveAccoutnTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:lineSpacingExtra="6sp"
+        android:text="@string/dontHaveAcct"
+        android:textAppearance="@style/loginDesc"
+        android:textColor="@color/loginDesc"
+        android:translationY="-2.92sp"
+ />
+
+
+</RelativeLayout>

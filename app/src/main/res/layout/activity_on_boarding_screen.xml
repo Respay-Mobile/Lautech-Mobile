@@ -4,48 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".OnBoardingScreenActivity">
+    tools:context=".SplashScreens.OnBoardingScreenActivity">
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/pager"
         android:layout_width="match_parent"
         android:layout_height="523dp"
         android:contentDescription="@string/app_name" />
-    <!--
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="373dp"/>
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="410dp">
-
-        <TextView
-            android:id="@+id/onbTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:lineSpacingExtra="-2sp"
-            android:gravity="center_horizontal|top"
-            android:text="@string/studServices"
-            android:layout_centerHorizontal="true"
-            android:textAppearance="@style/onbTitle" />
-
-        <TextView
-            android:id="@+id/onbDesc"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:lineSpacingExtra="3sp"
-            android:translationY="-1.33sp"
-            android:gravity="center_horizontal|top"
-            android:text="@string/studServicesdes"
-            android:layout_marginStart="45dp"
-            android:layout_marginEnd="45dp"
-            android:layout_marginTop="60dp"
-            android:textAppearance="@style/onbDesc"/>
-
-    </RelativeLayout>
--->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -68,7 +34,7 @@
             android:layout_width="163dp"
             android:layout_height="61dp"
             android:layout_marginStart="226dp"
-            android:text="Next"
+            android:text="@string/next"
             style="@style/onbBtn"
             />
 

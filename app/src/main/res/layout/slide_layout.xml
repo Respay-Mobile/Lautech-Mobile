@@ -26,19 +26,6 @@
             android:layout_centerHorizontal="true"
             android:textAppearance="@style/onbTitle" />
 
-        <!--
-        <TextView
-            android:visibility="gone"
-            android:id="@+id/onbMini"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_marginStart="282dp"
-            android:lineSpacingExtra="-2sp"
-            android:gravity="center_horizontal|top"
-            android:text="@string/tm"
-            android:textAppearance="@style/onbTitleMini" />
--->
         <TextView
             android:id="@+id/onbDesc"
             android:layout_width="wrap_content"
