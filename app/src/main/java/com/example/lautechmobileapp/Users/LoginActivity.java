@@ -21,7 +21,7 @@ import com.google.android.material.textfield.TextInputLayout;
 
 public class LoginActivity extends AppCompatActivity {
 
-    private TextView createAccoutnTextView, forgotPassTextView;
+    private TextView haveAccountTextView, forgotPassTextView;
     private TextInputLayout emailTextInput, passwordTextInput;
     private Button signIn;
     private String emailText, passwordText;
@@ -31,7 +31,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        createAccoutnTextView = findViewById(R.id.dontHaveAccoutnTextView);
+        haveAccountTextView = findViewById(R.id.haveAcctSignin);
         signIn = findViewById(R.id.signInBtn);
         emailTextInput = findViewById(R.id.emailOutlinedTextField);
         passwordTextInput = findViewById(R.id.passwordOutlinedTextField);
@@ -44,7 +44,7 @@ public class LoginActivity extends AppCompatActivity {
 
         //Make text bold
         SpannableStringBuilder boldText = makeBold("Don't have an account? Create Here");
-        createAccoutnTextView.setText(boldText);
+        haveAccountTextView.setText(boldText);
 
         //When sign in is clicked
         signIn.setOnClickListener(new View.OnClickListener() {
@@ -63,7 +63,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        createAccoutnTextView.setOnClickListener(new View.OnClickListener() {
+        haveAccountTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 moveToSignUpPage();
@@ -135,7 +135,7 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
-    // method to validateEmail email address
+    // method to validate password
     public boolean validatePassword() {
         if (passwordTextInput.getEditText().getText().toString().trim().isEmpty()) {
             passwordTextInput.setError("Required");

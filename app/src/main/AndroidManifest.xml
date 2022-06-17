@@ -14,9 +14,18 @@
         android:theme="@style/Theme.LautechMobileApp"
         tools:targetApi="31">
         <activity
+            android:name=".RegistrationStaffActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Users.Registration.RegistrationStudentActivity2"
+            android:exported="false" />
+        <activity
+            android:name=".Users.Registration.RegistrationExistingStudentActivity"
+            android:exported="false" />
+        <activity
             android:name=".Users.AccountSetupActivity"
             android:exported="false"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Users.LoginActivity"
             android:exported="false"

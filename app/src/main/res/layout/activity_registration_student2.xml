@@ -4,33 +4,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Users.LoginActivity">
+    tools:context=".Users.Registration.RegistrationStudentActivity2">
 
     <RelativeLayout
         android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
-        android:layout_height="133dp"
+        android:layout_height="125dp"
         android:background="@color/loginTop">
 
         <TextView
-            android:id="@+id/loginTitle"
+            android:id="@+id/createAcctTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginTop="23dp"
             android:lineSpacingExtra="-1sp"
-            android:text="@string/loginTitle"
+            android:text="@string/createAccount"
             android:textAppearance="@style/loginTitle" />
 
         <TextView
-            android:id="@+id/loginDesc"
+            android:id="@+id/createAcctDesc"
             android:layout_width="243dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="25dp"
             android:layout_marginTop="63dp"
             android:gravity="top"
             android:lineSpacingExtra="4sp"
-            android:text="@string/loginDesc"
+            android:text="@string/fillRequired"
             android:textAppearance="@style/loginDesc"
             android:textColor="@color/loginDesc"
             android:translationY="-1.96sp" />
@@ -42,16 +42,16 @@
         android:id="@+id/relativeLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="154dp">
+        android:layout_marginTop="149dp">
 
         <TextView
-            android:id="@+id/emailTextView"
+            android:id="@+id/othernamesTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_marginStart="20dp"
             android:lineSpacingExtra="6sp"
-            android:text="@string/userIdTextView"
+            android:text="@string/othernameText"
             android:textAppearance="@style/loginDesc"
             android:textColor="@color/loginTextView"
             android:translationY="-2.92sp"
@@ -60,7 +60,7 @@
 
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/emailOutlinedTextField"
+            android:id="@+id/othernamesOutlinedTextField"
             style="@style/TextInputLayoutStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -69,14 +69,14 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="22dp"
             android:layout_marginEnd="20dp"
-            app:startIconContentDescription="LoginPerson"
+            app:startIconContentDescription="PersonIcon"
             app:startIconDrawable="@drawable/ic_person_icon">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/emailTextInputEditText"
+                android:id="@+id/othernamesTextInputEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/userIdHelper"
+                android:hint="@string/ola"
                 android:inputType="text"
                 android:maxLength="100"
 
@@ -89,7 +89,57 @@
         android:id="@+id/relativeLayout3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="278dp">
+        android:layout_marginTop="265dp">
+
+        <TextView
+            android:id="@+id/phoneTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="20dp"
+            android:lineSpacingExtra="6sp"
+            android:text="@string/phoneNumText"
+            android:textAppearance="@style/loginDesc"
+            android:textColor="@color/loginTextView"
+            android:translationY="-2.92sp"
+
+            />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/phoneOutlinedTextField"
+            style="@style/TextInputLayoutStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="22dp"
+            android:layout_marginEnd="20dp"
+            app:startIconContentDescription="DateIcon"
+            app:startIconDrawable="@drawable/ic_phone_icon">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/phoneTextInputEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/phoneNumTextHelper"
+                android:maxLength="11"
+                android:inputType="phone"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="381dp">
 
         <TextView
             android:id="@+id/passwordTextView"
@@ -116,9 +166,9 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="22dp"
             android:layout_marginEnd="20dp"
-            app:endIconMode="password_toggle"
-            app:startIconContentDescription="LoginPassword"
-            app:startIconDrawable="@drawable/ic_password_icon">
+            app:startIconContentDescription="PasswordIcon"
+            app:startIconDrawable="@drawable/ic_password_icon"
+            app:endIconMode="password_toggle">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/passwordTextInputEditText"
@@ -127,41 +177,30 @@
                 android:hint="@string/passwordHelper"
                 android:inputType="textPassword"
                 android:maxLength="100"
-
                 />
 
         </com.google.android.material.textfield.TextInputLayout>
 
-
-        <TextView
-            android:id="@+id/forgotPasswordTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="256dp"
-            android:layout_marginTop="103dp"
-            android:lineSpacingExtra="6sp"
-            android:text="@string/forgotPass"
-            android:textAppearance="@style/loginDesc"
-            android:textColor="@color/loginDesc"
-            android:translationY="-2.92sp" />
-
     </RelativeLayout>
 
+
+
+
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/signInBtn"
+        android:id="@+id/continueBtn"
         style="@style/onbBtn"
         android:layout_width="335dp"
         android:layout_height="67dp"
-        android:text="@string/signIn"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginLeft="19dp"
-        android:layout_marginRight="19dp"
-        android:layout_marginTop="430dp"/>
+        android:text="@string/continueBtn"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="19dp"
+        android:layout_marginEnd="19dp"
+        android:layout_marginTop="504dp"/>
 
 
     <TextView
-        android:id="@+id/haveAcctSignin"
+        android:id="@+id/haveAcctSignin2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -171,7 +210,7 @@
         android:textAppearance="@style/loginDesc"
         android:textColor="@color/frame_view"
         android:translationY="-2.92sp"
- />
+        />
 
 
 </RelativeLayout>

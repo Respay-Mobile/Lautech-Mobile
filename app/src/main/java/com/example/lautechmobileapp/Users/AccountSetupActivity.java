@@ -16,6 +16,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.lautechmobileapp.R;
+import com.example.lautechmobileapp.Users.Registration.RegistrationExistingStudentActivity;
 
 public class AccountSetupActivity extends AppCompatActivity {
 
@@ -55,8 +56,6 @@ public class AccountSetupActivity extends AppCompatActivity {
         createAccountTextView.setText(boldText);
 
         //Onclicklistener for each frame
-
-
         frame1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -66,6 +65,8 @@ public class AccountSetupActivity extends AppCompatActivity {
         frame2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), RegistrationExistingStudentActivity.class);
+                startActivity(intent);
                  }
         });
 
@@ -80,7 +81,6 @@ public class AccountSetupActivity extends AppCompatActivity {
             public void onClick(View view) {
             }
         });
-
 
         createAccountTextView.setOnClickListener(new View.OnClickListener() {
             @Override

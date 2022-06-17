@@ -39,6 +39,26 @@
     <string name="exist_stud">Existing Student</string>
     <string name="alumn">Alumnus</string>
     <string name="staff">Staff</string>
+    <string name="haveAcct">Have an account? Sign in</string>
+
+    <!-- Register Existing STudents Activity -->
+    <string name="createAccount">Create Account</string>
+    <string name="fillRequired">Fill the required input fields to register.</string>
+    <string name="matricText">Matric Number</string>
+    <string name="matricHelper">UTME No/Email/Form No</string>
+    <string name="dobText">Date of Birth</string>
+    <string name="dobHelper">DD/MM/YYYY</string>
+    <string name="surnameText">Surname</string>
+    <string name="Seyi">Seyi</string>
+    <string name="firstnameText">First Name</string>
+    <string name="martins">Martins</string>
+    <string name="othernameText">Other Name</string>
+    <string name="ola">Ola</string>
+    <string name="phoneNumText">Phone Number</string>
+    <string name="phoneNumTextHelper">07011223345</string>
+    <string name="session">Select Session</string>
+    <string name="sessionHelper">2021/2022</string>
+    <string name="continueBtn">Continue</string>
 
 
 </resources>
