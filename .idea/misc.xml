@@ -4,15 +4,28 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/drawable-xhdpi/tab_selector.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/dotted.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_alumnus__light.xml" value="0.1985" />
+        <entry key="app/src/main/res/drawable/ic_alumnus_dark.xml" value="0.1985" />
         <entry key="app/src/main/res/drawable/ic_default_dot.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_existing_student_dark.xml" value="0.1985" />
+        <entry key="app/src/main/res/drawable/ic_existing_student_light.xml" value="0.1985" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_lautech_logo.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_new_student.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_new_student_dark.xml" value="0.1985" />
+        <entry key="app/src/main/res/drawable/ic_new_student_light.xml" value="0.1985" />
         <entry key="app/src/main/res/drawable/ic_selected_dot.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_staff.xml" value="0.1985" />
+        <entry key="app/src/main/res/drawable/ic_staff_light.xml" value="0.1985" />
+        <entry key="app/src/main/res/drawable/rectangle.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/tab_selector.xml" value="0.1" />
         <entry key="app/src/main/res/font/font.xml" value="0.14074074074074075" />
+        <entry key="app/src/main/res/layout/activity_account_setup.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.1568627450980392" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.15081521739130435" />
         <entry key="app/src/main/res/layout/activity_on_boarding_screen.xml" value="0.12269938650306748" />
+        <entry key="app/src/main/res/layout/activity_setup_account.xml" value="0.25" />
         <entry key="app/src/main/res/layout/sam.xml" value="0.14814814814814814" />
         <entry key="app/src/main/res/layout/slide_layout.xml" value="0.1" />
       </map>

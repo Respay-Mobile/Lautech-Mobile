@@ -20,4 +20,8 @@
     <color name="loginTextView">#3F3B34</color>
     <color name="loginTextHelperColor">#A7A7A7</color>
 
+    <!-- Account Setup Color -->
+<color name="iconDesc">#F9F5EF</color>
+    <color name="plain">#FFFFFF</color>
+
 </resources>

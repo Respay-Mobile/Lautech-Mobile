@@ -1,10 +1,14 @@
 package com.example.lautechmobileapp;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.util.DisplayMetrics;
 import android.view.Display;
+import android.view.Window;
 import android.view.WindowManager;
+
+import androidx.core.content.ContextCompat;
 
 public class MainClass {
     private final Context context1;

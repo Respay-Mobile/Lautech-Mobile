@@ -14,11 +14,9 @@
         android:theme="@style/Theme.LautechMobileApp"
         tools:targetApi="31">
         <activity
-            android:name=".AccountSetupActivity"
-            android:exported="false" />
-        <activity
-            android:name=".SetupAccountActivity"
-            android:exported="false" />
+            android:name=".Users.AccountSetupActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".Users.LoginActivity"
             android:exported="false"

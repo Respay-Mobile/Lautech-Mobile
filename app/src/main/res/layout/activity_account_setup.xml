@@ -1,9 +1,172 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AccountSetupActivity">
+    tools:context=".Users.AccountSetupActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="411dp"
+        android:layout_height="133dp"
+        android:background="@color/loginTop">
+
+        <TextView
+            android:id="@+id/loginTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="23dp"
+            android:lineSpacingExtra="-1sp"
+            android:text="@string/accountSetup"
+            android:textAppearance="@style/loginTitle" />
+
+        <TextView
+            android:id="@+id/loginDesc"
+            android:layout_width="243dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="63dp"
+            android:gravity="top"
+            android:lineSpacingExtra="4sp"
+            android:text="@string/AcctSetDesc"
+            android:textAppearance="@style/loginDesc"
+            android:textColor="@color/loginDesc"
+            android:translationY="-1.96sp" />
+
+    </RelativeLayout>
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="160dp"
+        android:columnCount="2"
+        android:rowCount="2">
+
+        <FrameLayout
+            android:id="@+id/view1"
+            android:layout_width="155dp"
+            android:layout_height="179dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginStart="30dp"
+            android:background="@drawable/rectangle"
+            android:backgroundTint="@color/frame_view">
+
+            <ImageView
+                android:id="@+id/acountImage1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="82dp"
+                android:background="@drawable/ic_new_student"
+                android:backgroundTint="@color/frame_text"/>
+
+            <TextView
+                android:id="@+id/acountDesc1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/new_stud"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="140dp"
+                android:textAppearance="@style/loginDesc"
+                android:textColor="@color/frame_text" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/view2"
+            android:layout_marginTop="30dp"
+            android:layout_marginStart="40dp"
+            android:layout_width="155dp"
+            android:layout_height="179dp"
+            android:background="@drawable/dotted">
+
+            <ImageView
+                android:id="@+id/acountImage2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="82dp"
+                android:background="@drawable/ic_existing_student" />
+
+            <TextView
+                android:id="@+id/acountDesc2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/exist_stud"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="140dp"
+                android:textAppearance="@style/loginDesc"
+                android:textColor="@color/onbBtn"/>
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/view3"
+            android:layout_width="155dp"
+            android:layout_height="179dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginStart="30dp"
+            android:background="@drawable/dotted">
+
+            <ImageView
+                android:id="@+id/acountImage3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="82dp"
+                android:background="@drawable/ic_alumnus" />
+
+            <TextView
+                android:id="@+id/acountDesc3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/alumn"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="140dp"
+                android:textAppearance="@style/loginDesc"
+                android:textColor="@color/onbBtn"/>
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/view4"
+            android:layout_width="155dp"
+            android:layout_height="179dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginStart="40dp"
+            android:background="@drawable/dotted">
+
+            <ImageView
+                android:id="@+id/acountImage4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="82dp"
+                android:background="@drawable/ic_staff" />
+
+            <TextView
+                android:id="@+id/acountDesc4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/staff"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="140dp"
+                android:textAppearance="@style/loginDesc"
+                android:textColor="@color/onbBtn"/>
+        </FrameLayout>
+
+    </GridLayout>
+
+    <TextView
+        android:id="@+id/dontHaveAccoutnTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:lineSpacingExtra="6sp"
+        android:text="@string/dontHaveAcct"
+        android:textAppearance="@style/loginDesc"
+        android:textColor="@color/frame_view"
+        android:translationY="-2.92sp"/>
+
+</RelativeLayout>

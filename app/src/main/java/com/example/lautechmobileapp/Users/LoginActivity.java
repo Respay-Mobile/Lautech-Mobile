@@ -17,7 +17,6 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.lautechmobileapp.R;
-import com.example.lautechmobileapp.SetupAccountActivity;
 import com.google.android.material.textfield.TextInputLayout;
 
 public class LoginActivity extends AppCompatActivity {
@@ -37,26 +36,15 @@ public class LoginActivity extends AppCompatActivity {
         emailTextInput = findViewById(R.id.emailOutlinedTextField);
         passwordTextInput = findViewById(R.id.passwordOutlinedTextField);
 
-        //set status bar color
-        Window window = this.getWindow();
-
-        // clear FLAG_TRANSLUCENT_STATUS flag:
-        window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-
-        // add FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS flag to the window
-        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-
-        // finally change the color
-        window.setStatusBarColor(ContextCompat.getColor(this,R.color.loginTop));
+        setTopBarColor();
 
         //Create object for text watcher class which is used with the textinputedittext
         emailTextInput.getEditText().addTextChangedListener(new LoginActivity.ValidationTextWatcher(emailTextInput.getEditText()));
         passwordTextInput.getEditText().addTextChangedListener(new LoginActivity.ValidationTextWatcher(passwordTextInput.getEditText()));
 
-        //Using SpannableStringBuilder method to make text bold
-        SpannableStringBuilder str = new SpannableStringBuilder("Dont have an account? Create Here");
-        str.setSpan(new android.text.style.StyleSpan(android.graphics.Typeface.BOLD), 22 ,33, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-        createAccoutnTextView.setText(str);
+        //Make text bold
+        SpannableStringBuilder boldText = makeBold("Don't have an account? Create Here");
+        createAccoutnTextView.setText(boldText);
 
         //When sign in is clicked
         signIn.setOnClickListener(new View.OnClickListener() {
@@ -74,14 +62,48 @@ public class LoginActivity extends AppCompatActivity {
 
             }
         });
+
+        createAccoutnTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                moveToSignUpPage();
+            }
+        });
     }
 
 
-    public void signIn(String a, String b){
-        //TODO: method for sign in operation
-        Intent intent = new Intent(getApplicationContext(), SetupAccountActivity.class);
+    public void setTopBarColor(){
+        //set status bar color
+        Window window = this.getWindow();
+
+        // clear FLAG_TRANSLUCENT_STATUS flag:
+        window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+
+        // add FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS flag to the window
+        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+
+        // finally change the color
+        window.setStatusBarColor(ContextCompat.getColor(this,R.color.loginTop));
+    }
+
+    public SpannableStringBuilder makeBold(String text){
+        //Using SpannableStringBuilder method to make text bold
+        SpannableStringBuilder str = new SpannableStringBuilder(text);
+        str.setSpan(new android.text.style.StyleSpan(android.graphics.Typeface.BOLD), 22 ,34, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        return str;
+    }
+
+
+    public void moveToSignUpPage(){
+        Intent intent = new Intent(getApplicationContext(), AccountSetupActivity.class);
         startActivity(intent);
     }
+
+    public void signIn(String User, String pass){
+        //TODO: method for sign in operation
+
+    }
+
 
 
     //If user clicks back button show alert dialog

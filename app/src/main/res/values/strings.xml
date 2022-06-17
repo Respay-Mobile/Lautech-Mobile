@@ -32,5 +32,13 @@
     <string name="no">No</string>
     <string name="yesToExit">Yes, Exit</string>
 
+    <!-- Account setup activity -->
+    <string name="accountSetup">Account Setup</string>
+    <string name="AcctSetDesc">What account would you like to setup?</string>
+    <string name="new_stud">New Student</string>
+    <string name="exist_stud">Existing Student</string>
+    <string name="alumn">Alumnus</string>
+    <string name="staff">Staff</string>
+
 
 </resources>
