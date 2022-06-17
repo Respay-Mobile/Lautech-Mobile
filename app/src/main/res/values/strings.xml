@@ -60,5 +60,9 @@
     <string name="sessionHelper">2021/2022</string>
     <string name="continueBtn">Continue</string>
 
+    <!-- Register Staff ACtivity -->
+    <string name="staffNumText">Staff Number</string>
+    <string name="staffNumHelper">124/221</string>
+
 
 </resources>

@@ -22,38 +22,37 @@ import com.example.lautechmobileapp.R;
 import com.example.lautechmobileapp.Users.LoginActivity;
 import com.google.android.material.datepicker.MaterialDatePicker;
 import com.google.android.material.datepicker.MaterialPickerOnPositiveButtonClickListener;
-import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.TimeZone;
 
-public class RegistrationExistingStudentActivity extends AppCompatActivity {
+public class RegistrationStaffActivity extends AppCompatActivity {
 
-    private TextInputLayout matricTextInput, DOBTextInput, surnameTextInput, firstnameTextInput;
+    private TextInputLayout staffIdTextInput, DOBTextInput, surnameTextInput, firstnameTextInput;
     private EditText DOBEditText;
     private TextView signInTextView;
     private Button nextBtn;
-    private String matric,DOB,surname,firstname;
+    private String staffId,DOB,surname,firstname;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_registration_existing_student);
+        setContentView(R.layout.activity_registration_staff);
 
         signInTextView = findViewById(R.id.haveAcctSignin);
 
-        matricTextInput = findViewById(R.id.matricOutlinedTextField);
+        staffIdTextInput = findViewById(R.id.staffNumOutlinedTextField);
         DOBTextInput = findViewById(R.id.DOBOutlinedTextField);
         surnameTextInput = findViewById(R.id.surnameOutlinedTextField);
         firstnameTextInput = findViewById(R.id.firstnameOutlinedTextField);
+        DOBEditText = findViewById(R.id.DOBTextInputEditText);
 
         nextBtn = findViewById(R.id.continueBtn);
 
-        DOBEditText = findViewById(R.id.DOBTextInputEditText);
         DOBEditText.setInputType(InputType.TYPE_NULL);
         DOBEditText.setKeyListener(null);
-
         DOBEditText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -69,10 +68,10 @@ public class RegistrationExistingStudentActivity extends AppCompatActivity {
         signInTextView.setText(boldText);
 
         //Create object for text watcher class which is used with the textinputedittext
-        matricTextInput.getEditText().addTextChangedListener(new RegistrationExistingStudentActivity.ValidationTextWatcher(matricTextInput.getEditText()));
-        DOBTextInput.getEditText().addTextChangedListener(new RegistrationExistingStudentActivity.ValidationTextWatcher(DOBTextInput.getEditText()));
-        surnameTextInput.getEditText().addTextChangedListener(new RegistrationExistingStudentActivity.ValidationTextWatcher(surnameTextInput.getEditText()));
-        firstnameTextInput.getEditText().addTextChangedListener(new RegistrationExistingStudentActivity.ValidationTextWatcher(firstnameTextInput.getEditText()));
+        staffIdTextInput.getEditText().addTextChangedListener(new RegistrationStaffActivity.ValidationTextWatcher(staffIdTextInput.getEditText()));
+        DOBTextInput.getEditText().addTextChangedListener(new RegistrationStaffActivity.ValidationTextWatcher(DOBTextInput.getEditText()));
+        surnameTextInput.getEditText().addTextChangedListener(new RegistrationStaffActivity.ValidationTextWatcher(surnameTextInput.getEditText()));
+        firstnameTextInput.getEditText().addTextChangedListener(new RegistrationStaffActivity.ValidationTextWatcher(firstnameTextInput.getEditText()));
 
         //when sign in textview is clicked
         signInTextView.setOnClickListener(new View.OnClickListener() {
@@ -88,18 +87,20 @@ public class RegistrationExistingStudentActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                if (!validateMatric() || !validateDOB() || !validateSurname() || !validateFirstname()) {
+                if (!validateStaffId() || !validateDOB() || !validateSurname() || !validateFirstname()) {
                     return;
                 }
 
-                matric = matricTextInput.getEditText().getText().toString().trim();
-                DOB = DOBTextInput.getEditText().getText().toString().trim();
-                surname = surnameTextInput.getEditText().getText().toString().trim();
-                firstname = firstnameTextInput.getEditText().getText().toString().trim();
-                moveToSignUpPage2(matric, DOB, surname, firstname);
+                staffId = staffIdTextInput.getEditText().getText().toString();
+                DOB = DOBTextInput.getEditText().getText().toString();
+                surname = surnameTextInput.getEditText().getText().toString();
+                firstname = firstnameTextInput.getEditText().getText().toString();
+                moveToSignUpPage2(staffId, DOB, surname, firstname);
             }
         });
     }
+
+
 
 
     public void showCalender(){
@@ -136,13 +137,13 @@ public class RegistrationExistingStudentActivity extends AppCompatActivity {
 
 
 
-    // method to validate matric number
-    public boolean validateMatric() {
-        if (matricTextInput.getEditText().getText().toString().trim().isEmpty()) {
-            matricTextInput.setError("Required");
+    // method to validate staff ID
+    public boolean validateStaffId() {
+        if (staffIdTextInput.getEditText().getText().toString().trim().isEmpty()) {
+            staffIdTextInput.setError("Required");
             return false;
         } else {
-            matricTextInput.setErrorEnabled(false);
+            staffIdTextInput.setErrorEnabled(false);
         }
         return true;
 
@@ -179,7 +180,6 @@ public class RegistrationExistingStudentActivity extends AppCompatActivity {
         if (firstnameTextInput.getEditText().getText().toString().trim().isEmpty()) {
             firstnameTextInput.setError("Required");
             return false;
-
         }else {
             firstnameTextInput.setErrorEnabled(false);
         }
@@ -202,7 +202,7 @@ public class RegistrationExistingStudentActivity extends AppCompatActivity {
         public void afterTextChanged(Editable editable) {
             switch (view.getId()){
                 case R.id.matricTextInputEditText:
-                    validateMatric();
+                    validateStaffId();
                     break;
 
                 case R.id.DOBTextInputEditText:
@@ -245,10 +245,9 @@ public class RegistrationExistingStudentActivity extends AppCompatActivity {
         return str;
     }
 
-
-    public void moveToSignUpPage2(String matric, String DOB, String surname, String firstname){
-        Intent intent = new Intent(getApplicationContext(), RegistrationStudentActivity2.class);
-        intent.putExtra(matric, "matricNumber");
+    public void moveToSignUpPage2(String staffId, String DOB, String surname, String firstname){
+        Intent intent = new Intent(getApplicationContext(), RegistrationStaffActivity2.class);
+        intent.putExtra(staffId, "staffId");
         intent.putExtra(DOB, "dateOfBirth");
         intent.putExtra(surname, "surname");
         intent.putExtra(firstname, "firstname");

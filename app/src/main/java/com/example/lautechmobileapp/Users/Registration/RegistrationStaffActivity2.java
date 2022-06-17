@@ -3,6 +3,7 @@ package com.example.lautechmobileapp.Users.Registration;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
+import android.app.AutomaticZenRule;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
@@ -19,16 +20,17 @@ import com.example.lautechmobileapp.R;
 import com.example.lautechmobileapp.Users.LoginActivity;
 import com.google.android.material.textfield.TextInputLayout;
 
-public class RegistrationStudentActivity2 extends AppCompatActivity {
+public class RegistrationStaffActivity2 extends AppCompatActivity {
 
     private TextInputLayout othernameTextInput, phoneTextInput, passwordTextInput;
     private TextView signInTextView;
     private Button contBtn;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_registration_student2);
+        setContentView(R.layout.activity_registration_staff2);
 
         signInTextView = findViewById(R.id.haveAcctSignin2);
         othernameTextInput = findViewById(R.id.othernamesOutlinedTextField);
@@ -43,11 +45,10 @@ public class RegistrationStudentActivity2 extends AppCompatActivity {
         SpannableStringBuilder boldText = makeBold("Have an account? Sign in");
         signInTextView.setText(boldText);
 
-
         //Create object for text watcher class which is used with the textinputedittext
-        othernameTextInput.getEditText().addTextChangedListener(new RegistrationStudentActivity2.ValidationTextWatcher(othernameTextInput.getEditText()));
-        phoneTextInput.getEditText().addTextChangedListener(new RegistrationStudentActivity2.ValidationTextWatcher(phoneTextInput.getEditText()));
-        passwordTextInput.getEditText().addTextChangedListener(new RegistrationStudentActivity2.ValidationTextWatcher(passwordTextInput.getEditText()));
+        othernameTextInput.getEditText().addTextChangedListener(new RegistrationStaffActivity2.ValidationTextWatcher(othernameTextInput.getEditText()));
+        phoneTextInput.getEditText().addTextChangedListener(new RegistrationStaffActivity2.ValidationTextWatcher(phoneTextInput.getEditText()));
+        passwordTextInput.getEditText().addTextChangedListener(new RegistrationStaffActivity2.ValidationTextWatcher(passwordTextInput.getEditText()));
 
         //when sign in textview is clicked
         signInTextView.setOnClickListener(new View.OnClickListener() {
@@ -68,10 +69,10 @@ public class RegistrationStudentActivity2 extends AppCompatActivity {
             }
         });
 
-        //TODO:validate values and handle sign in
     }
 
-    public void setTopBarColor() {
+
+    public void setTopBarColor(){
         //set status bar color
         Window window = this.getWindow();
 
@@ -82,13 +83,13 @@ public class RegistrationStudentActivity2 extends AppCompatActivity {
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
 
         // finally change the color
-        window.setStatusBarColor(ContextCompat.getColor(this, R.color.loginTop));
+        window.setStatusBarColor(ContextCompat.getColor(this,R.color.loginTop));
     }
 
-    public SpannableStringBuilder makeBold(String text) {
+    public SpannableStringBuilder makeBold(String text){
         //Using SpannableStringBuilder method to make text bold
         SpannableStringBuilder str = new SpannableStringBuilder(text);
-        str.setSpan(new android.text.style.StyleSpan(android.graphics.Typeface.BOLD), 17, 24, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        str.setSpan(new android.text.style.StyleSpan(android.graphics.Typeface.BOLD), 17 ,24, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         return str;
     }
 
@@ -127,7 +128,7 @@ public class RegistrationStudentActivity2 extends AppCompatActivity {
             passwordTextInput.setError("Required");
             return false;
         }else if(password < 6){
-          passwordTextInput.setError("Can not be less than 6 characters");
+            passwordTextInput.setError("Can not be less than 6 characters");
         }else {
             passwordTextInput.setErrorEnabled(false);
         }
@@ -164,4 +165,5 @@ public class RegistrationStudentActivity2 extends AppCompatActivity {
             }
         }
     }
+
 }

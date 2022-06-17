@@ -17,6 +17,7 @@ import android.widget.TextView;
 
 import com.example.lautechmobileapp.R;
 import com.example.lautechmobileapp.Users.Registration.RegistrationExistingStudentActivity;
+import com.example.lautechmobileapp.Users.Registration.RegistrationStaffActivity;
 
 public class AccountSetupActivity extends AppCompatActivity {
 
@@ -79,6 +80,8 @@ public class AccountSetupActivity extends AppCompatActivity {
         frame4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), RegistrationStaffActivity.class);
+                startActivity(intent);
             }
         });
 
