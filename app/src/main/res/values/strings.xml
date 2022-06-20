@@ -64,5 +64,16 @@
     <string name="staffNumText">Staff Number</string>
     <string name="staffNumHelper">124/221</string>
 
+    <!-- Register new  student Activity -->
+    <string name="loginWithDataRegistration">Log in with your data that you entered during registration.</string>
+    <string name="genderHelper">Male</string>
+    <string name="genderTextview">Gender</string>
+    <string name="stateOfOr">State of Origin</string>
+    <string name="stateOfOrHelper">Osun</string>
+    <string name="email">Email</string>
+    <string name="emailHelper">Ola@gmail.com</string>
+    <string name="admissionType">Admission Type</string>
+    <string name="admissionTypeHelper">Masters</string>
+    <string name="signUp">Sign up</string>
 
 </resources>

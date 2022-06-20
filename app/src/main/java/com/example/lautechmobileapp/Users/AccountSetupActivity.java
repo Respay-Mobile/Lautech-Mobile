@@ -15,8 +15,11 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.lautechmobileapp.MainClass;
 import com.example.lautechmobileapp.R;
+import com.example.lautechmobileapp.Users.Registration.AlumniRegistrationActivity;
 import com.example.lautechmobileapp.Users.Registration.RegistrationExistingStudentActivity;
+import com.example.lautechmobileapp.Users.Registration.RegistrationNewStudentActivity;
 import com.example.lautechmobileapp.Users.Registration.RegistrationStaffActivity;
 
 public class AccountSetupActivity extends AppCompatActivity {
@@ -24,6 +27,7 @@ public class AccountSetupActivity extends AppCompatActivity {
     private TextView desc1, desc2, desc3, desc4, createAccountTextView;
     private FrameLayout frame1, frame2, frame3, frame4;
     private ImageView image1, image2, image3, image4;
+    MainClass mainClass = new MainClass(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,14 +57,17 @@ public class AccountSetupActivity extends AppCompatActivity {
         setTopBarColor();
 
         //Make text bold
-        SpannableStringBuilder boldText = makeBold("Have an account? Sign in");
+        SpannableStringBuilder boldText = mainClass.makesignInBold("Have an account? Sign in");
         createAccountTextView.setText(boldText);
 
         //Onclicklistener for each frame
         frame1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-              }
+                Intent intent = new Intent(getApplicationContext(), RegistrationNewStudentActivity.class);
+                startActivity(intent);
+
+            }
         });
 
         frame2.setOnClickListener(new View.OnClickListener() {
@@ -74,7 +81,9 @@ public class AccountSetupActivity extends AppCompatActivity {
         frame3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-            }
+                    Intent intent = new Intent(getApplicationContext(), AlumniRegistrationActivity.class);
+                    startActivity(intent);
+                }
         });
 
         frame4.setOnClickListener(new View.OnClickListener() {
@@ -108,10 +117,5 @@ public class AccountSetupActivity extends AppCompatActivity {
         window.setStatusBarColor(ContextCompat.getColor(this,R.color.loginTop));
     }
 
-    public SpannableStringBuilder makeBold(String text){
-        //Using SpannableStringBuilder method to make text bold
-        SpannableStringBuilder str = new SpannableStringBuilder(text);
-        str.setSpan(new android.text.style.StyleSpan(android.graphics.Typeface.BOLD), 17 ,24, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-        return str;
-    }
+
 }

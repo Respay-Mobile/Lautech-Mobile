@@ -15,6 +15,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.lautechmobileapp.MainClass;
 import com.example.lautechmobileapp.R;
 import com.example.lautechmobileapp.Users.LoginActivity;
 import com.google.android.material.textfield.TextInputLayout;
@@ -24,6 +25,7 @@ public class RegistrationStudentActivity2 extends AppCompatActivity {
     private TextInputLayout othernameTextInput, phoneTextInput, passwordTextInput;
     private TextView signInTextView;
     private Button contBtn;
+    MainClass mainClass = new MainClass(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +42,7 @@ public class RegistrationStudentActivity2 extends AppCompatActivity {
         setTopBarColor();
 
         //Make text bold
-        SpannableStringBuilder boldText = makeBold("Have an account? Sign in");
+        SpannableStringBuilder boldText = mainClass.makesignInBold("Have an account? Sign in");
         signInTextView.setText(boldText);
 
 
@@ -83,13 +85,6 @@ public class RegistrationStudentActivity2 extends AppCompatActivity {
 
         // finally change the color
         window.setStatusBarColor(ContextCompat.getColor(this, R.color.loginTop));
-    }
-
-    public SpannableStringBuilder makeBold(String text) {
-        //Using SpannableStringBuilder method to make text bold
-        SpannableStringBuilder str = new SpannableStringBuilder(text);
-        str.setSpan(new android.text.style.StyleSpan(android.graphics.Typeface.BOLD), 17, 24, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-        return str;
     }
 
 

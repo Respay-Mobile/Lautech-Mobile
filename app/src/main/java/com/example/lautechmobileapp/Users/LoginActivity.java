@@ -16,6 +16,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.lautechmobileapp.MainClass;
 import com.example.lautechmobileapp.R;
 import com.google.android.material.textfield.TextInputLayout;
 
@@ -25,6 +26,7 @@ public class LoginActivity extends AppCompatActivity {
     private TextInputLayout emailTextInput, passwordTextInput;
     private Button signIn;
     private String emailText, passwordText;
+    MainClass mainClass = new MainClass(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +45,7 @@ public class LoginActivity extends AppCompatActivity {
         passwordTextInput.getEditText().addTextChangedListener(new LoginActivity.ValidationTextWatcher(passwordTextInput.getEditText()));
 
         //Make text bold
-        SpannableStringBuilder boldText = makeBold("Don't have an account? Create Here");
+        SpannableStringBuilder boldText = mainClass.makecreateHereBold("Don't have an account? Create Here");
         haveAccountTextView.setText(boldText);
 
         //When sign in is clicked
@@ -86,12 +88,7 @@ public class LoginActivity extends AppCompatActivity {
         window.setStatusBarColor(ContextCompat.getColor(this,R.color.loginTop));
     }
 
-    public SpannableStringBuilder makeBold(String text){
-        //Using SpannableStringBuilder method to make text bold
-        SpannableStringBuilder str = new SpannableStringBuilder(text);
-        str.setSpan(new android.text.style.StyleSpan(android.graphics.Typeface.BOLD), 22 ,34, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-        return str;
-    }
+
 
 
     public void moveToSignUpPage(){

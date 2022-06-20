@@ -75,6 +75,18 @@
         <item name="android:textColor">@color/loginDesc</item>
     </style>
 
+    <style name="TextInputDropDown" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+        <item name="boxStrokeColor">@color/loginTextHelperColor</item>
+        <item name="android:textColorHint">@color/loginTextHelperColor</item>
+        <item name="startIconTint">@color/loginTextHelperColor</item>
+        <item name="endIconTint">@color/loginTextHelperColor</item>
+        <item name="hintEnabled">false</item>
+        <item name="errorTextColor">@color/loginDesc</item>
+        <item name="errorIconTint">@color/loginDesc</item>
+        <item name="boxStrokeErrorColor">@color/loginDesc</item>
+        <item name="android:textColor">@color/loginDesc</item>
+    </style>
+
 
 
 

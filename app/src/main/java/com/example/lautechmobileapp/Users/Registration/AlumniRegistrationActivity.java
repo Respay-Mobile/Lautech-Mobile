@@ -8,7 +8,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.InputType;
-import android.text.Spannable;
 import android.text.SpannableStringBuilder;
 import android.text.TextWatcher;
 import android.view.View;
@@ -29,38 +28,36 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.TimeZone;
 
-public class RegistrationStaffActivity extends AppCompatActivity {
+public class AlumniRegistrationActivity extends AppCompatActivity {
 
-    private TextInputLayout staffIdTextInput, DOBTextInput, surnameTextInput, firstnameTextInput;
+    private TextInputLayout matricTextInput, DOBTextInput, passwordTextInput;
     private EditText DOBEditText;
     private TextView signInTextView;
-    private Button nextBtn;
-    private String staffId,DOB,surname,firstname;
+    private Button continueBtn;
+    private String matric,DOB,password;
     MainClass mainClass = new MainClass(this);
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_registration_staff);
+        setContentView(R.layout.activity_alumni_registration);
 
+        matricTextInput = findViewById(R.id.matricOutlinedTextField);
+        DOBTextInput = findViewById(R.id.DOBOutlinedTextField);
+        passwordTextInput = findViewById(R.id.passwordOutlinedTextField);
+        continueBtn = findViewById(R.id.continueBtn);
         signInTextView = findViewById(R.id.haveAcctSignin);
 
-        staffIdTextInput = findViewById(R.id.staffNumOutlinedTextField);
-        DOBTextInput = findViewById(R.id.DOBOutlinedTextField);
-        surnameTextInput = findViewById(R.id.surnameOutlinedTextField);
-        firstnameTextInput = findViewById(R.id.firstnameOutlinedTextField);
         DOBEditText = findViewById(R.id.DOBTextInputEditText);
-
-        nextBtn = findViewById(R.id.continueBtn);
-
         DOBEditText.setInputType(InputType.TYPE_NULL);
         DOBEditText.setKeyListener(null);
+
         DOBEditText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 showCalender();
             }
         });
+
 
         //Change top bar color
         setTopBarColor();
@@ -70,10 +67,10 @@ public class RegistrationStaffActivity extends AppCompatActivity {
         signInTextView.setText(boldText);
 
         //Create object for text watcher class which is used with the textinputedittext
-        staffIdTextInput.getEditText().addTextChangedListener(new RegistrationStaffActivity.ValidationTextWatcher(staffIdTextInput.getEditText()));
-        DOBTextInput.getEditText().addTextChangedListener(new RegistrationStaffActivity.ValidationTextWatcher(DOBTextInput.getEditText()));
-        surnameTextInput.getEditText().addTextChangedListener(new RegistrationStaffActivity.ValidationTextWatcher(surnameTextInput.getEditText()));
-        firstnameTextInput.getEditText().addTextChangedListener(new RegistrationStaffActivity.ValidationTextWatcher(firstnameTextInput.getEditText()));
+        matricTextInput.getEditText().addTextChangedListener(new AlumniRegistrationActivity.ValidationTextWatcher(matricTextInput.getEditText()));
+        DOBTextInput.getEditText().addTextChangedListener(new AlumniRegistrationActivity.ValidationTextWatcher(DOBTextInput.getEditText()));
+        passwordTextInput.getEditText().addTextChangedListener(new AlumniRegistrationActivity.ValidationTextWatcher(passwordTextInput.getEditText()));
+
 
         //when sign in textview is clicked
         signInTextView.setOnClickListener(new View.OnClickListener() {
@@ -85,24 +82,22 @@ public class RegistrationStaffActivity extends AppCompatActivity {
         });
 
         //When next button clicked
-        nextBtn.setOnClickListener(new View.OnClickListener() {
+        continueBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                if (!validateStaffId() || !validateDOB() || !validateSurname() || !validateFirstname()) {
+                if (!validateMatric() || !validateDOB() || !validatePassword()) {
                     return;
                 }
 
-                staffId = staffIdTextInput.getEditText().getText().toString().trim();
+                matric = matricTextInput.getEditText().getText().toString().trim();
                 DOB = DOBTextInput.getEditText().getText().toString().trim();
-                surname = surnameTextInput.getEditText().getText().toString().trim();
-                firstname = firstnameTextInput.getEditText().getText().toString().trim();
-                moveToSignUpPage2(staffId, DOB, surname, firstname);
+                password = passwordTextInput.getEditText().getText().toString().trim();
+                //TODO: moveToSignUpPage2(matric, DOB, surname, firstname);
             }
         });
+
     }
-
-
 
 
     public void showCalender(){
@@ -139,13 +134,13 @@ public class RegistrationStaffActivity extends AppCompatActivity {
 
 
 
-    // method to validate staff ID
-    public boolean validateStaffId() {
-        if (staffIdTextInput.getEditText().getText().toString().trim().isEmpty()) {
-            staffIdTextInput.setError("Required");
+    // method to validate matric number
+    public boolean validateMatric() {
+        if (matricTextInput.getEditText().getText().toString().trim().isEmpty()) {
+            matricTextInput.setError("Required");
             return false;
         } else {
-            staffIdTextInput.setErrorEnabled(false);
+            matricTextInput.setErrorEnabled(false);
         }
         return true;
 
@@ -164,26 +159,17 @@ public class RegistrationStaffActivity extends AppCompatActivity {
 
     }
 
-    // method to validate surname
-    public boolean validateSurname() {
-        if (surnameTextInput.getEditText().getText().toString().trim().isEmpty()) {
-            surnameTextInput.setError("Required");
+    // method to validate password
+    public boolean validatePassword() {
+        int password = passwordTextInput.getEditText().getText().toString().trim().length();
+        if (passwordTextInput.getEditText().getText().toString().trim().isEmpty()) {
+            passwordTextInput.setError("Required");
             return false;
-
-        }else {
-            surnameTextInput.setErrorEnabled(false);
-        }
-        return true;
-
-    }
-
-    // method to validate firstname
-    public boolean validateFirstname() {
-        if (firstnameTextInput.getEditText().getText().toString().trim().isEmpty()) {
-            firstnameTextInput.setError("Required");
+        } else if(password < 6){
+            passwordTextInput.setError("Password must be at least 6 characters");
             return false;
-        }else {
-            firstnameTextInput.setErrorEnabled(false);
+        } else {
+            passwordTextInput.setErrorEnabled(false);
         }
         return true;
 
@@ -204,19 +190,15 @@ public class RegistrationStaffActivity extends AppCompatActivity {
         public void afterTextChanged(Editable editable) {
             switch (view.getId()){
                 case R.id.matricTextInputEditText:
-                    validateStaffId();
+                    validateMatric();
                     break;
 
                 case R.id.DOBTextInputEditText:
                     validateDOB();
                     break;
 
-                case R.id.surnameTextInputEditText:
-                    validateSurname();
-                    break;
-
-                case R.id.firstnameTextInputEditText:
-                    validateFirstname();
+                case R.id.passwordTextInputEditText:
+                    validatePassword();
                     break;
 
             }
@@ -240,13 +222,5 @@ public class RegistrationStaffActivity extends AppCompatActivity {
         window.setStatusBarColor(ContextCompat.getColor(this,R.color.loginTop));
     }
 
-    public void moveToSignUpPage2(String staffId, String DOB, String surname, String firstname){
-        Intent intent = new Intent(getApplicationContext(), RegistrationStaffActivity2.class);
-        intent.putExtra(staffId, "staffId");
-        intent.putExtra(DOB, "dateOfBirth");
-        intent.putExtra(surname, "surname");
-        intent.putExtra(firstname, "firstname");
-        startActivity(intent);
-    }
 
 }

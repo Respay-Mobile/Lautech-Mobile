@@ -3,6 +3,8 @@ package com.example.lautechmobileapp;
 import android.app.Activity;
 import android.content.Context;
 import android.content.res.Configuration;
+import android.text.Spannable;
+import android.text.SpannableStringBuilder;
 import android.util.DisplayMetrics;
 import android.view.Display;
 import android.view.Window;
@@ -49,5 +51,19 @@ public class MainClass {
     }
 
 
+
+    public SpannableStringBuilder makesignInBold(String text){
+        //Using SpannableStringBuilder method to make text bold
+        SpannableStringBuilder str = new SpannableStringBuilder(text);
+        str.setSpan(new android.text.style.StyleSpan(android.graphics.Typeface.BOLD), 17 ,24, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        return str;
+    }
+
+    public SpannableStringBuilder makecreateHereBold(String text){
+        //Using SpannableStringBuilder method to make text bold
+        SpannableStringBuilder str = new SpannableStringBuilder(text);
+        str.setSpan(new android.text.style.StyleSpan(android.graphics.Typeface.BOLD), 22 ,34, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        return str;
+    }
 
 }

@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Users.Registration.RegistrationNewStudentActivity3">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="125dp"
+        android:background="@color/loginTop">
+
+        <TextView
+            android:id="@+id/createAcctTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="23dp"
+            android:lineSpacingExtra="-1sp"
+            android:text="@string/createAccount"
+            android:textAppearance="@style/loginTitle" />
+
+        <TextView
+            android:id="@+id/createAcctDesc"
+            android:layout_width="243dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="63dp"
+            android:gravity="top"
+            android:lineSpacingExtra="4sp"
+            android:text="@string/loginWithDataRegistration"
+            android:textAppearance="@style/loginDesc"
+            android:textColor="@color/loginDesc"
+            android:translationY="-1.96sp" />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="149dp">
+
+        <TextView
+            android:id="@+id/emailTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="20dp"
+            android:lineSpacingExtra="6sp"
+            android:text="@string/email"
+            android:textAppearance="@style/loginDesc"
+            android:textColor="@color/loginTextView"
+            android:translationY="-2.92sp"
+
+            />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/emailOutlinedTextField"
+            style="@style/TextInputLayoutStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="22dp"
+            android:layout_marginEnd="20dp"
+            app:startIconContentDescription="EmailIcon"
+            app:startIconDrawable="@drawable/ic_email_icon">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/emailTextInputEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/emailHelper"
+                android:inputType="textEmailAddress"
+                android:maxLength="100"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="265dp">
+
+        <TextView
+            android:id="@+id/passwordTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="20dp"
+            android:lineSpacingExtra="6sp"
+            android:text="@string/passwordTextView"
+            android:textAppearance="@style/loginDesc"
+            android:textColor="@color/loginTextView"
+            android:translationY="-2.92sp"
+
+            />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/passwordOutlinedTextField"
+            style="@style/TextInputLayoutStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="22dp"
+            android:layout_marginEnd="20dp"
+            app:startIconContentDescription="PasswordIcon"
+            app:startIconDrawable="@drawable/ic_password_icon"
+            app:endIconMode="password_toggle">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/passwordTextInputEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/passwordHelper"
+                android:inputType="textPassword"
+                android:maxLength="100"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="381dp">
+
+        <TextView
+            android:id="@+id/admissionTypeTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="20dp"
+            android:lineSpacingExtra="6sp"
+            android:text="@string/admissionType"
+            android:textAppearance="@style/loginDesc"
+            android:textColor="@color/loginTextView"
+            android:translationY="-2.92sp"
+
+            />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/admissionOutlinedTextField"
+            style="@style/TextInputDropDown"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="22dp"
+            android:layout_marginEnd="20dp"
+            app:startIconContentDescription="AdmissionIcon"
+            app:startIconDrawable="@drawable/ic_calender_icon">
+
+            <AutoCompleteTextView
+                android:id="@+id/admissionDropDown"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/admissionTypeHelper"
+                android:inputType="none"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+    </RelativeLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/signUpBtn"
+        style="@style/onbBtn"
+        android:layout_width="335dp"
+        android:layout_height="67dp"
+        android:text="@string/signUp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="19dp"
+        android:layout_marginEnd="19dp"
+        android:layout_marginTop="504dp"/>
+
+
+    <TextView
+        android:id="@+id/haveAcctSignin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:lineSpacingExtra="6sp"
+        android:text="@string/haveAcct"
+        android:textAppearance="@style/loginDesc"
+        android:textColor="@color/frame_view"
+        android:translationY="-2.92sp"
+        />
+
+
+</RelativeLayout>

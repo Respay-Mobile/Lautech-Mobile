@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Users.Registration.RegistrationExistingStudentActivity">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="125dp"
+        android:background="@color/loginTop">
+
+        <TextView
+            android:id="@+id/createAcctTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="23dp"
+            android:lineSpacingExtra="-1sp"
+            android:text="@string/createAccount"
+            android:textAppearance="@style/loginTitle" />
+
+        <TextView
+            android:id="@+id/createAcctDesc"
+            android:layout_width="243dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="63dp"
+            android:gravity="top"
+            android:lineSpacingExtra="4sp"
+            android:text="@string/fillRequired"
+            android:textAppearance="@style/loginDesc"
+            android:textColor="@color/loginDesc"
+            android:translationY="-1.96sp" />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="149dp">
+
+        <TextView
+            android:id="@+id/matricTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="20dp"
+            android:lineSpacingExtra="6sp"
+            android:text="@string/matricText"
+            android:textAppearance="@style/loginDesc"
+            android:textColor="@color/loginTextView"
+            android:translationY="-2.92sp"
+
+            />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/matricOutlinedTextField"
+            style="@style/TextInputLayoutStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="22dp"
+            android:layout_marginEnd="20dp"
+            app:startIconContentDescription="PersonIcon"
+            app:startIconDrawable="@drawable/ic_person_icon">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/matricTextInputEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/matricHelper"
+                android:inputType="text"
+                android:maxLength="100"
+
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="265dp">
+
+        <TextView
+            android:id="@+id/DOBTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="20dp"
+            android:lineSpacingExtra="6sp"
+            android:text="@string/dobText"
+            android:textAppearance="@style/loginDesc"
+            android:textColor="@color/loginTextView"
+            android:translationY="-2.92sp"
+
+            />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/DOBOutlinedTextField"
+            style="@style/TextInputLayoutStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="22dp"
+            android:layout_marginEnd="20dp"
+            app:startIconContentDescription="DateIcon"
+            app:startIconDrawable="@drawable/ic_calender_icon"
+            app:endIconMode="custom"
+            app:endIconDrawable="@drawable/ic_dropdown_icon"
+            app:endIconContentDescription="DropdownIcon">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/DOBTextInputEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/dobHelper"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="381dp">
+
+        <TextView
+            android:id="@+id/passwordTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="20dp"
+            android:lineSpacingExtra="6sp"
+            android:text="@string/passwordTextView"
+            android:textAppearance="@style/loginDesc"
+            android:textColor="@color/loginTextView"
+            android:translationY="-2.92sp"
+
+            />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/passwordOutlinedTextField"
+            style="@style/TextInputLayoutStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="22dp"
+            android:layout_marginEnd="20dp"
+            app:startIconContentDescription="PasswordIcon"
+            app:startIconDrawable="@drawable/ic_password_icon"
+            app:endIconMode="password_toggle">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/passwordTextInputEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/passwordHelper"
+                android:inputType="textPassword"
+                android:maxLength="100"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+    </RelativeLayout>
+
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/continueBtn"
+        style="@style/onbBtn"
+        android:layout_width="335dp"
+        android:layout_height="67dp"
+        android:text="@string/continueBtn"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="19dp"
+        android:layout_marginEnd="19dp"
+        android:layout_marginTop="504dp"/>
+
+
+    <TextView
+        android:id="@+id/haveAcctSignin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:lineSpacingExtra="6sp"
+        android:text="@string/haveAcct"
+        android:textAppearance="@style/loginDesc"
+        android:textColor="@color/frame_view"
+        android:translationY="-2.92sp"
+        />
+
+
+</RelativeLayout>
