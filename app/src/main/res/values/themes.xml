@@ -6,7 +6,7 @@
         <item name="colorPrimaryVariant">@color/white</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondary">@color/OTPTitle</item>
         <item name="colorSecondaryVariant">@color/teal_700</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
@@ -85,6 +85,24 @@
         <item name="errorIconTint">@color/loginDesc</item>
         <item name="boxStrokeErrorColor">@color/loginDesc</item>
         <item name="android:textColor">@color/loginDesc</item>
+    </style>
+
+    <!-- OTP style -->
+    <!--Style for Login Activity -->
+    <style name="OTPTitle" parent="TextAppearance.AppCompat.Large">
+        <item name="android:textSize">22sp</item>
+        <item name="android:fontFamily">@font/mulish_bold</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="OTPDesc">
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">@font/mulish_medium</item>
+    </style>
+
+    <style name="OTPPhone">
+        <item name="android:textSize">18sp</item>
+        <item name="android:fontFamily">@font/mulish_medium</item>
     </style>
 
 

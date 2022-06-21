@@ -76,4 +76,14 @@
     <string name="admissionTypeHelper">Masters</string>
     <string name="signUp">Sign up</string>
 
+    <!-- OTP activity -->
+    <!-- <string name="hiSeyi">Hi, Seyi Martins Ola</string>
+    <string name="phoneNumber">070XXXXXX66</string>-->
+    <string name="lorem">Input your OTP below to complete registration</string>
+    <string name="enterOTP">Enter the OTP Code</string>
+    <string name="seenOtP">We’ve sent you an OTP code to</string>
+    <string name="resend">Resesnd OTP</string>
+    <string name="success">Success</string>
+    <string name="succCreated">Your account has been successfully created</string>
+
 </resources>

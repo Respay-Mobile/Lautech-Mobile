@@ -68,10 +68,19 @@ public class RegistrationNewStudentActivity2 extends AppCompatActivity {
         genderTextInput.getEditText().addTextChangedListener(new RegistrationNewStudentActivity2.ValidationTextWatcher(genderTextInput.getEditText()));
         originTextInput.getEditText().addTextChangedListener(new RegistrationNewStudentActivity2.ValidationTextWatcher(originTextInput.getEditText()));
 
-        //get previous string from intent
-        surname = getIntent().getStringExtra("surname");
-        surname = getIntent().getStringExtra("firstname");
-        surname = getIntent().getStringExtra("othername");
+
+        //Get details from previous activity and ensure they are not empty
+        Bundle extras = getIntent().getExtras();
+        if(extras != null){
+            //get previous string from intent
+            surname = getIntent().getStringExtra("surname");
+            firstname = getIntent().getStringExtra("firstname");
+            othername = getIntent().getStringExtra("othername");
+
+        } else {
+            Intent intent = new Intent(getApplicationContext(), RegistrationNewStudentActivity.class);
+            startActivity(intent);
+        }
 
         //Change top bar color
         setTopBarColor();
@@ -167,12 +176,12 @@ public class RegistrationNewStudentActivity2 extends AppCompatActivity {
 
     public void moveToSignUpPage3(String phone, String gender, String origin, String surname, String firstname, String othername){
         Intent intent = new Intent(getApplicationContext(), RegistrationNewStudentActivity3.class);
-        intent.putExtra(surname, "surname");
-        intent.putExtra(firstname, "firstname");
-        intent.putExtra(othername, "othername");
-        intent.putExtra(phone, "phone");
-        intent.putExtra(gender, "gender");
-        intent.putExtra(origin, "origin");
+        intent.putExtra("surname", surname );
+        intent.putExtra("firstname", firstname );
+        intent.putExtra("othername", othername);
+        intent.putExtra("phone", phone);
+        intent.putExtra("gender", gender);
+        intent.putExtra("origin", origin);
         startActivity(intent);
     }
 

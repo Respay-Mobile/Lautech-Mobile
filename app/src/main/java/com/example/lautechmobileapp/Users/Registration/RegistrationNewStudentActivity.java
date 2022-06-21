@@ -34,8 +34,8 @@ public class RegistrationNewStudentActivity extends AppCompatActivity {
         setContentView(R.layout.activity_registration_new_student);
 
         surnameTextInput = findViewById(R.id.surnameOutlinedTextField);
-        firstnameTextInput = findViewById(R.id.surnameOutlinedTextField);
-        othernameTextInput = findViewById(R.id.surnameOutlinedTextField);
+        firstnameTextInput = findViewById(R.id.firstnameOutlinedTextField);
+        othernameTextInput = findViewById(R.id.othernameOutlinedTextField);
         signInTextView = findViewById(R.id.haveAcctSignin);
         continueBtn = findViewById(R.id.continueBtn);
 
@@ -132,9 +132,9 @@ public class RegistrationNewStudentActivity extends AppCompatActivity {
 
     public void moveToSignUpPage2(String surname, String firstname, String othername){
         Intent intent = new Intent(getApplicationContext(), RegistrationNewStudentActivity2.class);
-        intent.putExtra(surname, "surname");
-        intent.putExtra(firstname, "firstname");
-        intent.putExtra(othername, "othername");
+        intent.putExtra("surname", surname);
+        intent.putExtra("firstname", firstname);
+        intent.putExtra("othername", othername);
          startActivity(intent);
     }
 

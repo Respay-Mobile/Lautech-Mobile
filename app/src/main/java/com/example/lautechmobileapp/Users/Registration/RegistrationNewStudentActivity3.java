@@ -3,13 +3,16 @@ package com.example.lautechmobileapp.Users.Registration;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.InputType;
 import android.text.Spannable;
 import android.text.SpannableStringBuilder;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.view.Window;
@@ -24,10 +27,18 @@ import com.example.lautechmobileapp.R;
 import com.example.lautechmobileapp.Users.LoginActivity;
 import com.google.android.material.textfield.TextInputLayout;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+
 public class RegistrationNewStudentActivity3 extends AppCompatActivity {
 
     private TextInputLayout emailTextInput, passwordTextInput, admissionTextInput;
-    private String email, password, admission;
+    private String surname, firstname, othername, phone, gender, origin, email, password, admission;
     private TextView signInTextView;
     private AutoCompleteTextView admissionType;
     private String[] admissionTypeText = {"Pre-Degree", "UTME", "Direct Entry", "Part-time", "Masters"};
@@ -39,6 +50,9 @@ public class RegistrationNewStudentActivity3 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration_new_student3);
 
+
+        signInTextView = findViewById(R.id.haveAcctSignin);
+        signUpBtn = findViewById(R.id.signUpBtn);
         admissionType = findViewById(R.id.admissionDropDown);
         emailTextInput = findViewById(R.id.emailOutlinedTextField);
         passwordTextInput = findViewById(R.id.passwordOutlinedTextField);
@@ -46,22 +60,33 @@ public class RegistrationNewStudentActivity3 extends AppCompatActivity {
 
         //Array adapter for stateOfOrigindropdown and genderdropdown
         ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this, R.layout.list_item, admissionTypeText);
+        //Set the adapter
+        admissionType.setAdapter(adapter1);
+        //hide soft keyboard for drop downs
+        admissionType.setInputType(InputType.TYPE_NULL);
+        admissionType.setKeyListener(null);
+
+
+        //Get details from previous activity and ensure they are not empty
+        Bundle extras = getIntent().getExtras();
+        if(extras != null){
+            surname = extras.getString("surname");
+            firstname = extras.getString("firstname");
+            othername = extras.getString("othername");
+            phone = extras.getString("phone");
+            gender = extras.getString("gender");
+            origin = extras.getString("origin");
+
+        } else {
+            Intent intent = new Intent(getApplicationContext(), RegistrationNewStudentActivity2.class);
+            startActivity(intent);
+        }
+
 
         //Create object for text watcher class which is used with the textinputedittext
         emailTextInput.getEditText().addTextChangedListener(new RegistrationNewStudentActivity3.ValidationTextWatcher(emailTextInput.getEditText()));
         passwordTextInput.getEditText().addTextChangedListener(new RegistrationNewStudentActivity3.ValidationTextWatcher(passwordTextInput.getEditText()));
         admissionTextInput.getEditText().addTextChangedListener(new RegistrationNewStudentActivity3.ValidationTextWatcher(admissionTextInput.getEditText()));
-
-        //Set the adapter
-        admissionType.setAdapter(adapter1);
-
-        signInTextView = findViewById(R.id.haveAcctSignin);
-        signUpBtn = findViewById(R.id.signUpBtn);
-
-        //hide soft keyboard for drop downs
-        admissionType.setInputType(InputType.TYPE_NULL);
-        admissionType.setKeyListener(null);
-
 
         //Change top bar color
         setTopBarColor();
@@ -82,9 +107,16 @@ public class RegistrationNewStudentActivity3 extends AppCompatActivity {
         signUpBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(!validateMail() || !validatePassword() || !validatePassword()){
+                if(!validateMail() || !validatePassword() || !validateAdmission()){
                     return;
                 }
+
+                email= emailTextInput.getEditText().getText().toString().trim();
+                password= passwordTextInput.getEditText().getText().toString().trim();
+                admission= admissionTextInput.getEditText().getText().toString().trim();
+
+                //store user data in JSON file
+                storeAsJson(surname, firstname, othername, phone, gender, origin, email, password, admission);
             }
         });
 
@@ -135,7 +167,6 @@ public class RegistrationNewStudentActivity3 extends AppCompatActivity {
         if (admissionTextInput.getEditText().getText().toString().trim().isEmpty()) {
             admissionTextInput.setError("Required");
             return false;
-
         }else {
             admissionTextInput.setErrorEnabled(false);
         }
@@ -186,6 +217,47 @@ public class RegistrationNewStudentActivity3 extends AppCompatActivity {
                     break;
 
             }
+        }
+
+    }
+
+    public void storeAsJson(String surname, String firstname, String othername, String phone, String gender, String origin, String email, String password, String admission) {
+
+        try {
+            JSONObject jsonObject = new JSONObject();
+            jsonObject.put("Surname", surname);
+            jsonObject.put("Firstname", firstname);
+            jsonObject.put("Othername", othername);
+            jsonObject.put("Phone", phone);
+            jsonObject.put("Gender", gender);
+            jsonObject.put("Origin", origin);
+            jsonObject.put("Email", email);
+            jsonObject.put("Password", password);
+            jsonObject.put("Admission", admission);
+
+            // Convert JsonObject to String Format
+            String userString = jsonObject.toString();
+
+            // Define the File Path and its Name
+            File file = new File(getFilesDir(),"user-details.json");
+            FileWriter fileWriter = new FileWriter(file);
+            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+            bufferedWriter.write(userString);
+            bufferedWriter.close();
+
+            Intent intent = new Intent(getApplicationContext(), OTPActivity.class);
+            intent.putExtra("phoneNumber", phone);
+            intent.putExtra("surname", surname);
+            intent.putExtra("firstname", firstname);
+            intent.putExtra("othername", othername);
+            startActivity(intent);
+            signUpBtn.setEnabled(false);
+            Log.d("RegisteredUser", userString);
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
 
     }

@@ -18,14 +18,17 @@
         <entry key="app/src/main/res/drawable/ic_selected_dot.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_staff.xml" value="0.1985" />
         <entry key="app/src/main/res/drawable/ic_staff_light.xml" value="0.1985" />
+        <entry key="app/src/main/res/drawable/otp_box.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/rectangle.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/tab_selector.xml" value="0.1" />
         <entry key="app/src/main/res/font/font.xml" value="0.14074074074074075" />
         <entry key="app/src/main/res/layout/activity_account_setup.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_alumni_registration.xml" value="0.23097826086956522" />
+        <entry key="app/src/main/res/layout/activity_home.xml" value="0.11271529888551166" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.1568627450980392" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.15081521739130435" />
         <entry key="app/src/main/res/layout/activity_on_boarding_screen.xml" value="0.12269938650306748" />
+        <entry key="app/src/main/res/layout/activity_otpactivity.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_register_new_student3.xml" value="0.24583333333333332" />
         <entry key="app/src/main/res/layout/activity_registration_existing_student.xml" value="0.18931159420289856" />
         <entry key="app/src/main/res/layout/activity_registration_new_student.xml" value="0.1" />

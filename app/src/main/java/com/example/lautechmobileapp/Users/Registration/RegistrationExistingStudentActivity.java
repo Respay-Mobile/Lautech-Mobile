@@ -11,6 +11,7 @@ import android.text.InputType;
 import android.text.Spannable;
 import android.text.SpannableStringBuilder;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -181,7 +182,6 @@ public class RegistrationExistingStudentActivity extends AppCompatActivity {
         if (firstnameTextInput.getEditText().getText().toString().trim().isEmpty()) {
             firstnameTextInput.setError("Required");
             return false;
-
         }else {
             firstnameTextInput.setErrorEnabled(false);
         }
@@ -242,10 +242,10 @@ public class RegistrationExistingStudentActivity extends AppCompatActivity {
 
     public void moveToSignUpPage2(String matric, String DOB, String surname, String firstname){
         Intent intent = new Intent(getApplicationContext(), RegistrationStudentActivity2.class);
-        intent.putExtra(matric, "matricNumber");
-        intent.putExtra(DOB, "dateOfBirth");
-        intent.putExtra(surname, "surname");
-        intent.putExtra(firstname, "firstname");
+        intent.putExtra("matricNumber", matric );
+        intent.putExtra("dateOfBirth", DOB);
+        intent.putExtra("surname", surname);
+        intent.putExtra("firstname", firstname);
         startActivity(intent);
     }
 

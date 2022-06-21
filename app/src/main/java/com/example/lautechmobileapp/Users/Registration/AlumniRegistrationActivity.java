@@ -10,6 +10,7 @@ import android.text.Editable;
 import android.text.InputType;
 import android.text.SpannableStringBuilder;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -24,6 +25,13 @@ import com.google.android.material.datepicker.MaterialDatePicker;
 import com.google.android.material.datepicker.MaterialPickerOnPositiveButtonClickListener;
 import com.google.android.material.textfield.TextInputLayout;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.TimeZone;
@@ -93,7 +101,9 @@ public class AlumniRegistrationActivity extends AppCompatActivity {
                 matric = matricTextInput.getEditText().getText().toString().trim();
                 DOB = DOBTextInput.getEditText().getText().toString().trim();
                 password = passwordTextInput.getEditText().getText().toString().trim();
-                //TODO: moveToSignUpPage2(matric, DOB, surname, firstname);
+                //store user data in JSON file
+                storeAsJson(matric, DOB, password);
+
             }
         });
 
@@ -220,6 +230,37 @@ public class AlumniRegistrationActivity extends AppCompatActivity {
 
         // finally change the color
         window.setStatusBarColor(ContextCompat.getColor(this,R.color.loginTop));
+    }
+
+    public void storeAsJson(String matric, String dob, String password) {
+
+        try {
+            JSONObject jsonObject = new JSONObject();
+            jsonObject.put("Matric_Number", matric);
+            jsonObject.put("Date_of_Birth", dob);
+            jsonObject.put("Password", password);
+
+            // Convert JsonObject to String Format
+            String userString = jsonObject.toString();
+
+            // Define the File Path and its Name
+            File file = new File(getFilesDir(),"user-details.json");
+            FileWriter fileWriter = new FileWriter(file);
+            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+            bufferedWriter.write(userString);
+            bufferedWriter.close();
+
+            Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+            startActivity(intent);
+            continueBtn.setEnabled(false);
+            Log.d("RegisteredUser", userString);
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 
 

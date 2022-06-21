@@ -242,10 +242,10 @@ public class RegistrationStaffActivity extends AppCompatActivity {
 
     public void moveToSignUpPage2(String staffId, String DOB, String surname, String firstname){
         Intent intent = new Intent(getApplicationContext(), RegistrationStaffActivity2.class);
-        intent.putExtra(staffId, "staffId");
-        intent.putExtra(DOB, "dateOfBirth");
-        intent.putExtra(surname, "surname");
-        intent.putExtra(firstname, "firstname");
+        intent.putExtra("staffId", staffId );
+        intent.putExtra("dateOfBirth", DOB );
+        intent.putExtra("surname", surname );
+        intent.putExtra("firstname", firstname);
         startActivity(intent);
     }
 

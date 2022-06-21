@@ -10,14 +10,17 @@ import android.text.Editable;
 import android.text.Spannable;
 import android.text.SpannableStringBuilder;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.lautechmobileapp.HomeActivity;
 import com.example.lautechmobileapp.MainClass;
 import com.example.lautechmobileapp.R;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputLayout;
 
 public class LoginActivity extends AppCompatActivity {
@@ -40,10 +43,6 @@ public class LoginActivity extends AppCompatActivity {
 
         setTopBarColor();
 
-        //Create object for text watcher class which is used with the textinputedittext
-        emailTextInput.getEditText().addTextChangedListener(new LoginActivity.ValidationTextWatcher(emailTextInput.getEditText()));
-        passwordTextInput.getEditText().addTextChangedListener(new LoginActivity.ValidationTextWatcher(passwordTextInput.getEditText()));
-
         //Make text bold
         SpannableStringBuilder boldText = mainClass.makecreateHereBold("Don't have an account? Create Here");
         haveAccountTextView.setText(boldText);
@@ -53,14 +52,14 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                if (!validateEmail() || !validatePassword()) {
+                if (!validateEmail() || !validatepassword()) {
                     return;
                 }
 
                 //Get username and password then pass it to signIn method
                 emailText =  emailTextInput.getEditText().getText().toString().trim();
                 passwordText = passwordTextInput.getEditText().getText().toString().trim();
-                signIn(emailText, passwordText);
+                signIn(emailText, passwordText, view);
 
             }
         });
@@ -89,17 +88,36 @@ public class LoginActivity extends AppCompatActivity {
     }
 
 
-
-
     public void moveToSignUpPage(){
         Intent intent = new Intent(getApplicationContext(), AccountSetupActivity.class);
         startActivity(intent);
     }
 
-    public void signIn(String User, String pass){
-        //TODO: method for sign in operation
+    public void signIn(String user, String pass, View view){
+        Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+        Log.d("User", user);
+        Log.d("Pass", pass);
+        if(user.equals("admin@gmail.com")  && pass.equals("admin")){
+            startActivity(intent);
+            emailTextInput.getEditText().getText().clear();
+            passwordTextInput.getEditText().getText().clear();
+        } else if(user.equals("134/321") && pass.equals("admin")){
+            startActivity(intent);
+            emailTextInput.getEditText().getText().clear();
+            passwordTextInput.getEditText().getText().clear();
+
+        } else if(user.equals("12345") && pass.equals("admin")){
+            startActivity(intent);
+            emailTextInput.getEditText().getText().clear();
+            passwordTextInput.getEditText().getText().clear();
+
+        } else {
+
+            showErr("Invalid username or password", view);
+        }
 
     }
+
 
 
 
@@ -132,16 +150,11 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
-    // method to validate password
-    public boolean validatePassword() {
+    public boolean validatepassword() {
         if (passwordTextInput.getEditText().getText().toString().trim().isEmpty()) {
             passwordTextInput.setError("Required");
             return false;
-
-        }else if(passwordTextInput.getEditText().getText().toString().length() <= 6){
-            passwordTextInput.setError("Password must be at least 6 characters");
-            return false;
-        }else {
+        } else {
             passwordTextInput.setErrorEnabled(false);
         }
         return true;
@@ -149,31 +162,12 @@ public class LoginActivity extends AppCompatActivity {
     }
 
 
-    //Text watcher class which will be used with the validateEmail method
-    private class ValidationTextWatcher implements TextWatcher {
-        private View view;
 
-        private ValidationTextWatcher(View view) {
-            this.view = view;
-        }
-        public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-        }
-        public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-        }
-        public void afterTextChanged(Editable editable) {
-            switch (view.getId()){
-                case R.id.emailTextInputEditText:
-                    validateEmail();
-                    break;
-
-                case R.id.passwordTextInputEditText:
-                    validatePassword();
-                    break;
-
-            }
-        }
-
+    //Method for error
+    public void showErr(String errorMessage, View view){
+        Snackbar snackbar = Snackbar.make(view, errorMessage, Snackbar.LENGTH_SHORT);
+        snackbar.setBackgroundTint(getResources().getColor(R.color.onbBtn));
+        snackbar.show();
     }
-
 
 }
