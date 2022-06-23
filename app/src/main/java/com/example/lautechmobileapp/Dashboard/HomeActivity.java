@@ -27,7 +27,8 @@ public class HomeActivity extends AppCompatActivity {
 
     private EditText searchInput;
     private String code1, time1, venue1, code2, time2, venue2, code3, time3, venue3;
-    private TextView coursecode1, coursetime1, coursevenue1, coursecode2, coursetime2, coursevenue2, coursecode3, coursetime3, coursevenue3;
+    private TextView coursecode1, coursetime1, coursevenue1, coursecode2, coursetime2, coursevenue2, coursecode3, coursetime3, coursevenue3,
+            courseCardTitle1, courseCardTitle2, courseCardSubtitle1, courseCardSubtitle2, courseCardUnit1, courseCardUnit2 ;
     private ViewPager2 mViewPager;
     private NewsCardAdapter mCardAdapter;
     private List newsDataList = new ArrayList<>();
@@ -53,9 +54,19 @@ public class HomeActivity extends AppCompatActivity {
         //view pager for card
         mViewPager =  findViewById(R.id.pager);
 
+        //Inititalize items of course card
+        courseCardTitle1 = findViewById(R.id.courseTitle1);
+        courseCardTitle2 = findViewById(R.id.courseTitle2);
+        courseCardSubtitle1 = findViewById(R.id.courseSubtitle1);
+        courseCardSubtitle2 = findViewById(R.id.courseSubtitle2);
+        courseCardUnit1 = findViewById(R.id.courseUnit1);
+        courseCardUnit2 = findViewById(R.id.courseUnit2);
+
         //set values with various textvies in the Timetable card
         setTextValues();
 
+        //set values with various textvies in the Course card
+        setCourseCardValues();
 
         //Item class for news card
         List newsCardItem = new ArrayList<>();
@@ -93,6 +104,11 @@ public class HomeActivity extends AppCompatActivity {
 
     }
 
+    public void setCourseCardValues(){
+        courseCardTitle1.setText("CHEM 201");
+        courseCardSubtitle1.setText("Amet minim mollit non deserunt ullamco est sit");
+        courseCardUnit1.setText("3 Units");
+    }
     public void setNewsCardValues(){
         NewsCardItem data = new NewsCardItem("Post Graduate School", "Amet minim mollit non deserunt ullamco est sit aliqua dolor do.");
         newsDataList.add(data);
