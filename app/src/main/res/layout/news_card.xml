@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card"
+        android:layout_width="262dp"
+        android:layout_height="104dp"
+        android:backgroundTint="@color/newsCard"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="20dp"
+        app:shapeAppearance="@style/ShapeAppearance.Lautech.MediumComponent">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/profilePicturecardView"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            app:cardCornerRadius="4dp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                app:cardCornerRadius="4dp">
+
+                <ImageView
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:scaleType="centerCrop"
+                    android:layout_gravity="center"
+                    android:background="@color/newsCard"
+                    android:src="@drawable/ic_person_icon" />
+
+            </androidx.cardview.widget.CardView>
+
+        </androidx.cardview.widget.CardView>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lineSpacingExtra="-1sp"
+            android:gravity="top"
+            android:layout_marginTop="25dp"
+            android:layout_marginStart="72dp"
+            android:textColor="@color/plain"
+            android:text="@string/PGschool"
+            android:textAppearance="@style/DashboardItemDesc"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lineSpacingExtra="2sp"
+            android:translationY="-1.4sp"
+            android:alpha="0.6"
+            android:gravity="top"
+            android:layout_marginTop="47dp"
+            android:layout_marginStart="72dp"
+            android:textColor="@color/plain"
+            android:text="@string/temporaryText"
+            android:textAppearance="@style/NewsDesc"
+            />
+    </com.google.android.material.card.MaterialCardView>
+
+
+</RelativeLayout>

@@ -44,14 +44,14 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="149dp">
 
-        <TextView
-            android:id="@+id/othernamesTextView"
+         <TextView
+            android:id="@+id/DOBTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_marginStart="20dp"
             android:lineSpacingExtra="6sp"
-            android:text="@string/othernameText"
+            android:text="@string/dobText"
             android:textAppearance="@style/loginDesc"
             android:textColor="@color/loginTextView"
             android:translationY="-2.92sp"
@@ -60,7 +60,7 @@
 
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/othernamesOutlinedTextField"
+            android:id="@+id/DOBOutlinedTextField"
             style="@style/TextInputLayoutStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -69,20 +69,21 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="22dp"
             android:layout_marginEnd="20dp"
-            app:startIconContentDescription="PersonIcon"
-            app:startIconDrawable="@drawable/ic_person_icon">
+            app:startIconContentDescription="DateIcon"
+            app:startIconDrawable="@drawable/ic_calender_icon"
+            app:endIconMode="custom"
+            app:endIconDrawable="@drawable/ic_dropdown_icon"
+            app:endIconContentDescription="DropdownIcon">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/othernamesTextInputEditText"
+                android:id="@+id/DOBTextInputEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/ola"
-                android:inputType="text"
-                android:maxLength="100"
-
+                android:hint="@string/dobHelper"
                 />
 
         </com.google.android.material.textfield.TextInputLayout>
+
     </RelativeLayout>
 
     <RelativeLayout

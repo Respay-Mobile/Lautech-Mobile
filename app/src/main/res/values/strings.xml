@@ -86,4 +86,12 @@
     <string name="success">Success</string>
     <string name="succCreated">Your account has been successfully created</string>
 
+    <!-- Dashboard Activity -->
+    <string name="goodMorn">Good Morning,</string>
+    <string name="search">Search your courses, news …</string>
+    <string name="todaysTime">Today’s Tabletime</string>
+    <string name="newsText">News</string>
+    <string name="seeAll">See all</string>
+    <string name="PGschool">Post Graduate School</string>
+    <string name="temporaryText">Amet minim mollit non deserunt ullamco est sit aliqua dolor do.</string>
 </resources>

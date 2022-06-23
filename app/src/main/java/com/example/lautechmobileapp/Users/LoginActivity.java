@@ -6,10 +6,7 @@ import androidx.core.content.ContextCompat;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.Spannable;
 import android.text.SpannableStringBuilder;
-import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
@@ -17,7 +14,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.lautechmobileapp.HomeActivity;
+import com.example.lautechmobileapp.Dashboard.HomeActivity;
 import com.example.lautechmobileapp.MainClass;
 import com.example.lautechmobileapp.R;
 import com.google.android.material.snackbar.Snackbar;
@@ -136,6 +133,7 @@ public class LoginActivity extends AppCompatActivity {
         AlertDialog dialog = alertDialogBuilder.create();
         dialog.show();
     }
+
 
 
     // method to validateEmail email address

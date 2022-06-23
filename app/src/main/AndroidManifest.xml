@@ -14,7 +14,7 @@
         android:theme="@style/Theme.LautechMobileApp"
         tools:targetApi="31">
         <activity
-            android:name=".HomeActivity"
+            android:name=".Dashboard.HomeActivity"
             android:exported="false" />
         <activity
             android:name=".Users.Registration.OTPActivity"

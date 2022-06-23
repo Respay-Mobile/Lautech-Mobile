@@ -17,7 +17,7 @@
     </style>
 
 
-    <style name="ShapeAppearance.Escrow.SmallComponent" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+    <style name="ShapeAppearance.Lautech.SmallComponent" parent="ShapeAppearance.MaterialComponents.SmallComponent">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">4dp</item>
     </style>
@@ -47,7 +47,7 @@
     <style name="onbBtn" parent="Widget.MaterialComponents.Button">
         <item name="android:textAppearance">@style/onbLoginBtnText</item>
         <item name="android:backgroundTint">@color/onbBtn</item>
-        <item name="shapeAppearance">@style/ShapeAppearance.Escrow.SmallComponent</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.Lautech.SmallComponent</item>
     </style>
 
     <!--Style for Login Activity -->
@@ -105,7 +105,32 @@
         <item name="android:fontFamily">@font/mulish_medium</item>
     </style>
 
+    <!-- Dashboard style -->
+    <style name="DashboardDesc">
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">@font/mulish</item>
+    </style>
 
+    <style name="searchText">
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/mulish_bold</item>
+    </style>
 
+    <style name="DashboardItemDesc">
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">@font/mulish_bold</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="ShapeAppearance.Lautech.MediumComponent" parent="ShapeAppearance.MaterialComponents.MediumComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">10dp</item>
+    </style>
+
+    <!-- Dashboard style -->
+    <style name="NewsDesc">
+        <item name="android:textSize">12sp</item>
+        <item name="android:fontFamily">@font/mulish</item>
+    </style>
 
 </resources>

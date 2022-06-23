@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
@@ -21,10 +20,13 @@
     <color name="loginTextHelperColor">#A7A7A7</color>
 
     <!-- Account Setup Color -->
-<color name="iconDesc">#F9F5EF</color>
     <color name="plain">#FFFFFF</color>
 
     <!-- OTP activity Color -->
     <color name="OTPTitle">#515151</color>
+
+    <!-- Dashboard activity Color -->
+    <color name="dashboardTitle">#F9F5EF</color>
+    <color name="newsCard">#813D38</color>
 
 </resources>

@@ -33,11 +33,11 @@ import java.util.TimeZone;
 
 public class RegistrationExistingStudentActivity extends AppCompatActivity {
 
-    private TextInputLayout matricTextInput, DOBTextInput, surnameTextInput, firstnameTextInput;
-    private EditText DOBEditText;
+    private TextInputLayout matricTextInput, othernameTextInput, surnameTextInput, firstnameTextInput;
+    private EditText othernameEditText;
     private TextView signInTextView;
     private Button nextBtn;
-    private String matric,DOB,surname,firstname;
+    private String matric,othername,surname,firstname;
     MainClass mainClass = new MainClass(this);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,22 +47,11 @@ public class RegistrationExistingStudentActivity extends AppCompatActivity {
         signInTextView = findViewById(R.id.haveAcctSignin);
 
         matricTextInput = findViewById(R.id.matricOutlinedTextField);
-        DOBTextInput = findViewById(R.id.DOBOutlinedTextField);
+        othernameTextInput = findViewById(R.id.othernamesOutlinedTextField);
         surnameTextInput = findViewById(R.id.surnameOutlinedTextField);
         firstnameTextInput = findViewById(R.id.firstnameOutlinedTextField);
 
         nextBtn = findViewById(R.id.continueBtn);
-
-        DOBEditText = findViewById(R.id.DOBTextInputEditText);
-        DOBEditText.setInputType(InputType.TYPE_NULL);
-        DOBEditText.setKeyListener(null);
-
-        DOBEditText.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                showCalender();
-            }
-        });
 
         //Change top bar color
         setTopBarColor();
@@ -73,7 +62,7 @@ public class RegistrationExistingStudentActivity extends AppCompatActivity {
 
         //Create object for text watcher class which is used with the textinputedittext
         matricTextInput.getEditText().addTextChangedListener(new RegistrationExistingStudentActivity.ValidationTextWatcher(matricTextInput.getEditText()));
-        DOBTextInput.getEditText().addTextChangedListener(new RegistrationExistingStudentActivity.ValidationTextWatcher(DOBTextInput.getEditText()));
+        othernameTextInput.getEditText().addTextChangedListener(new RegistrationExistingStudentActivity.ValidationTextWatcher(othernameTextInput.getEditText()));
         surnameTextInput.getEditText().addTextChangedListener(new RegistrationExistingStudentActivity.ValidationTextWatcher(surnameTextInput.getEditText()));
         firstnameTextInput.getEditText().addTextChangedListener(new RegistrationExistingStudentActivity.ValidationTextWatcher(firstnameTextInput.getEditText()));
 
@@ -91,52 +80,18 @@ public class RegistrationExistingStudentActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                if (!validateMatric() || !validateDOB() || !validateSurname() || !validateFirstname()) {
+                if (!validateMatric() || !validateOthername() || !validateSurname() || !validateFirstname()) {
                     return;
                 }
 
                 matric = matricTextInput.getEditText().getText().toString().trim();
-                DOB = DOBTextInput.getEditText().getText().toString().trim();
+                othername = othernameTextInput.getEditText().getText().toString().trim();
                 surname = surnameTextInput.getEditText().getText().toString().trim();
                 firstname = firstnameTextInput.getEditText().getText().toString().trim();
-                moveToSignUpPage2(matric, DOB, surname, firstname);
+                moveToSignUpPage2(matric, othername, surname, firstname);
             }
         });
     }
-
-
-    public void showCalender(){
-        //Create Instance of materialdatePicker
-        MaterialDatePicker.Builder materialDateBuilder = MaterialDatePicker.Builder.datePicker();
-
-        // now define the properties of the
-        // materialDateBuilder that is title text as SELECT A DATE
-        materialDateBuilder.setTitleText("Select Date of Birth");
-
-        // now create the instance of the material date
-        // picker
-        final MaterialDatePicker materialDatePicker = materialDateBuilder.build();
-
-        materialDatePicker.show(getSupportFragmentManager(), "MATERIAL_DATE_PICKER");
-
-        //handling the positive button click from the
-        materialDatePicker.addOnPositiveButtonClickListener(
-                new MaterialPickerOnPositiveButtonClickListener<Long>() {
-                    @SuppressLint("SetTextI18n")
-                    @Override
-                    public void onPositiveButtonClick(Long selection) {
-                        Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
-                        calendar.setTimeInMillis(selection);
-                        SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
-                        String formattedDate  = format.format(calendar.getTime());
-                        DOBEditText.setText(formattedDate);
-
-                    }
-                });
-
-    }
-
-
 
 
     // method to validate matric number
@@ -152,13 +107,13 @@ public class RegistrationExistingStudentActivity extends AppCompatActivity {
     }
 
     // method to validate DOB
-    public boolean validateDOB() {
-        if (DOBTextInput.getEditText().getText().toString().trim().isEmpty()) {
-            DOBTextInput.setError("Required");
+    public boolean validateOthername() {
+        if (othernameTextInput.getEditText().getText().toString().trim().isEmpty()) {
+            othernameTextInput.setError("Required");
             return false;
 
         }else {
-            DOBTextInput.setErrorEnabled(false);
+            othernameTextInput.setErrorEnabled(false);
         }
         return true;
 
@@ -207,16 +162,16 @@ public class RegistrationExistingStudentActivity extends AppCompatActivity {
                     validateMatric();
                     break;
 
-                case R.id.DOBTextInputEditText:
-                    validateDOB();
-                    break;
-
                 case R.id.surnameTextInputEditText:
                     validateSurname();
                     break;
 
                 case R.id.firstnameTextInputEditText:
                     validateFirstname();
+                    break;
+
+                case R.id.othernamesTextInputEditText:
+                    validateOthername();
                     break;
 
             }
@@ -240,12 +195,12 @@ public class RegistrationExistingStudentActivity extends AppCompatActivity {
         window.setStatusBarColor(ContextCompat.getColor(this,R.color.loginTop));
     }
 
-    public void moveToSignUpPage2(String matric, String DOB, String surname, String firstname){
+    public void moveToSignUpPage2(String matric, String surname, String firstname, String othername){
         Intent intent = new Intent(getApplicationContext(), RegistrationStudentActivity2.class);
         intent.putExtra("matricNumber", matric );
-        intent.putExtra("dateOfBirth", DOB);
         intent.putExtra("surname", surname);
         intent.putExtra("firstname", firstname);
+        intent.putExtra("othername", othername);
         startActivity(intent);
     }
 

@@ -3,11 +3,13 @@ package com.example.lautechmobileapp.Users.Registration;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.Editable;
+import android.text.InputType;
 import android.text.Spannable;
 import android.text.SpannableStringBuilder;
 import android.text.TextWatcher;
@@ -21,6 +23,9 @@ import android.widget.TextView;
 import com.example.lautechmobileapp.MainClass;
 import com.example.lautechmobileapp.R;
 import com.example.lautechmobileapp.Users.LoginActivity;
+import com.google.android.material.datepicker.MaterialDatePicker;
+import com.google.android.material.datepicker.MaterialPickerOnPositiveButtonClickListener;
+import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
 import org.json.JSONException;
@@ -30,10 +35,14 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.TimeZone;
 
 public class RegistrationStudentActivity2 extends AppCompatActivity {
 
-    private TextInputLayout othernameTextInput, phoneTextInput, passwordTextInput;
+    private TextInputLayout DOBTextInput, phoneTextInput, passwordTextInput;
+    private TextInputEditText DOBEditText;
     private TextView signInTextView;
     private Button contBtn;
     private String matric, dob, surname, firstname, othername, phone, password;
@@ -45,18 +54,29 @@ public class RegistrationStudentActivity2 extends AppCompatActivity {
         setContentView(R.layout.activity_registration_student2);
 
         signInTextView = findViewById(R.id.haveAcctSignin2);
-        othernameTextInput = findViewById(R.id.othernamesOutlinedTextField);
+        DOBTextInput = findViewById(R.id.DOBOutlinedTextField);
         phoneTextInput = findViewById(R.id.phoneOutlinedTextField);
         passwordTextInput = findViewById(R.id.passwordOutlinedTextField);
         contBtn = findViewById(R.id.continueBtn);
+
+        DOBEditText = findViewById(R.id.DOBTextInputEditText);
+        DOBEditText.setInputType(InputType.TYPE_NULL);
+        DOBEditText.setKeyListener(null);
+
+        DOBEditText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showCalender();
+            }
+        });
 
         //Get details from previous activity and ensure they are not empty
         Bundle extras = getIntent().getExtras();
         if(extras != null){
             matric = extras.getString("matricNumber");
-            dob = extras.getString("dateOfBirth");
             surname = extras.getString("surname");
             firstname = extras.getString("firstname");
+            othername = extras.getString("othername");
 
         } else {
             Intent intent = new Intent(getApplicationContext(), RegistrationExistingStudentActivity.class);
@@ -73,7 +93,7 @@ public class RegistrationStudentActivity2 extends AppCompatActivity {
 
 
         //Create object for text watcher class which is used with the textinputedittext
-        othernameTextInput.getEditText().addTextChangedListener(new RegistrationStudentActivity2.ValidationTextWatcher(othernameTextInput.getEditText()));
+        DOBTextInput.getEditText().addTextChangedListener(new RegistrationStudentActivity2.ValidationTextWatcher(DOBTextInput.getEditText()));
         phoneTextInput.getEditText().addTextChangedListener(new RegistrationStudentActivity2.ValidationTextWatcher(phoneTextInput.getEditText()));
         passwordTextInput.getEditText().addTextChangedListener(new RegistrationStudentActivity2.ValidationTextWatcher(passwordTextInput.getEditText()));
 
@@ -89,11 +109,11 @@ public class RegistrationStudentActivity2 extends AppCompatActivity {
         contBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (!validateOtherName() || !validatephoneNumber() || !validatePassword()) {
+                if (!validateDOB() || !validatephoneNumber() || !validatePassword()) {
                     return;
                 }
 
-                othername= othernameTextInput.getEditText().getText().toString().trim();
+                dob= DOBTextInput.getEditText().getText().toString().trim();
                 phone= phoneTextInput.getEditText().getText().toString().trim();
                 password= passwordTextInput.getEditText().getText().toString().trim();
 
@@ -103,8 +123,41 @@ public class RegistrationStudentActivity2 extends AppCompatActivity {
             }
         });
 
-        //TODO:validate values and handle sign in
     }
+
+
+
+    public void showCalender(){
+        //Create Instance of materialdatePicker
+        MaterialDatePicker.Builder materialDateBuilder = MaterialDatePicker.Builder.datePicker();
+
+        // now define the properties of the
+        // materialDateBuilder that is title text as SELECT A DATE
+        materialDateBuilder.setTitleText("Select Date of Birth");
+
+        // now create the instance of the material date
+        // picker
+        final MaterialDatePicker materialDatePicker = materialDateBuilder.build();
+
+        materialDatePicker.show(getSupportFragmentManager(), "MATERIAL_DATE_PICKER");
+
+        //handling the positive button click from the
+        materialDatePicker.addOnPositiveButtonClickListener(
+                new MaterialPickerOnPositiveButtonClickListener<Long>() {
+                    @SuppressLint("SetTextI18n")
+                    @Override
+                    public void onPositiveButtonClick(Long selection) {
+                        Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
+                        calendar.setTimeInMillis(selection);
+                        SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+                        String formattedDate  = format.format(calendar.getTime());
+                        DOBEditText.setText(formattedDate);
+
+                    }
+                });
+
+    }
+
 
     public void setTopBarColor() {
         //set status bar color
@@ -122,12 +175,12 @@ public class RegistrationStudentActivity2 extends AppCompatActivity {
 
 
     // method to validate othername
-    public boolean validateOtherName() {
-        if (othernameTextInput.getEditText().getText().toString().trim().isEmpty()) {
-            othernameTextInput.setError("Required");
+    public boolean validateDOB() {
+        if (DOBTextInput.getEditText().getText().toString().trim().isEmpty()) {
+            DOBTextInput.setError("Required");
             return false;
         } else {
-            othernameTextInput.setErrorEnabled(false);
+            DOBTextInput.setErrorEnabled(false);
         }
         return true;
     }
@@ -181,7 +234,7 @@ public class RegistrationStudentActivity2 extends AppCompatActivity {
         public void afterTextChanged(Editable editable) {
             switch (view.getId()) {
                 case R.id.othernamesTextInputEditText:
-                    validateOtherName();
+                    validateDOB();
                     break;
 
                 case R.id.phoneTextInputEditText:
@@ -201,10 +254,10 @@ public class RegistrationStudentActivity2 extends AppCompatActivity {
         try {
             JSONObject jsonObject = new JSONObject();
             jsonObject.put("Matric_Number", matric);
-            jsonObject.put("Date_of_Birth", dob);
             jsonObject.put("Surname", surname);
             jsonObject.put("Firstname", firstname);
             jsonObject.put("Othername", othername);
+            jsonObject.put("Date_of_Birth", dob);
             jsonObject.put("Phone", phone);
             jsonObject.put("Password", password);
 

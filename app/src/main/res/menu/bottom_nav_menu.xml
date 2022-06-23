@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/home"
+        android:title="Home"
+        android:icon="@drawable/ic_navbar_home"/>
+
+
+    <item
+        android:id="@+id/courses"
+        android:title="Courses"
+        android:icon="@drawable/ic_navbar_courses"/>
+
+
+    <item
+        android:id="@+id/tasks"
+        android:title="Tasks"
+        android:icon="@drawable/ic_navbar_tasks"/>
+
+    <item
+        android:id="@+id/news"
+        android:title="News"
+        android:icon="@drawable/ic_navbar_newspaper"/>
+
+    <item
+        android:id="@+id/more"
+        android:title="More"
+        android:icon="@drawable/ic_navbar_more"/>
+
+</menu>
