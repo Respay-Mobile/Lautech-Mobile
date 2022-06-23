@@ -1,14 +1,19 @@
 package com.example.lautechmobileapp.Dashboard;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
+import androidx.core.view.ViewCompat;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Bundle;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.lautechmobileapp.Dashboard.NewsCardViewPager2.NewsCardAdapter;
@@ -25,6 +30,7 @@ public class HomeActivity extends AppCompatActivity {
     private TextView coursecode1, coursetime1, coursevenue1, coursecode2, coursetime2, coursevenue2, coursecode3, coursetime3, coursevenue3;
     private ViewPager2 mViewPager;
     private NewsCardAdapter mCardAdapter;
+    private List newsDataList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,21 +51,55 @@ public class HomeActivity extends AppCompatActivity {
         coursetime3 = findViewById(R.id.courseTime3);
         coursevenue3 = findViewById(R.id.courseVenue3);
         //view pager for card
-        mViewPager = (ViewPager2) findViewById(R.id.pager);
+        mViewPager =  findViewById(R.id.pager);
 
         //set values with various textvies in the Timetable card
         setTextValues();
 
-        enableSearchInput();
 
-        //Item class for purple card
-        List<NewsCardItem> newsCardItem = new ArrayList<>();
+        //Item class for news card
+        List newsCardItem = new ArrayList<>();
 
-        //Object for CardVIewPager2Adapter
-        mCardAdapter = new NewsCardAdapter(newsCardItem);
-        newsCardItem.add(new NewsCardItem(R.string.PGschool, R.string.temporaryText));
-        newsCardItem.add(new NewsCardItem(R.string.PGschool, R.string.temporaryText));
-        newsCardItem.add(new NewsCardItem(R.string.PGschool, R.string.temporaryText));
+        //Object for NewsCardAdapter
+        mCardAdapter = new NewsCardAdapter(newsDataList);
+
+        //Set CardAdapter as viewpager2adapter
+        mViewPager.setAdapter(mCardAdapter);
+        setNewsCardValues();
+        mViewPager.setClipToPadding(false);
+        mViewPager.setClipChildren(false);
+        mViewPager.setOffscreenPageLimit(3);
+
+        int pageMarginPx = 110;
+        int offsetPx = 120;
+
+        mViewPager.setPageTransformer(new ViewPager2.PageTransformer() {
+            @Override
+            public void transformPage(@NonNull View page, float position) {
+                ViewPager2 viewPager = (ViewPager2) page.getParent().getParent();
+                float offset = position * -(2 * offsetPx + pageMarginPx);
+
+                if (viewPager.getOrientation()  == ViewPager2.ORIENTATION_HORIZONTAL) {
+                    if (ViewCompat.getLayoutDirection(viewPager) == ViewCompat.LAYOUT_DIRECTION_RTL) {
+                        page.setTranslationX(-offset);
+                    } else {
+                        page.setTranslationX(offset);
+                    }
+                } else {
+                    page.setTranslationY(offset);
+                }
+            }
+        });
+
+    }
+
+    public void setNewsCardValues(){
+        NewsCardItem data = new NewsCardItem("Post Graduate School", "Amet minim mollit non deserunt ullamco est sit aliqua dolor do.");
+        newsDataList.add(data);
+        data = new NewsCardItem("Undergraduate School", "Amet minim mollit non deserunt ullamco est sit aliqua dolor do.");
+        newsDataList.add(data);
+        data = new NewsCardItem("Post Graduate2 School", "Amet minim mollit non deserunt ullamco est sit aliqua dolor do.");
+        newsDataList.add(data);
     }
 
     public void setTextValues()
