@@ -131,22 +131,23 @@
                     android:id="@+id/seeAllTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:gravity="top"
-                    android:lineSpacingExtra="3sp"
-                    android:translationY="-1.47sp"
                     android:layout_alignParentEnd="true"
                     android:layout_marginEnd="30dp"
+                    android:gravity="top"
+                    android:lineSpacingExtra="3sp"
                     android:text="@string/seeAll"
-                    android:textAppearance="@style/DashboardDesc" />
+                    android:textColor="@color/see_all"
+                    android:textAppearance="@style/seeAllText"
+                    android:translationY="-1.47sp" />
 
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/card"
                     android:layout_width="wrap_content"
                     android:layout_height="104dp"
-                    android:layout_marginTop="29dp"
                     android:layout_alignParentStart="true"
                     android:layout_alignParentEnd="true"
                     android:layout_marginStart="20dp"
+                    android:layout_marginTop="29dp"
                     android:layout_marginEnd="25dp"
                     android:backgroundTint="@color/onbBtn"
                     app:shapeAppearance="@style/ShapeAppearance.Lautech.MediumComponent">
@@ -155,11 +156,11 @@
                         android:id="@+id/course1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="15dp"
-                        android:layout_gravity="center_horizontal"
                         android:layout_alignParentStart="true"
-                        android:layout_marginStart="12dp"
                         android:layout_alignParentEnd="true"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="15dp"
                         android:layout_marginEnd="12dp"
                         android:orientation="horizontal">
 
@@ -167,10 +168,10 @@
                             android:id="@+id/courseCode1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
                             android:lineSpacingExtra="-1sp"
-                            android:textColor="@color/plain"
                             android:textAppearance="@style/DashboardItemDesc"
-                            android:layout_alignParentStart="true" />
+                            android:textColor="@color/plain" />
 
                         <TextView
                             android:id="@+id/courseTime1"
@@ -183,13 +184,13 @@
 
                         <TextView
                             android:id="@+id/courseVenue1"
-                            android:layout_marginLeft="25dp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginLeft="25dp"
                             android:lineSpacingExtra="-1sp"
-                            android:textColor="@color/plain"
                             android:textAppearance="@style/OTPDesc"
-                            android:layout_alignParentEnd="true" />
+                            android:textColor="@color/plain" />
 
                     </RelativeLayout>
 
@@ -197,11 +198,11 @@
                         android:id="@+id/course2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="45dp"
-                        android:layout_gravity="center_horizontal"
                         android:layout_alignParentStart="true"
-                        android:layout_marginStart="12dp"
                         android:layout_alignParentEnd="true"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="45dp"
                         android:layout_marginEnd="12dp"
                         android:orientation="horizontal">
 
@@ -209,30 +210,30 @@
                             android:id="@+id/courseCode2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
                             android:lineSpacingExtra="-1sp"
-                            android:textColor="@color/plain"
                             android:textAppearance="@style/DashboardItemDesc"
-                            android:layout_alignParentStart="true" />
+                            android:textColor="@color/plain" />
 
                         <TextView
                             android:id="@+id/courseTime2"
-                            android:layout_marginLeft="25dp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:layout_marginLeft="25dp"
                             android:lineSpacingExtra="-1sp"
-                            android:textColor="@color/plain"
                             android:textAppearance="@style/OTPDesc"
-                            android:layout_centerInParent="true" />
+                            android:textColor="@color/plain" />
 
                         <TextView
                             android:id="@+id/courseVenue2"
-                            android:layout_marginLeft="25dp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginLeft="25dp"
                             android:lineSpacingExtra="-1sp"
-                            android:textColor="@color/plain"
                             android:textAppearance="@style/OTPDesc"
-                            android:layout_alignParentEnd="true" />
+                            android:textColor="@color/plain" />
 
                     </RelativeLayout>
 
@@ -240,11 +241,11 @@
                         android:id="@+id/course3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="75dp"
-                        android:layout_gravity="center_horizontal"
                         android:layout_alignParentStart="true"
-                        android:layout_marginStart="12dp"
                         android:layout_alignParentEnd="true"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="75dp"
                         android:layout_marginEnd="12dp"
                         android:orientation="horizontal">
 
@@ -252,30 +253,30 @@
                             android:id="@+id/courseCode3"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:lineSpacingExtra="-1sp"
+                            android:layout_alignParentStart="true"
                             android:layout_gravity="end"
-                            android:textColor="@color/plain"
+                            android:lineSpacingExtra="-1sp"
                             android:textAppearance="@style/DashboardItemDesc"
-                            android:layout_alignParentStart="true" />
+                            android:textColor="@color/plain" />
 
                         <TextView
                             android:id="@+id/courseTime3"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:lineSpacingExtra="-1sp"
+                            android:layout_centerInParent="true"
                             android:layout_gravity="center"
-                            android:textColor="@color/plain"
+                            android:lineSpacingExtra="-1sp"
                             android:textAppearance="@style/OTPDesc"
-                            android:layout_centerInParent="true"/>
+                            android:textColor="@color/plain" />
 
                         <TextView
                             android:id="@+id/courseVenue3"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
                             android:lineSpacingExtra="-1sp"
-                            android:textColor="@color/plain"
                             android:textAppearance="@style/OTPDesc"
-                            android:layout_alignParentEnd="true" />
+                            android:textColor="@color/plain" />
 
                     </RelativeLayout>
 
@@ -287,16 +288,16 @@
                 android:id="@+id/relativeLayout3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="150dp">
+                android:layout_marginTop="170dp">
 
                 <TextView
                     android:id="@+id/newsTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:gravity="top"
-                    android:lineSpacingExtra="-1sp"
                     android:layout_alignParentStart="true"
                     android:layout_marginStart="15dp"
+                    android:gravity="top"
+                    android:lineSpacingExtra="-1sp"
                     android:text="@string/newsText"
                     android:textAppearance="@style/DashboardItemDesc" />
 
@@ -304,13 +305,14 @@
                     android:id="@+id/seeAllTextView2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:gravity="top"
-                    android:lineSpacingExtra="3sp"
-                    android:translationY="-1.47sp"
                     android:layout_alignParentEnd="true"
                     android:layout_marginEnd="30dp"
+                    android:gravity="top"
+                    android:lineSpacingExtra="3sp"
                     android:text="@string/seeAll"
-                    android:textAppearance="@style/DashboardDesc" />
+                    android:textColor="@color/see_all"
+                    android:textAppearance="@style/seeAllText"
+                    android:translationY="-1.47sp" />
 
 
                 <androidx.viewpager2.widget.ViewPager2
@@ -333,10 +335,10 @@
                     android:id="@+id/coursesTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:gravity="top"
-                    android:lineSpacingExtra="-1sp"
                     android:layout_alignParentStart="true"
                     android:layout_marginStart="15dp"
+                    android:gravity="top"
+                    android:lineSpacingExtra="-1sp"
                     android:text="@string/courseText"
                     android:textAppearance="@style/DashboardItemDesc" />
 
@@ -344,13 +346,14 @@
                     android:id="@+id/seeAllTextView3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:gravity="top"
-                    android:lineSpacingExtra="3sp"
-                    android:translationY="-1.47sp"
                     android:layout_alignParentEnd="true"
                     android:layout_marginEnd="30dp"
+                    android:gravity="top"
+                    android:lineSpacingExtra="3sp"
                     android:text="@string/seeAll"
-                    android:textAppearance="@style/DashboardDesc" />
+                    android:textAppearance="@style/seeAllText"
+                    android:textColor="@color/see_all"
+                    android:translationY="-1.47sp" />
 
 
                 <androidx.viewpager2.widget.ViewPager2
