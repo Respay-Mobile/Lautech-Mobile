@@ -35,4 +35,8 @@
     <!-- Course activity Color -->
     <color name="colorTitle">#866F44</color>
 
+    <!-- Course Desc activity color -->
+    <color name="greenColor">#068631</color>
+    <color name="discoverDescColor">#858585</color>
+
 </resources>

@@ -49,14 +49,14 @@ public class CourseActivity extends AppCompatActivity {
         //Set CardAdapter as viewpager2adapter
         mRecyclerView.setAdapter(mCardAdapter);
         // set a GridLayoutManager with 3 number of columns , horizontal gravity and false value for reverseLayout to show the items from start to end
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(getApplicationContext(),2);
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(getApplicationContext(), 2);
         mRecyclerView.setLayoutManager(gridLayoutManager);
 
         mCardAdapter.setOnItemClickListener(new CourseCardAdapter.OnItemClickListener() {
             @Override
             public void onClick(CourseCardItem items) {
-               // Intent intent = new Intent(getApplicationContext(), CourseDescActivity.class);
-                //startActivity(intent);
+                Intent intent = new Intent(getApplicationContext(), CourseDescActivity.class);
+                startActivity(intent);
             }
         });
 

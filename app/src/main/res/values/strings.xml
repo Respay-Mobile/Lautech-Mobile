@@ -96,4 +96,9 @@
     <string name="temporaryText">Amet minim mollit non deserunt ullamco est sit aliqua dolor do.</string>
     <string name="courseText">Courses</string>
     <string name="courseImage">Course Image</string>
+
+    <!-- Overview fragment -->
+    <string name="discover">Discover</string>
+    <string name="instruc">Instructors</string>
+    <string name="requirement">Requirements</string>
 </resources>

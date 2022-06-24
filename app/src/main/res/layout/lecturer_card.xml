@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card"
+        android:layout_width="152dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="16dp"
+        app:shapeAppearance="@style/ShapeAppearance.Lautech.MediumComponent">
+
+
+
+                <ImageView
+                    android:id="@+id/cardImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:layout_gravity="center"
+                    android:background="@color/OTPTitle"
+                    android:src="@drawable/ic_person_icon" />
+
+
+        <TextView
+            android:id="@+id/cardTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lineSpacingExtra="-1sp"
+            android:gravity="top"
+            android:layout_gravity="center"
+            android:textColor="@color/plain"
+            android:text="Prof. Sunny Addy"
+            android:textAppearance="@style/DashboardItemDesc"
+            />
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+</RelativeLayout>

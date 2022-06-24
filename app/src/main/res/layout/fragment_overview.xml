@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Courses.OverviewFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:id="@+id/discoverTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:text="@string/discover"
+        android:lineSpacingExtra="-1sp"
+        android:gravity="top"
+        android:textAppearance="@style/DashboardItemDesc"
+        android:textColor="@color/onbTitle"/>
+
+    <TextView
+        android:id="@+id/discoverDescTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="55dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:lineSpacingExtra="3sp"
+        android:translationY="-1.44sp"
+        android:gravity="top"
+        android:textAppearance="@style/seeAllText"
+        android:textColor="@color/discoverDescColor"/>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="180dp">
+        <TextView
+            android:id="@+id/whatYouLearnTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text="@string/instruc"
+            android:lineSpacingExtra="-1sp"
+            android:gravity="top"
+            android:textAppearance="@style/DashboardItemDesc"
+            android:textColor="@color/onbTitle"/>
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/pager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:orientation="horizontal" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="320dp">
+
+
+        <TextView
+            android:id="@+id/requirementsTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:gravity="top"
+            android:lineSpacingExtra="-1sp"
+            android:text="@string/requirement"
+            android:textAppearance="@style/DashboardItemDesc"
+            android:textColor="@color/onbTitle" />
+
+        <TextView
+            android:id="@+id/requirement1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="30dp"
+            android:drawablePadding="10dp"
+            android:gravity="top"
+            android:textAppearance="@style/searchText"
+            android:textColor="@color/OTPTitle"
+            app:drawableStartCompat="@drawable/ic_text_ellipse_icon" />
+
+        <TextView
+            android:id="@+id/requirement2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="60dp"
+            android:drawablePadding="10dp"
+            android:gravity="top"
+            android:textAppearance="@style/searchText"
+            android:textColor="@color/OTPTitle"
+            app:drawableStartCompat="@drawable/ic_text_ellipse_icon" />
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

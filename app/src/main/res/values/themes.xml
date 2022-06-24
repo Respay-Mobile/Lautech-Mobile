@@ -160,4 +160,24 @@
         <item name="android:textStyle">bold</item>
     </style>
 
+    <!-- Course Detail Activity -->
+    <style name="CourseName">
+    <item name="android:textSize">14sp</item>
+    <item name="android:fontFamily">@font/mulish_bold</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- Overview fragment design -->
+    <style name="TabText">
+        <item name="android:textSize">18sp</item>
+        <item name="android:fontFamily">@font/mulish_bold</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="LecturerName">
+        <item name="android:textSize">12sp</item>
+        <item name="android:fontFamily">@font/mulish_bold</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
 </resources>

@@ -9,6 +9,7 @@
         <entry key="app/src/main/res/drawable/ic_alumnus__light.xml" value="0.1985" />
         <entry key="app/src/main/res/drawable/ic_alumnus_dark.xml" value="0.1985" />
         <entry key="app/src/main/res/drawable/ic_anonymous.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_back_button_icon.xml" value="0.157" />
         <entry key="app/src/main/res/drawable/ic_card_icon.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_default_dot.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_existing_student_dark.xml" value="0.1985" />
@@ -37,7 +38,8 @@
         <entry key="app/src/main/res/font/font.xml" value="0.14074074074074075" />
         <entry key="app/src/main/res/layout/activity_account_setup.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_alumni_registration.xml" value="0.23097826086956522" />
-        <entry key="app/src/main/res/layout/activity_course.xml" value="0.15070921985815602" />
+        <entry key="app/src/main/res/layout/activity_course.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_course_desc.xml" value="0.23591549295774647" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.18931159420289856" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.1568627450980392" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.15081521739130435" />
@@ -52,9 +54,13 @@
         <entry key="app/src/main/res/layout/activity_registration_staff2.xml" value="0.15070921985815602" />
         <entry key="app/src/main/res/layout/activity_registration_student2.xml" value="0.23177083333333334" />
         <entry key="app/src/main/res/layout/activity_setup_account.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/course_card.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/course_card.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_course_content.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_overview.xml" value="0.27844311377245506" />
+        <entry key="app/src/main/res/layout/lecturer_card.xml" value="0.2028985507246377" />
         <entry key="app/src/main/res/layout/list_item.xml" value="0.24479166666666666" />
         <entry key="app/src/main/res/layout/news_card.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/overview_list_view.xml" value="0.2028985507246377" />
         <entry key="app/src/main/res/layout/sam.xml" value="0.14814814814814814" />
         <entry key="app/src/main/res/layout/search_layout.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/slide_layout.xml" value="0.1" />
@@ -71,7 +77,7 @@
   <component name="VisualizationToolProject">
     <option name="state">
       <ProjectState>
-        <option name="scale" value="0.1497005988023952" />
+        <option name="scale" value="0.1" />
       </ProjectState>
     </option>
   </component>

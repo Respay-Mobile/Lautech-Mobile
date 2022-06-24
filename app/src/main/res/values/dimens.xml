@@ -3,4 +3,5 @@
 
     <!--Recycler view grid spacing -->
     <dimen name="item_offset">4dp</dimen>
+    <dimen name="image_height">258dp</dimen>
 </resources>
