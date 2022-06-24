@@ -27,6 +27,12 @@
 
     <!-- Dashboard activity Color -->
     <color name="dashboardTitle">#F9F5EF</color>
+    <color name="timeTableCard">#BF9F61</color>
     <color name="newsCard">#813D38</color>
+    <color name="seeAll">#2D2D2D</color>
+    <color name="unitCOlor">#DA251D</color>
+
+    <!-- Course activity Color -->
+    <color name="colorTitle">#866F44</color>
 
 </resources>

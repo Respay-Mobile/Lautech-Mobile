@@ -9,7 +9,6 @@
     >
 
     <EditText
-        android:enabled="false"
         android:id="@+id/searchInput"
         android:layout_toEndOf="@+id/layout1"
         android:layout_marginTop="5dp"

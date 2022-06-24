@@ -94,4 +94,6 @@
     <string name="seeAll">See all</string>
     <string name="PGschool">Post Graduate School</string>
     <string name="temporaryText">Amet minim mollit non deserunt ullamco est sit aliqua dolor do.</string>
+    <string name="courseText">Courses</string>
+    <string name="courseImage">Course Image</string>
 </resources>

@@ -9,9 +9,8 @@
         android:id="@+id/card"
         android:layout_width="262dp"
         android:layout_height="104dp"
-        android:backgroundTint="@color/newsCard"
-        android:layout_marginTop="30dp"
-        android:layout_marginLeft="20dp"
+        android:layout_marginLeft="16dp"
+        app:cardBackgroundColor="@color/newsCard"
         app:shapeAppearance="@style/ShapeAppearance.Lautech.MediumComponent">
 
         <androidx.cardview.widget.CardView
@@ -31,6 +30,7 @@
                 app:cardCornerRadius="4dp">
 
                 <ImageView
+                    android:id="@+id/cardImage"
                     android:layout_width="48dp"
                     android:layout_height="48dp"
                     android:scaleType="centerCrop"
@@ -44,6 +44,7 @@
 
 
         <TextView
+            android:id="@+id/cardTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:lineSpacingExtra="-1sp"
@@ -56,6 +57,7 @@
             />
 
         <TextView
+            android:id="@+id/cardSubtitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:lineSpacingExtra="2sp"

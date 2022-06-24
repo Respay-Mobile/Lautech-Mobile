@@ -7,18 +7,21 @@ import androidx.core.content.ContextCompat;
 import androidx.core.view.ViewCompat;
 import androidx.viewpager2.widget.ViewPager2;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.EditText;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.example.lautechmobileapp.Courses.CourseActivity;
 import com.example.lautechmobileapp.Dashboard.NewsCardViewPager2.NewsCardAdapter;
 import com.example.lautechmobileapp.Dashboard.NewsCardViewPager2.NewsCardItem;
 import com.example.lautechmobileapp.R;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,7 +31,8 @@ public class HomeActivity extends AppCompatActivity {
     private EditText searchInput;
     private String code1, time1, venue1, code2, time2, venue2, code3, time3, venue3;
     private TextView coursecode1, coursetime1, coursevenue1, coursecode2, coursetime2, coursevenue2, coursecode3, coursetime3, coursevenue3,
-            courseCardTitle1, courseCardTitle2, courseCardSubtitle1, courseCardSubtitle2, courseCardUnit1, courseCardUnit2 ;
+            courseCardTitle1, courseCardTitle2, courseCardSubtitle1, courseCardSubtitle2, courseCardUnit1, courseCardUnit2,
+            timeTableSeeAllText,courseSeeAllText, newsSeeAllText;
     private ViewPager2 mViewPager;
     private NewsCardAdapter mCardAdapter;
     private List newsDataList = new ArrayList<>();
@@ -62,14 +66,16 @@ public class HomeActivity extends AppCompatActivity {
         courseCardUnit1 = findViewById(R.id.courseUnit1);
         courseCardUnit2 = findViewById(R.id.courseUnit2);
 
+        //Initialize see all textviews
+        timeTableSeeAllText = findViewById(R.id.seeAllTextView);
+        newsSeeAllText = findViewById(R.id.seeAllTextView2);
+        courseSeeAllText = findViewById(R.id.seeAllTextView3);
+
         //set values with various textvies in the Timetable card
         setTextValues();
 
         //set values with various textvies in the Course card
         setCourseCardValues();
-
-        //Item class for news card
-        List newsCardItem = new ArrayList<>();
 
         //Object for NewsCardAdapter
         mCardAdapter = new NewsCardAdapter(newsDataList);
@@ -102,12 +108,49 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
+
+        //See all textviews onclick listener
+        courseSeeAllText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), CourseActivity.class);
+                startActivity(intent);
+            }
+        });
+
+       //Onclick listener for bottom navigation view
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
+
+        // Set Home selected
+        bottomNavigationView.setSelectedItemId(R.id.home);
+
+        // Perform item selected listener
+        bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                switch(item.getItemId())
+                {
+                    case R.id.home:
+                        return true;
+                    case R.id.courses:
+                        startActivity(new Intent(getApplicationContext(),CourseActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                }
+                return false;
+            }
+        });
     }
 
     public void setCourseCardValues(){
         courseCardTitle1.setText("CHEM 201");
         courseCardSubtitle1.setText("Amet minim mollit non deserunt ullamco est sit");
         courseCardUnit1.setText("3 Units");
+
+        courseCardTitle2.setText("CHEM 201");
+        courseCardSubtitle2.setText("Amet minim mollit non deserunt ullamco est sit");
+        courseCardUnit2.setText("3 Units");
     }
     public void setNewsCardValues(){
         NewsCardItem data = new NewsCardItem("Post Graduate School", "Amet minim mollit non deserunt ullamco est sit aliqua dolor do.");
@@ -177,5 +220,7 @@ public class HomeActivity extends AppCompatActivity {
         AlertDialog dialog = alertDialogBuilder.create();
         dialog.show();
     }
+
+
 
 }

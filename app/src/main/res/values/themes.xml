@@ -133,4 +133,31 @@
         <item name="android:fontFamily">@font/mulish</item>
     </style>
 
+    <style name="seeAllText">
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/mulish</item>
+    </style>
+
+    <style name="unitText">
+        <item name="android:textSize">12sp</item>
+        <item name="android:fontFamily">@font/mulish</item>
+    </style>
+
+    <style name="CourseCardShapeAppearance" parent="ShapeAppearance.MaterialComponents.MediumComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">4dp</item>
+    </style>
+
+    <style name="CourseDesc">
+        <item name="android:textSize">12sp</item>
+        <item name="android:fontFamily">@font/mulish</item>
+    </style>
+
+    <!-- Course Activity -->
+    <style name="CourseTitle" parent="TextAppearance.AppCompat.Large">
+        <item name="android:textSize">25sp</item>
+        <item name="android:fontFamily">@font/mulish_bold</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
 </resources>

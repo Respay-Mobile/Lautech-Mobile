@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/courseCard"
+        android:layout_width="180dp"
+        android:layout_height="160dp"
+        android:layout_margin="10dp"
+        android:clickable="true"
+        app:cardElevation="2dp"
+        app:cardPreventCornerOverlap="false"
+        app:shapeAppearance="@style/CourseCardShapeAppearance"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/courseImage"
+                android:layout_width="match_parent"
+                android:layout_height="92dp"
+                android:scaleType="centerCrop"
+                android:background="@drawable/course_image"
+                android:contentDescription="@string/courseImage"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="5dp">
+
+                <TextView
+                    android:id="@+id/courseTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingExtra="-1sp"
+                    android:gravity="top"
+                    android:textColor="@color/onbTitle"
+                    android:textAppearance="@style/DashboardItemDesc"
+                    />
+
+                <TextView
+                    android:id="@+id/courseUnit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:lineSpacingExtra="-1sp"
+                    android:gravity="top"
+                    android:textColor="@color/unitCOlor"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="5dp"
+                    android:textAppearance="@style/unitText"
+                    />
+
+
+                <TextView
+                    android:id="@+id/courseSubtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="22dp"
+                    android:lineSpacingExtra="1sp"
+                    android:gravity="top"
+                    android:textColor="@color/onbDesc"
+                    android:textAppearance="@style/CourseDesc"
+                    />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
