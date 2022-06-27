@@ -16,6 +16,7 @@ import com.example.lautechmobileapp.Courses.CourseCardRecyclerView.CourseCardIte
 import com.example.lautechmobileapp.Courses.CourseCardRecyclerView.RecyclerViewItemDecorator;
 import com.example.lautechmobileapp.Dashboard.HomeActivity;
 import com.example.lautechmobileapp.R;
+import com.example.lautechmobileapp.Tasks.TaskActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
@@ -69,7 +70,7 @@ public class CourseActivity extends AppCompatActivity {
         //Onclick listener for bottom navigation view
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
 
-        // Set Home selected
+        // Set Course selected
         bottomNavigationView.setSelectedItemId(R.id.courses);
 
         // Perform item selected listener
@@ -85,6 +86,12 @@ public class CourseActivity extends AppCompatActivity {
                         startActivity(new Intent(getApplicationContext(),HomeActivity.class));
                         overridePendingTransition(0,0);
                         return true;
+
+                    case R.id.tasks:
+                        startActivity(new Intent(getApplicationContext(), TaskActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+
                 }
                 return false;
             }

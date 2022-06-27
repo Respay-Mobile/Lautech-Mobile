@@ -20,6 +20,7 @@ import com.example.lautechmobileapp.Courses.CourseActivity;
 import com.example.lautechmobileapp.Dashboard.NewsCardViewPager2.NewsCardAdapter;
 import com.example.lautechmobileapp.Dashboard.NewsCardViewPager2.NewsCardItem;
 import com.example.lautechmobileapp.R;
+import com.example.lautechmobileapp.Tasks.TaskActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
@@ -137,6 +138,12 @@ public class HomeActivity extends AppCompatActivity {
                         startActivity(new Intent(getApplicationContext(),CourseActivity.class));
                         overridePendingTransition(0,0);
                         return true;
+
+                    case R.id.tasks:
+                        startActivity(new Intent(getApplicationContext(), TaskActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+
                 }
                 return false;
             }

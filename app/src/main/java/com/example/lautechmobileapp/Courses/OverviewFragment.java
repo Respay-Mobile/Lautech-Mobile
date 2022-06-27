@@ -10,6 +10,7 @@ import androidx.viewpager2.widget.ViewPager2;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -25,32 +26,32 @@ import java.util.List;
 
 public class OverviewFragment extends Fragment {
 
-    private TextView discover, requirement1, requirement2;
+    private View view;
+    private TextView discover;
     private ViewPager2 mViewPager;
     private OverviewCardAdapter mCardAdapter;
+    private ListView requirementsList;
     private List overviewDataList = new ArrayList<>();
-
-    String[] requirementsArray = {"Lorem ipsum dolor sit amet","Eu vitae, bibendum pulvinar orci pellen sit. "};
+    String[] requirementsArray = {"Lorem ipsum dolor sit amet" ,"Eu vitae, bibendum pulvinar orci pellen sit. ", "Eu vitae, bibendum pulvinar orci pellen sit.", "Lorem ipsum dolor sit amet", "Lorem ipsum dolor sit amet", "Lorem ipsum dolor sit amet"};
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.fragment_overview, container, false);
+         view = inflater.inflate(R.layout.fragment_overview, container, false);
+
+         //this calls the method and shows the requirements textviews in a list
+         showrequirementsList();
 
 
         //view pager for card
         mViewPager =  view.findViewById(R.id.pager);
         discover = view.findViewById(R.id.discoverDescTextView);
-        requirement1 = view.findViewById(R.id.requirement1);
-        requirement2 = view.findViewById(R.id.requirement2);
 
         discover.setText("Lorem ipsum dolor sit amet, consectetur adipisci elit. Dictumst laoreet faucibus eu, faucibus odio porta. " +
                 "Eu vitae, bibendum pulvinar orci pellen sit. Sit facilisi sem mauris amet, enim urna viverra so. Sit consectetur fermentum pretium " +
                 "vitae duis nisi eget nec.");
-        requirement1.setText("Lorem ipsum dolor sit amet,");
-        requirement2.setText("Eu vitae, bibendum pulvinar orci pellen sit.");
 
         setOverviewCardValues();
 
@@ -88,6 +89,24 @@ public class OverviewFragment extends Fragment {
 
         // Inflate the layout for this fragment
         return view;
+    }
+
+    //Method to display the requirements textview
+    public void showrequirementsList() {
+        requirementsList =  view.findViewById(R.id.requirementList);
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(),
+                R.layout.course_detail_requirements_texts, R.id.requirementText, requirementsArray);
+        requirementsList.setAdapter(adapter);
+
+        //set height oflist based on amount of items
+        //this was done because listview doesnt work well if the height is not set with static number
+        int itemcount=adapter.getCount();
+        ViewGroup.LayoutParams params = requirementsList.getLayoutParams();
+        params.height =(itemcount*50);
+        requirementsList.setLayoutParams(params);
+        requirementsList.requestLayout();
+
     }
 
     public void setOverviewCardValues(){

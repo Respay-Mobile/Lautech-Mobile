@@ -4,36 +4,43 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Courses.CourseActivity">
+    tools:context=".Tasks.TaskActivity">
 
     <TextView
-        android:id="@+id/courseTitle"
+        android:id="@+id/TaskTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="25dp"
         android:lineSpacingExtra="-1sp"
-        android:text="@string/courseText"
+        android:text="@string/taskText"
+        android:gravity="top"
         android:textColor="@color/colorTitle"
         android:textAppearance="@style/CourseTitle" />
 
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginTop="70dp"
-        android:layout_marginBottom="55dp">
+        android:layout_marginTop="75dp">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerView"
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/taskTabLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:clipToPadding="true"
-            android:paddingTop="5dp"/>
+            app:tabIndicatorColor="@color/unitCOlor"
+            app:tabTextAppearance="@style/TabText"
+            app:tabSelectedTextColor="@color/onbTitle"
+            app:tabTextColor="@color/discoverDescColor"/>
 
-    </LinearLayout>
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/taskviewPager2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp" />
 
+
+    </RelativeLayout>
 
 
 

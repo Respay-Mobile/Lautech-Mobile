@@ -103,6 +103,7 @@ public class CourseDescActivity extends AppCompatActivity {
         public void onScrollChanged() {
             int scrollY = Math.min(Math.max(mScrollView.getScrollY(), 0), mImageViewHeight);
 
+
             // changing position of ImageView
             imageCardView.setTranslationY(scrollY / 2);
             courseImage.setTranslationY(scrollY / 2);
