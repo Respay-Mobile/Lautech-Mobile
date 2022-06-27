@@ -19,6 +19,7 @@ import android.widget.TextView;
 import com.example.lautechmobileapp.Courses.CourseActivity;
 import com.example.lautechmobileapp.Dashboard.NewsCardViewPager2.NewsCardAdapter;
 import com.example.lautechmobileapp.Dashboard.NewsCardViewPager2.NewsCardItem;
+import com.example.lautechmobileapp.News.NewsActivity;
 import com.example.lautechmobileapp.R;
 import com.example.lautechmobileapp.Tasks.TaskActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -119,6 +120,14 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
+        newsSeeAllText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), NewsActivity.class);
+                startActivity(intent);
+            }
+        });
+
        //Onclick listener for bottom navigation view
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
 
@@ -141,6 +150,11 @@ public class HomeActivity extends AppCompatActivity {
 
                     case R.id.tasks:
                         startActivity(new Intent(getApplicationContext(), TaskActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+
+                    case R.id.news:
+                        startActivity(new Intent(getApplicationContext(), NewsActivity.class));
                         overridePendingTransition(0,0);
                         return true;
 

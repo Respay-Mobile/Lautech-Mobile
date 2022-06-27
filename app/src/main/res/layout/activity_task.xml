@@ -26,6 +26,7 @@
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/taskTabLayout"
+            android:background="@drawable/tab_line"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:tabIndicatorColor="@color/unitCOlor"

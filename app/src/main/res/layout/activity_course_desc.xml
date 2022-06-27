@@ -104,6 +104,7 @@
                     android:id="@+id/tabLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="@drawable/tab_line"
                     app:tabIndicatorColor="@color/unitCOlor"
                     app:tabTextAppearance="@style/TabText"
                     app:tabSelectedTextColor="@color/onbTitle"

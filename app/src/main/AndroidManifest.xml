@@ -14,14 +14,21 @@
         android:theme="@style/Theme.LautechMobileApp"
         tools:targetApi="31">
         <activity
+            android:name=".News.NewsActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+        <activity
             android:name=".Tasks.TaskActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".Courses.CourseDescActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".Courses.CourseActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".Dashboard.HomeActivity"
             android:exported="false"

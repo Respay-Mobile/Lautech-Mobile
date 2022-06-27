@@ -171,7 +171,6 @@
     <style name="TabText">
         <item name="android:textSize">18sp</item>
         <item name="android:fontFamily">@font/mulish_bold</item>
-        <item name="android:textStyle">bold</item>
     </style>
 
     <style name="LecturerName">
@@ -179,5 +178,18 @@
         <item name="android:fontFamily">@font/mulish_bold</item>
         <item name="android:textStyle">bold</item>
     </style>
+
+    <!-- News Activity -->
+    <style name="NewsCardShapeAppearance" parent="ShapeAppearance.MaterialComponents.MediumComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">25dp</item>
+    </style>
+
+
+    <style name="NewsTabText">
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">@font/mulish</item>
+    </style>
+
 
 </resources>
