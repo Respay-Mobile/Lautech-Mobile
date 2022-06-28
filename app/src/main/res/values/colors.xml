@@ -39,4 +39,7 @@
     <color name="greenColor">#068631</color>
     <color name="discoverDescColor">#858585</color>
 
+    <!-- news Activity colors -->
+    <color name="newsExtrasColor">#A09E9B</color>
+
 </resources>

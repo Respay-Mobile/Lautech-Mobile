@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".News.NewsDetailsActivity">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/newsImageCard"
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        app:cardPreventCornerOverlap="false">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <ImageView
+                android:id="@+id/newsImage"
+                android:layout_width="match_parent"
+                android:layout_height="240dp"
+                android:background="@drawable/course_image" />
+
+
+        </RelativeLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="250dp"
+        android:fillViewport="true"
+        android:fadeScrollbars="false"
+        android:scrollbars="vertical"
+        android:scrollX="2dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp">
+
+                <TextView
+                    android:id="@+id/newsDetailsTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="36dp"
+                    android:layout_marginEnd="96dp"
+                    android:gravity="top"
+                    android:lineSpacingExtra="4sp"
+                    android:text="COVID-19 Omicron Variant Lorem ipsum siat riwfe"
+                    android:textAppearance="@style/newsDetailsTitle"
+                    android:textColor="@color/see_all"
+                    android:translationY="-2.2sp" />
+
+                <TextView
+                    android:id="@+id/writtenByTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="36dp"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginEnd="36dp"
+                    android:gravity="top"
+                    android:lineSpacingExtra="-1sp"
+                    android:text="@string/writtenBy"
+                    android:textAppearance="@style/CourseDesc"
+                    android:textColor="@color/discoverDescColor" />
+
+                <TextView
+                    android:id="@+id/UsernameTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="97dp"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginEnd="36dp"
+                    android:lineSpacingExtra="-1sp"
+                    android:text="Dayo Omole"
+                    android:textAppearance="@style/CourseDesc"
+                    android:textColor="@color/discoverDescColor" />
+
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/newsDetailSubtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="36dp"
+                android:layout_marginTop="85dp"
+                android:layout_marginEnd="36dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="top"
+                android:lineSpacingExtra="5sp"
+                android:text="Minim labore nulla culpa velit consectetur commodo et labore do nisi. Lorem aute duis officia exercitation in dolor. \nLaboris enim fugiat qui adipisicing ullamco amet. Cillum velit et esse consectetur consectetur sit id velit. Mollit sint voluptate aliquip aliquip.\nUllamco reprehenderit nulla ipsum ipsum velit eiusmod ullamco voluptate incididunt do anim officia officia. Consectetur nisi cillum in ea. Ullamco culpa ex consectetur cillum dolor occaecat exercitation minim veniam.
+                    \n Minim labore nulla culpa velit consectetur commodo et labore do nisi. Lorem aute duis officia exercitation in dolor. \nLaboris enim fugiat qui adipisicing ullamco amet. Cillum velit et esse consectetur consectetur sit id velit. Mollit sint voluptate aliquip aliquip.\nUllamco reprehenderit nulla ipsum ipsum velit eiusmod ullamco voluptate incididunt do anim officia officia. Consectetur nisi cillum in ea. Ullamco culpa ex consectetur cillum dolor occaecat exercitation minim veniam."
+                android:textAppearance="@style/seeAllText"
+                android:translationY="-1.71sp" />
+
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+</RelativeLayout>

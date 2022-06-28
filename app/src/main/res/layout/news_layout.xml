@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/newsLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/news_card_click"
+    android:clickable="true"
+    android:focusable="true">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/newsPicturecardView"
+        android:layout_width="79dp"
+        android:layout_height="79dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        app:cardCornerRadius="4dp">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="79dp"
+            android:layout_height="79dp"
+            android:layout_gravity="center"
+            app:cardCornerRadius="4dp">
+
+            <ImageView
+                android:id="@+id/newsImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_person_icon" />
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.cardview.widget.CardView>
+
+
+    <RelativeLayout
+        android:id="@+id/newsExtraLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="112dp">
+
+        <TextView
+            android:id="@+id/newsTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lineSpacingExtra="-1sp"
+            android:gravity="top"
+            android:textColor="@color/onbTitle"
+            android:text="----------------------------------------"
+            android:textAppearance="@style/CourseName"
+            />
+
+        <TextView
+            android:id="@+id/newsSubtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lineSpacingExtra="3sp"
+            android:translationY="-1.47sp"
+            android:gravity="top"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/onbTitle"
+            android:text="---------------------------------------------------------------------"
+            android:textAppearance="@style/NewsDesc"
+            />
+
+        <RelativeLayout
+            android:id="@+id/newsExtraLayout2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp">
+
+            <ImageView
+                android:id="@+id/newsIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_clock_icon"/>
+
+            <TextView
+                android:id="@+id/newsTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="-1sp"
+                android:layout_marginTop="2dp"
+                android:layout_marginStart="25dp"
+                android:textColor="@color/newsExtrasColor"
+                android:text="---"
+                android:textAppearance="@style/newsExtras" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/viewsLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:layout_marginStart="140dp">
+
+            <ImageView
+                android:id="@+id/viewsIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_eye_icon"/>
+
+            <TextView
+                android:id="@+id/newsViews"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="-1sp"
+                android:layout_marginTop="2dp"
+                android:layout_marginStart="25dp"
+                android:textColor="@color/newsExtrasColor"
+                android:text="---"
+                android:textAppearance="@style/newsExtras" />
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

@@ -1,66 +1,70 @@
 package com.example.lautechmobileapp.News;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.lautechmobileapp.News.AllNewsFragmentRecyclerView.AllNewsAdapter;
+import com.example.lautechmobileapp.News.AllNewsFragmentRecyclerView.AllNewsItem;
 import com.example.lautechmobileapp.R;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link CareerNewsFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import java.util.ArrayList;
+import java.util.List;
+
 public class CareerNewsFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public CareerNewsFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment CareerNewsFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static CareerNewsFragment newInstance(String param1, String param2) {
-        CareerNewsFragment fragment = new CareerNewsFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
+    private RecyclerView mRecyclerView;
+    private AllNewsAdapter mCareerNewsAdapter;
+    private List careerNewsDataList = new ArrayList<>();
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        View view = inflater.inflate(R.layout.fragment_career_news, container, false);
+
+        mRecyclerView = view.findViewById(R.id.careerNewsRecyclerView);
+
+        //Object for NewsCardAdapter
+        mCareerNewsAdapter = new AllNewsAdapter(careerNewsDataList);
+        mRecyclerView.setAdapter(mCareerNewsAdapter);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()) );
+
+        //Use the method declared below
+        setCareerNewsValues();
+
+        mCareerNewsAdapter.setOnItemClickListener(new AllNewsAdapter.OnItemClickListener() {
+            @Override
+            public void onClick(AllNewsItem items) {
+                Intent intent = new Intent(getContext(), NewsDetailsActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_career_news, container, false);
+        return view;
+    }
+
+
+    //set the texts for the textviews
+    public void setCareerNewsValues(){
+        AllNewsItem data = new AllNewsItem("Velit officia consequat duis enim veli", "Amet minim mollit non deserunt ullamco est sit aliqua dolor do.", "3 hours ago", "267 views", R.drawable.ic_person_icon );
+        careerNewsDataList.add(data);
+
+         data = new AllNewsItem("Amet minim mollit non deserunt ulla", "Amet minim mollit non deserunt ullamco est sit aliqua dolor do.", "3 hours ago", "267 views", R.drawable.ic_person_icon );
+        careerNewsDataList.add(data);
+
+        data = new AllNewsItem("Amet minim mollit non deserunt ulla", "Amet minim mollit non deserunt ullamco est sit aliqua dolor do.", "3 hours ago", "267 views", R.drawable.ic_person_icon );
+        careerNewsDataList.add(data);
+
+
     }
 }

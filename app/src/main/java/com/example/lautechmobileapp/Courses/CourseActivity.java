@@ -57,7 +57,7 @@ public class CourseActivity extends AppCompatActivity {
         mCardAdapter.setOnItemClickListener(new CourseCardAdapter.OnItemClickListener() {
             @Override
             public void onClick(CourseCardItem items) {
-                Intent intent = new Intent(getApplicationContext(), CourseDescActivity.class);
+                Intent intent = new Intent(getApplicationContext(), CourseDetailsActivity.class);
                 startActivity(intent);
             }
         });

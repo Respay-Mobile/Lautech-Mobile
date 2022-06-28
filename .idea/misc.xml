@@ -43,10 +43,12 @@
         <entry key="app/src/main/res/layout/activity_alumni_registration.xml" value="0.23097826086956522" />
         <entry key="app/src/main/res/layout/activity_course.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_course_desc.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_course_details.xml" value="0.1408514492753623" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.18931159420289856" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.1568627450980392" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.15081521739130435" />
-        <entry key="app/src/main/res/layout/activity_news.xml" value="0.24550898203592814" />
+        <entry key="app/src/main/res/layout/activity_news.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_news_desc.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/activity_on_boarding_screen.xml" value="0.12269938650306748" />
         <entry key="app/src/main/res/layout/activity_otpactivity.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_register_new_student3.xml" value="0.24583333333333332" />
@@ -62,15 +64,19 @@
         <entry key="app/src/main/res/layout/assignment_layout.xml" value="0.18931159420289856" />
         <entry key="app/src/main/res/layout/course_card.xml" value="0.1" />
         <entry key="app/src/main/res/layout/course_detail_requirements_texts.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/fragment_all_news.xml" value="0.24583333333333332" />
         <entry key="app/src/main/res/layout/fragment_assignment.xml" value="0.24583333333333332" />
+        <entry key="app/src/main/res/layout/fragment_career_news.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/fragment_course_content.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_faculty_news.xml" value="0.21467391304347827" />
+        <entry key="app/src/main/res/layout/fragment_other_tasks.xml" value="0.24583333333333332" />
         <entry key="app/src/main/res/layout/fragment_overview.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_school_news.xml" value="0.21467391304347827" />
         <entry key="app/src/main/res/layout/fragment_sug_news.xml" value="0.21467391304347827" />
         <entry key="app/src/main/res/layout/lecturer_card.xml" value="0.2028985507246377" />
         <entry key="app/src/main/res/layout/list_item.xml" value="0.24479166666666666" />
         <entry key="app/src/main/res/layout/news_card.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/news_layout.xml" value="0.30885416666666665" />
         <entry key="app/src/main/res/layout/overview_list_view.xml" value="0.2028985507246377" />
         <entry key="app/src/main/res/layout/sam.xml" value="0.14814814814814814" />
         <entry key="app/src/main/res/layout/search_layout.xml" value="0.3098958333333333" />

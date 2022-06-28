@@ -110,4 +110,7 @@
     <!-- News Activity -->
     <string name="trend">Trending</string>
     <string name="learnMore">learn more</string>
+
+    <!-- News detail activity -->
+    <string name="writtenBy">Written by</string>
 </resources>

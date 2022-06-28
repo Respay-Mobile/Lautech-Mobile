@@ -24,10 +24,7 @@ public class AssignmentFragment extends Fragment {
    private View view;
     private RecyclerView mRecyclerView;
     private AssignmentsAdapter mAssignmentAdapter;
-   private ListView assignmentList;
     private List assignmentDataList = new ArrayList<>();
-    String[] courseCodeArray = {"CHM 201" , "CHM 201", "CHM 201"};
-    String[] assignmentDescArray = {"Lorem ipsum dolor sit amet, consectetur adipisci elit. Dictumst laoreet faucibus eu, faucibus odio porta. Eu vitae, bibendum pulvinar orci pellen sit. Sit facilisi sem mauris amet, enim urna viverra so. Sit consectetur fermentum pretium vitae duis nisi eget nec. ", "Lorem ipsum dolor sit amet, consectetur adipisci elit. Dictumst laoreet faucibus eu, faucibus odio porta. Eu vitae, bibendum pulvinar orci pellen sit. Sit facilisi sem mauris amet, enim urna viverra so. Sit consectetur fermentum pretium vitae duis nisi eget nec. ", "Lorem ipsum dolor sit amet, consectetur adipisci elit. Dictumst laoreet faucibus eu, faucibus odio porta. Eu vitae, bibendum pulvinar orci pellen sit. Sit facilisi sem mauris amet, enim urna viverra so. Sit consectetur fermentum pretium vitae duis nisi eget nec. "};
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

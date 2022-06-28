@@ -11,13 +11,12 @@ import android.view.ViewTreeObserver;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
-import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.example.lautechmobileapp.R;
 import com.google.android.material.tabs.TabLayout;
 
-public class CourseDescActivity extends AppCompatActivity {
+public class CourseDetailsActivity extends AppCompatActivity {
 
     private CardView imageCardView;
     private NestedScrollView mScrollView;
@@ -29,7 +28,7 @@ public class CourseDescActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_course_desc);
+        setContentView(R.layout.activity_course_details);
 
         tabLayout = findViewById(R.id.tabLayout);
         viewPager = findViewById(R.id.viewPager);
