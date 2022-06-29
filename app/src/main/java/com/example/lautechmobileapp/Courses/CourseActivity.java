@@ -45,10 +45,10 @@ public class CourseActivity extends AppCompatActivity {
         courseCardImage = findViewById(R.id.courseImage);
 
 
-        //Object for NewsCardAdapter
+        //Object for CourseCardAdapter
         mCardAdapter = new CourseCardAdapter(courseDataList);
 
-        //Set CardAdapter as viewpager2adapter
+        //Set CardAdapter as Recyclerview
         mRecyclerView.setAdapter(mCardAdapter);
         // set a GridLayoutManager with 3 number of columns , horizontal gravity and false value for reverseLayout to show the items from start to end
         GridLayoutManager gridLayoutManager = new GridLayoutManager(getApplicationContext(), 2);

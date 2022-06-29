@@ -3,6 +3,7 @@ package com.example.lautechmobileapp.Dashboard;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.core.content.ContextCompat;
 import androidx.core.view.ViewCompat;
 import androidx.viewpager2.widget.ViewPager2;
@@ -14,14 +15,22 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.lautechmobileapp.Courses.CourseActivity;
+import com.example.lautechmobileapp.Courses.CourseCardRecyclerView.CourseCardAdapter;
+import com.example.lautechmobileapp.Courses.CourseCardRecyclerView.CourseCardItem;
+import com.example.lautechmobileapp.Courses.CourseDetailsActivity;
 import com.example.lautechmobileapp.Dashboard.NewsCardViewPager2.NewsCardAdapter;
 import com.example.lautechmobileapp.Dashboard.NewsCardViewPager2.NewsCardItem;
 import com.example.lautechmobileapp.News.NewsActivity;
+import com.example.lautechmobileapp.News.NewsDetailsActivity;
 import com.example.lautechmobileapp.R;
 import com.example.lautechmobileapp.Tasks.TaskActivity;
+import com.example.lautechmobileapp.Wallet.WalletActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
@@ -35,9 +44,11 @@ public class HomeActivity extends AppCompatActivity {
     private TextView coursecode1, coursetime1, coursevenue1, coursecode2, coursetime2, coursevenue2, coursecode3, coursetime3, coursevenue3,
             courseCardTitle1, courseCardTitle2, courseCardSubtitle1, courseCardSubtitle2, courseCardUnit1, courseCardUnit2,
             timeTableSeeAllText,courseSeeAllText, newsSeeAllText;
+    private CardView courseCard1, courseCard2;
     private ViewPager2 mViewPager;
     private NewsCardAdapter mCardAdapter;
     private List newsDataList = new ArrayList<>();
+    private ImageView walletIcon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,6 +83,11 @@ public class HomeActivity extends AppCompatActivity {
         timeTableSeeAllText = findViewById(R.id.seeAllTextView);
         newsSeeAllText = findViewById(R.id.seeAllTextView2);
         courseSeeAllText = findViewById(R.id.seeAllTextView3);
+
+        courseCard1 = findViewById(R.id.courseCard1);
+        courseCard2 = findViewById(R.id.courseCard2);
+
+        walletIcon = findViewById(R.id.walletIcon);
 
         //set values with various textvies in the Timetable card
         setTextValues();
@@ -128,7 +144,42 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
-       //Onclick listener for bottom navigation view
+        //onclick listener for news card
+        mCardAdapter.setOnItemClickListener(new NewsCardAdapter.OnItemClickListener() {
+            @Override
+            public void onClick(NewsCardItem items) {
+                Intent intent = new Intent(getApplicationContext(), NewsDetailsActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        //Onclick listener for course cards
+        courseCard1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), CourseDetailsActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        courseCard2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), CourseDetailsActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        //Onclick listener for wallet icon
+        walletIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), WalletActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        //Onclick listener for bottom navigation view
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
 
         // Set Home selected
@@ -222,9 +273,6 @@ public class HomeActivity extends AppCompatActivity {
         window.setStatusBarColor(ContextCompat.getColor(this,R.color.dashboardTitle));
     }
 
-    public void enableSearchInput(){
-        searchInput.setEnabled(true);
-    }
 
     //If user clicks back button show alert dialog
     @Override

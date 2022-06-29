@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Wallet.WalletActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/walletRelativeLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="@drawable/ic_top_ellipse">
+
+        <TextView
+            android:id="@+id/walletText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="30dp"
+            android:gravity="top"
+            android:lineSpacingExtra="-1sp"
+            android:text="@string/walletText"
+            android:textAppearance="@style/walletTitle"
+            android:textColor="@color/colorTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/walletID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="top"
+            android:lineSpacingExtra="2sp"
+            android:text="@string/walletId"
+            android:textAppearance="@style/CourseDesc"
+            android:textColor="@color/colorTitle"
+            android:translationY="-1.14sp"
+            app:layout_constraintStart_toStartOf="@+id/walletText"
+            app:layout_constraintTop_toBottomOf="@+id/walletText" />
+
+        <TextView
+            android:id="@+id/walletIDNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:gravity="top"
+            android:lineSpacingExtra="2sp"
+            android:text="4300034903"
+            android:textAppearance="@style/LecturerName"
+            android:textColor="@color/colorTitle"
+            android:translationY="-1.14sp"
+            app:layout_constraintStart_toEndOf="@+id/walletID"
+            app:layout_constraintTop_toBottomOf="@+id/walletText" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="18dp"
+            android:src="@drawable/ic_wallet_notification_icon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/transactionCard"
+        android:layout_width="match_parent"
+        android:layout_height="127dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="110dp"
+        android:layout_marginEnd="20dp"
+        app:cardElevation="7dp"
+        app:shapeAppearance="@style/walletCardShapeAppearance">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="35dp"
+            android:alpha="0.9"
+            android:gravity="center_horizontal|top"
+            android:lineSpacingExtra="7sp"
+            android:text="@string/walletBal"
+            android:textAppearance="@style/seeAllText"
+            android:textColor="@color/timeTableCard"
+            android:translationY="-3.43sp" />
+
+        <TextView
+            android:id="@+id/walletBalance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="60dp"
+            android:gravity="center_horizontal|top"
+            android:lineSpacingExtra="6sp"
+            android:text="₦10,000.00"
+            android:textAppearance="@style/onbTitle"
+            android:textColor="@color/timeTableCard"
+            android:translationY="-3.04sp" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <RelativeLayout
+        android:id="@+id/transactionLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="270dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lineSpacingExtra="-1sp"
+            android:gravity="top"
+            android:layout_marginStart="20dp"
+            android:text="@string/transactText"
+            android:textColor="@color/see_all"
+            android:textAppearance="@style/DashboardItemDesc"
+            />
+
+        <TextView
+            android:id="@+id/seeAllTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lineSpacingExtra="-1sp"
+            android:gravity="top"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="20dp"
+            android:text="@string/seeAll"
+            android:textColor="@color/see_all"
+            android:textAppearance="@style/CourseDesc"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/walletRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="70dp"
+            android:nestedScrollingEnabled="false"
+            app:spanCount="4" />
+
+    </RelativeLayout>
+
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/bottom_nav_menu" />
+
+</RelativeLayout>

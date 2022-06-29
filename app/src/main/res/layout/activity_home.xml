@@ -67,21 +67,34 @@
             android:gravity="top"
             />
 
-        <ImageView
-            android:id="@+id/walletIcon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="315dp"
-            android:layout_marginTop="30dp"
-            android:background="@drawable/ic_card_icon"/>
 
-        <ImageView
-            android:id="@+id/notificationIcon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="365dp"
-            android:layout_marginTop="30dp"
-            android:background="@drawable/ic_notification_icon"/>
+
+            <ImageView
+                android:id="@+id/walletIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true"
+                android:layout_marginStart="315dp"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/ic_card_icon"
+                android:backgroundTint="@color/wallet_icon_click"/>
+
+
+
+
+            <ImageButton
+                android:id="@+id/notificationIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="365dp"
+                android:layout_marginTop="30dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="@drawable/ic_notification_icon" />
+
+
+
 
     </RelativeLayout>
 
@@ -105,7 +118,7 @@
         android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="730dp"
-        android:paddingTop="152dp">
+        android:layout_marginTop="152dp">
 
         <LinearLayout
             android:layout_width="match_parent"

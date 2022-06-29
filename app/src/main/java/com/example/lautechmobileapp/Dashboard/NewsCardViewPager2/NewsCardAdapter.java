@@ -11,12 +11,23 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.lautechmobileapp.Courses.CourseCardRecyclerView.CourseCardAdapter;
+import com.example.lautechmobileapp.Courses.CourseCardRecyclerView.CourseCardItem;
 import com.example.lautechmobileapp.R;
 
 import java.util.List;
 
 public class NewsCardAdapter extends RecyclerView.Adapter<NewsCardAdapter.CardViewHolder> {
     private List<NewsCardItem> newsCardItems;
+    NewsCardAdapter.OnItemClickListener listener;
+
+    public void setOnItemClickListener(NewsCardAdapter.OnItemClickListener listener){
+        this.listener = listener;
+    }
+
+    public interface OnItemClickListener {
+        public void onClick(NewsCardItem items);
+    }
 
     public NewsCardAdapter(List<NewsCardItem> newsCardItems) {
         this.newsCardItems = newsCardItems;
@@ -38,6 +49,12 @@ public class NewsCardAdapter extends RecyclerView.Adapter<NewsCardAdapter.CardVi
         NewsCardItem data = newsCardItems.get(position);
         holder.title.setText(data.mTitleResource);
         holder.subtitle.setText(data.mSubtitleResource);
+        holder.card.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                listener.onClick(data);
+            }
+        });
 
         if((position % 2) == 0){
             holder.card.setCardBackgroundColor(Color.parseColor("#813D38"));

@@ -202,4 +202,16 @@
         <item name="android:textStyle">bold</item>
     </style>
 
+    <!-- Wallet activity -->
+    <style name="walletTitle">
+        <item name="android:textSize">25sp</item>
+        <item name="android:fontFamily">@font/mulish_light</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="walletCardShapeAppearance" parent="ShapeAppearance.MaterialComponents.MediumComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">16dp</item>
+    </style>
+
 </resources>

@@ -42,4 +42,8 @@
     <!-- news Activity colors -->
     <color name="newsExtrasColor">#A09E9B</color>
 
+    <!-- wallet activity colors -->
+    <color name="transactionNameColor">#15141F</color>
+    <color name="transactionSubtitle">#A2A0A8</color>
+
 </resources>

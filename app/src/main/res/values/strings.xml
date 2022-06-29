@@ -113,4 +113,10 @@
 
     <!-- News detail activity -->
     <string name="writtenBy">Written by</string>
+
+    <!-- Wallet Activity -->
+    <string name="walletText">Wallet</string>
+    <string name="walletId">ID :</string>
+    <string name="walletBal">Wallet Balance</string>
+    <string name="transactText">Transactions</string>
 </resources>
