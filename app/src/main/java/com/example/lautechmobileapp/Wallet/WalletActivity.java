@@ -23,6 +23,7 @@ import android.widget.TextView;
 import com.example.lautechmobileapp.Courses.CourseActivity;
 import com.example.lautechmobileapp.Dashboard.HomeActivity;
 import com.example.lautechmobileapp.News.NewsActivity;
+import com.example.lautechmobileapp.Profile.ProfileActivity;
 import com.example.lautechmobileapp.R;
 import com.example.lautechmobileapp.Tasks.TaskActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -35,7 +36,7 @@ public class WalletActivity extends AppCompatActivity {
 
     private RecyclerView mRecyclerView;
     private WalletCardAdapter mWalletCardAdapter;
-    private TextView seeAllText, walletId, walletIdNum;
+    private TextView seeAllText, walletId, walletIdNum, walletBalance;
     private ImageView iconTop;
     private CardView transactionCard;
     private RelativeLayout transactionLayout;
@@ -52,6 +53,7 @@ public class WalletActivity extends AppCompatActivity {
         seeAllText = findViewById(R.id.seeAllTextView);
         walletId = findViewById(R.id.walletID);
         walletIdNum = findViewById(R.id.walletIDNum);
+        walletBalance = findViewById(R.id.walletBalance);
         iconTop = findViewById(R.id.imageView2);
         transactionCard = findViewById(R.id.transactionCard);
         walletRelativeLayout1 = findViewById(R.id.walletRelativeLayout1);
@@ -63,6 +65,9 @@ public class WalletActivity extends AppCompatActivity {
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()) );
         //Use the method declared below
         setTransactionValues();
+
+        //sethe values for the amount and ID
+        setAmountValues();
 
         //onclick listener for see all textview
         seeAllText.setOnClickListener(new View.OnClickListener() {
@@ -103,6 +108,10 @@ public class WalletActivity extends AppCompatActivity {
                         overridePendingTransition(0,0);
                         return true;
 
+                    case R.id.more:
+                        startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
                 }
                 return false;
             }
@@ -178,6 +187,11 @@ public class WalletActivity extends AppCompatActivity {
 
         ViewGroup.MarginLayoutParams params = (ViewGroup.MarginLayoutParams) transactionLayout.getLayoutParams();
         params.topMargin = 708;
+    }
+
+    public void setAmountValues(){
+        walletIdNum.setText("4300034903");
+        walletBalance.setText("₦10,000.00");
     }
 
     public void setTopBarColor(){

@@ -28,6 +28,7 @@ import com.example.lautechmobileapp.Dashboard.NewsCardViewPager2.NewsCardAdapter
 import com.example.lautechmobileapp.Dashboard.NewsCardViewPager2.NewsCardItem;
 import com.example.lautechmobileapp.News.NewsActivity;
 import com.example.lautechmobileapp.News.NewsDetailsActivity;
+import com.example.lautechmobileapp.Profile.ProfileActivity;
 import com.example.lautechmobileapp.R;
 import com.example.lautechmobileapp.Tasks.TaskActivity;
 import com.example.lautechmobileapp.Wallet.WalletActivity;
@@ -44,7 +45,7 @@ public class HomeActivity extends AppCompatActivity {
     private TextView coursecode1, coursetime1, coursevenue1, coursecode2, coursetime2, coursevenue2, coursecode3, coursetime3, coursevenue3,
             courseCardTitle1, courseCardTitle2, courseCardSubtitle1, courseCardSubtitle2, courseCardUnit1, courseCardUnit2,
             timeTableSeeAllText,courseSeeAllText, newsSeeAllText;
-    private CardView courseCard1, courseCard2;
+    private CardView profilePictureCardview, courseCard1, courseCard2;
     private ViewPager2 mViewPager;
     private NewsCardAdapter mCardAdapter;
     private List newsDataList = new ArrayList<>();
@@ -89,6 +90,8 @@ public class HomeActivity extends AppCompatActivity {
 
         walletIcon = findViewById(R.id.walletIcon);
 
+        profilePictureCardview = findViewById(R.id.profilePicturecardView);
+
         //set values with various textvies in the Timetable card
         setTextValues();
 
@@ -126,6 +129,15 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
+
+        //onclick listener for profile picture
+        profilePictureCardview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), ProfileActivity.class);
+                startActivity(intent);
+            }
+        });
 
         //See all textviews onclick listener
         courseSeeAllText.setOnClickListener(new View.OnClickListener() {
@@ -209,6 +221,10 @@ public class HomeActivity extends AppCompatActivity {
                         overridePendingTransition(0,0);
                         return true;
 
+                    case R.id.more:
+                        startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
                 }
                 return false;
             }

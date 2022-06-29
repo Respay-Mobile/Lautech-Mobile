@@ -119,4 +119,15 @@
     <string name="walletId">ID :</string>
     <string name="walletBal">Wallet Balance</string>
     <string name="transactText">Transactions</string>
+
+    <!-- Profile Activity -->
+    <string name="profileText">Profile</string>
+    <string name="accountSetting">ACCOUNT SETTINGS</string>
+    <string name="application">Application</string>
+    <string name="logOut">Logout</string>
+    <string name="changePhoneNum">Change Phone Number</string>
+    <string name="digitalExam">Digital Exam Pass</string>
+    <string name="schoolId">School ID Card QR</string>
+    <string name="cgpaPlanner">CGPA Planner</string>
+    <string name="result">Results</string>
 </resources>

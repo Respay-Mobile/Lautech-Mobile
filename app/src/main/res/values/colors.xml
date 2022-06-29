@@ -46,4 +46,8 @@
     <color name="transactionNameColor">#15141F</color>
     <color name="transactionSubtitle">#A2A0A8</color>
 
+    <!-- Profile Activity -->
+    <color name="profileTextBackground">#FBFCFD</color>
+    <color name="logOutColor">#FD2A2A</color>
+
 </resources>

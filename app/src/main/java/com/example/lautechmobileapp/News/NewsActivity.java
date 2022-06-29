@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import com.example.lautechmobileapp.Courses.CourseActivity;
 import com.example.lautechmobileapp.Dashboard.HomeActivity;
+import com.example.lautechmobileapp.Profile.ProfileActivity;
 import com.example.lautechmobileapp.R;
 import com.example.lautechmobileapp.Tasks.TaskActivity;
 import com.example.lautechmobileapp.Tasks.TaskTabAdapter;
@@ -108,6 +109,11 @@ public class NewsActivity extends AppCompatActivity {
                         return true;
 
                     case R.id.news:
+                        return true;
+
+                    case R.id.more:
+                        startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
+                        overridePendingTransition(0,0);
                         return true;
 
                 }
