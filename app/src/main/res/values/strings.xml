@@ -151,4 +151,7 @@
 
     <!-- SChool Id Card Activity -->
     <string name="schoolIdCardText">School ID Card QR</string>
+
+    <!-- Digital exam pass activity -->
+    <string name="digitalExamPassText">Digital Exam Pass</string>
 </resources>

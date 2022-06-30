@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DigitalExamPassActivity">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
+
+        <TextView
+            android:id="@+id/digitalExamTitleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="40dp"
+            android:gravity="top"
+            android:lineSpacingExtra="-1sp"
+            android:text="@string/digitalExamPassText"
+            android:textAppearance="@style/walletTitle"
+            android:textColor="@color/colorTitle" />
+    </RelativeLayout>
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="430dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="130dp"
+        android:layout_marginEnd="30dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="3dp">
+
+        <ImageView
+            android:layout_width="44dp"
+            android:layout_height="52dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/lautech_logo" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/profilePicturecardView"
+            android:layout_width="94dp"
+            android:layout_height="94dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="110dp"
+            app:cardCornerRadius="250dp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="94dp"
+                android:layout_height="94dp"
+                android:layout_gravity="center_horizontal"
+                app:cardCornerRadius="250dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:background="@color/loginTop"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_person_icon" />
+
+            </androidx.cardview.widget.CardView>
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/fullNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="220dp"
+            android:gravity="top"
+            android:lineSpacingExtra="-1sp"
+            android:text="Seyi Martins Ola"
+            android:textAppearance="@style/NewsTabText"
+            android:textColor="@color/fullNameTextColor" />
+
+        <TextView
+            android:id="@+id/departmentTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="240dp"
+            android:gravity="top"
+            android:lineSpacingExtra="-1sp"
+            android:text="Computer Engineering"
+            android:textAppearance="@style/seeAllText"
+            android:textColor="@color/courseTextColor" />
+
+        <TextView
+            android:id="@+id/matricNumTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="260dp"
+            android:gravity="top"
+            android:lineSpacingExtra="-1sp"
+            android:text="229/201/03"
+            android:textAppearance="@style/seeAllText"
+            android:textColor="@color/matricTextColor" />
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="109dp"
+            android:layout_gravity="bottom"
+            android:background="@color/timeTableCard">
+
+            <ImageView
+                android:id="@+id/barCodeImage"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
+                android:background="@color/plain" />
+
+        </RelativeLayout>
+    </com.google.android.material.card.MaterialCardView>
+    
+
+
+</RelativeLayout>

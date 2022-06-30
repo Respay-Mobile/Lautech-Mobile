@@ -15,6 +15,7 @@ import android.widget.TextView;
 
 import com.example.lautechmobileapp.Courses.CourseActivity;
 import com.example.lautechmobileapp.Dashboard.HomeActivity;
+import com.example.lautechmobileapp.DigitalExamPassActivity;
 import com.example.lautechmobileapp.News.NewsActivity;
 import com.example.lautechmobileapp.Profile.SchholIDCard.SchoolIdCardQrActivity;
 import com.example.lautechmobileapp.R;
@@ -26,7 +27,7 @@ import com.google.android.material.navigation.NavigationBarView;
 public class ProfileActivity extends AppCompatActivity {
 
     private TextView logOutText;
-    private RelativeLayout profileLayout, schoolIdCardLayout;
+    private RelativeLayout profileLayout, schoolIdCardLayout, digitalExamLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +36,7 @@ public class ProfileActivity extends AppCompatActivity {
         logOutText = findViewById(R.id.logOutTextView);
         profileLayout = findViewById(R.id.profileRelativeLayout);
         schoolIdCardLayout = findViewById(R.id.schoolIdCardLayout);
+        digitalExamLayout = findViewById(R.id.digitalExamLayout);
 
         //Onclick listener for logout text
         logOutText.setOnClickListener(new View.OnClickListener() {
@@ -54,10 +56,20 @@ public class ProfileActivity extends AppCompatActivity {
             }
         });
 
+        //Onclick listener for school ID card relative layout
         schoolIdCardLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), SchoolIdCardQrActivity.class );
+                startActivity(intent);
+            }
+        });
+
+        //Onclick listener for digital exam relative layout
+        digitalExamLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), DigitalExamPassActivity.class );
                 startActivity(intent);
             }
         });

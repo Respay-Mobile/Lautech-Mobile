@@ -12,7 +12,7 @@
         android:layout_height="100dp">
 
         <TextView
-            android:id="@+id/profileTitleText"
+            android:id="@+id/schoolIdTitleText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
@@ -30,7 +30,7 @@
         android:layout_width="236dp"
         android:layout_height="236dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="160dp"
+        android:layout_marginTop="180dp"
         android:background="@drawable/rectangle">
 
         <ImageView
@@ -47,7 +47,7 @@
             android:id="@+id/fullNameTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="410dp"
+            android:layout_marginTop="430dp"
             android:layout_centerHorizontal="true"
             android:text="Seyi Martins Ola"
             android:textColor="@color/fullNameTextColor"
@@ -59,7 +59,7 @@
             android:id="@+id/departmentTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="430dp"
+            android:layout_marginTop="450dp"
             android:layout_centerHorizontal="true"
             android:text="Computer Engineering"
             android:textColor="@color/courseTextColor"
@@ -71,7 +71,7 @@
         android:id="@+id/matricNumTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="450dp"
+        android:layout_marginTop="470dp"
         android:layout_centerHorizontal="true"
         android:text="229/201/03"
         android:textColor="@color/matricTextColor"

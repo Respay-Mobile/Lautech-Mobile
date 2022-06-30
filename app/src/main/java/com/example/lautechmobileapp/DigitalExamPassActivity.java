@@ -1,34 +1,38 @@
-package com.example.lautechmobileapp.Profile.SchholIDCard;
+package com.example.lautechmobileapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.Bitmap;
 import android.graphics.Color;
-import android.graphics.Point;
 import android.os.Bundle;
-import android.view.Display;
-import android.view.WindowManager;
+import android.os.Handler;
+import android.os.Looper;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.lautechmobileapp.R;
 import com.google.zxing.BarcodeFormat;
+import com.google.zxing.EncodeHintType;
+import com.google.zxing.MultiFormatWriter;
+import com.google.zxing.Writer;
 import com.google.zxing.WriterException;
 import com.google.zxing.common.BitMatrix;
-import com.google.zxing.qrcode.QRCodeWriter;
+import com.google.zxing.oned.Code128Writer;
+import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;
 
-public class SchoolIdCardQrActivity extends AppCompatActivity {
+import java.util.Hashtable;
 
-    private ImageView qrCodeImage;
+public class DigitalExamPassActivity extends AppCompatActivity {
+
+    private ImageView barCodeImage;
     private TextView nameText, departmentText, matricNumberText;
     String name, department, matricNum, data;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_school_id_card_qr);
+        setContentView(R.layout.activity_digital_exam_pass);
 
-        qrCodeImage = findViewById(R.id.qrCodeImage);
+        barCodeImage = findViewById(R.id.barCodeImage);
         nameText = findViewById(R.id.fullNameTextView);
         departmentText = findViewById(R.id.departmentTextView);
         matricNumberText = findViewById(R.id.matricNumTextView);
@@ -40,30 +44,24 @@ public class SchoolIdCardQrActivity extends AppCompatActivity {
         //adding all text together to display them in QR code format
         data = name + "\n" +department + "\n" +matricNum;
 
-        //call method to display QR code
-        displayQrCode();
-
+        createBarCode();
     }
 
-    //method displays qr code
-    public void displayQrCode(){
 
-        if(data.length() > 0){
-
-
-            QRCodeWriter writer = new QRCodeWriter();
+    public void createBarCode(){
+        if(data != null){
+            MultiFormatWriter multiFormatWriter = new MultiFormatWriter();
             try {
-                BitMatrix bitMatrix = writer.encode(data, BarcodeFormat.QR_CODE, 380, 380);
+                BitMatrix bitMatrix = multiFormatWriter.encode(data, BarcodeFormat.CODE_128, 252,100);
                 int width = bitMatrix.getWidth();
                 int height = bitMatrix.getHeight();
-                Bitmap bmp = Bitmap.createBitmap(width, height, Bitmap.Config.RGB_565);
-                for (int x = 0; x < width; x++) {
-                    for (int y = 0; y < height; y++) {
-                        bmp.setPixel(x, y, bitMatrix.get(x, y) ? Color.BLACK : Color.WHITE);
+                Bitmap bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.RGB_565);
+                for (int i = 0; i<width; i++){
+                    for (int j = 0; j<height; j++){
+                        bitmap.setPixel(i,j,bitMatrix.get(i,j)? getResources().getColor(R.color.timeTableCard):getResources().getColor(R.color.plain));
                     }
                 }
-                qrCodeImage.setImageBitmap(bmp);
-
+                barCodeImage.setImageBitmap(bitmap);
             } catch (WriterException e) {
                 e.printStackTrace();
             }

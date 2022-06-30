@@ -50,6 +50,7 @@
         <entry key="app/src/main/res/layout/activity_course.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_course_desc.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_course_details.xml" value="0.1408514492753623" />
+        <entry key="app/src/main/res/layout/activity_digital_exam_pass.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.1568627450980392" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.15081521739130435" />
@@ -68,7 +69,7 @@
         <entry key="app/src/main/res/layout/activity_registration_staff.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/activity_registration_staff2.xml" value="0.15070921985815602" />
         <entry key="app/src/main/res/layout/activity_registration_student2.xml" value="0.23177083333333334" />
-        <entry key="app/src/main/res/layout/activity_school_id_card_qr.xml" value="0.24583333333333332" />
+        <entry key="app/src/main/res/layout/activity_school_id_card_qr.xml" value="0.2" />
         <entry key="app/src/main/res/layout/activity_setup_account.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_task.xml" value="0.23177083333333334" />
         <entry key="app/src/main/res/layout/activity_wallet.xml" value="0.15070921985815602" />
@@ -106,7 +107,7 @@
   <component name="VisualizationToolProject">
     <option name="state">
       <ProjectState>
-        <option name="scale" value="0.26811879475911454" />
+        <option name="scale" value="0.1" />
       </ProjectState>
     </option>
   </component>
