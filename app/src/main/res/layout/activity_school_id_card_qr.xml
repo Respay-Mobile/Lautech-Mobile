@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Profile.SchholIDCard.SchoolIdCardQrActivity">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
+
+        <TextView
+            android:id="@+id/profileTitleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="40dp"
+            android:gravity="top"
+            android:lineSpacingExtra="-1sp"
+            android:text="@string/schoolIdCardText"
+            android:textAppearance="@style/walletTitle"
+            android:textColor="@color/colorTitle" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/qrCodeLayout"
+        android:layout_width="236dp"
+        android:layout_height="236dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="160dp"
+        android:background="@drawable/rectangle">
+
+        <ImageView
+            android:id="@+id/qrCodeImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true" />
+
+    </RelativeLayout>
+
+
+
+        <TextView
+            android:id="@+id/fullNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="410dp"
+            android:layout_centerHorizontal="true"
+            android:text="Seyi Martins Ola"
+            android:textColor="@color/fullNameTextColor"
+            android:lineSpacingExtra="-1sp"
+            android:textAppearance="@style/NewsTabText"
+            android:gravity="top" />
+
+        <TextView
+            android:id="@+id/departmentTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="430dp"
+            android:layout_centerHorizontal="true"
+            android:text="Computer Engineering"
+            android:textColor="@color/courseTextColor"
+            android:lineSpacingExtra="-1sp"
+            android:textAppearance="@style/seeAllText"
+            android:gravity="top" />
+
+    <TextView
+        android:id="@+id/matricNumTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="450dp"
+        android:layout_centerHorizontal="true"
+        android:text="229/201/03"
+        android:textColor="@color/matricTextColor"
+        android:lineSpacingExtra="-1sp"
+        android:textAppearance="@style/seeAllText"
+        android:gravity="top" />
+
+
+</RelativeLayout>

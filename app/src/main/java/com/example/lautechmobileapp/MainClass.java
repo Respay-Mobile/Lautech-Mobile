@@ -15,6 +15,7 @@ import androidx.core.content.ContextCompat;
 public class MainClass {
     private final Context context1;
 
+
     public MainClass(Context context) {
         this.context1 = context;
     }

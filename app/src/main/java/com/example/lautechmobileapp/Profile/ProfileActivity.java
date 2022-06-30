@@ -16,6 +16,7 @@ import android.widget.TextView;
 import com.example.lautechmobileapp.Courses.CourseActivity;
 import com.example.lautechmobileapp.Dashboard.HomeActivity;
 import com.example.lautechmobileapp.News.NewsActivity;
+import com.example.lautechmobileapp.Profile.SchholIDCard.SchoolIdCardQrActivity;
 import com.example.lautechmobileapp.R;
 import com.example.lautechmobileapp.Tasks.TaskActivity;
 import com.example.lautechmobileapp.Users.LoginActivity;
@@ -25,7 +26,7 @@ import com.google.android.material.navigation.NavigationBarView;
 public class ProfileActivity extends AppCompatActivity {
 
     private TextView logOutText;
-    private RelativeLayout profileLayout;
+    private RelativeLayout profileLayout, schoolIdCardLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +34,7 @@ public class ProfileActivity extends AppCompatActivity {
 
         logOutText = findViewById(R.id.logOutTextView);
         profileLayout = findViewById(R.id.profileRelativeLayout);
+        schoolIdCardLayout = findViewById(R.id.schoolIdCardLayout);
 
         //Onclick listener for logout text
         logOutText.setOnClickListener(new View.OnClickListener() {
@@ -48,6 +50,14 @@ public class ProfileActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), PersonalInfoActivity.class );
+                startActivity(intent);
+            }
+        });
+
+        schoolIdCardLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), SchoolIdCardQrActivity.class );
                 startActivity(intent);
             }
         });

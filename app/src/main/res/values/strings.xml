@@ -148,4 +148,7 @@
     <string name="unionPositionTextView">Union Position</string>
     <string name="unionPositionHelper">NIL</string>
     <string name="saveBtnText">Save</string>
+
+    <!-- SChool Id Card Activity -->
+    <string name="schoolIdCardText">School ID Card QR</string>
 </resources>

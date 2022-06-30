@@ -50,4 +50,9 @@
     <color name="profileTextBackground">#FBFCFD</color>
     <color name="logOutColor">#FD2A2A</color>
 
+    <!-- QR code activity -->
+    <color name="fullNameTextColor">#313131</color>
+    <color name="courseTextColor">#504E4E</color>
+    <color name="matricTextColor">#838181</color>
+
 </resources>

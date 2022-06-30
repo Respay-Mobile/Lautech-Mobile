@@ -26,8 +26,7 @@
                 android:lineSpacingExtra="-1sp"
                 android:text="@string/profileText"
                 android:textAppearance="@style/walletTitle"
-                android:textColor="@color/colorTitle"
-                />
+                android:textColor="@color/colorTitle" />
 
 
             <androidx.cardview.widget.CardView
