@@ -14,6 +14,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.lautechmobileapp.Courses.CourseActivity;
+import com.example.lautechmobileapp.Dashboard.HomeActivity;
 import com.example.lautechmobileapp.News.NewsActivity;
 import com.example.lautechmobileapp.R;
 import com.example.lautechmobileapp.Tasks.TaskActivity;
@@ -67,6 +68,8 @@ public class ProfileActivity extends AppCompatActivity {
                 switch(item.getItemId())
                 {
                     case R.id.home:
+                        startActivity(new Intent(getApplicationContext(), HomeActivity.class));
+                        overridePendingTransition(0,0);
                         return true;
                     case R.id.courses:
                         startActivity(new Intent(getApplicationContext(), CourseActivity.class));

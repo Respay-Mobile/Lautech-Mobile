@@ -5,73 +5,29 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginBottom="30dp"
-    tools:context=".Profile.PersonalInfoActivity">
+    tools:context=".Profile.PersonalInfo2Activity">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <RelativeLayout
-            android:id="@+id/relativeLayout1"
-            android:layout_width="match_parent"
-            android:layout_height="140dp">
-
-            <TextView
-                android:id="@+id/profileTitleText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="20dp"
-                android:gravity="top"
-                android:lineSpacingExtra="-1sp"
-                android:text="@string/profileText"
-                android:textAppearance="@style/walletTitle"
-                android:textColor="@color/colorTitle"
-                />
-
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/profilePicturecardView"
-                android:layout_width="64dp"
-                android:layout_height="64dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="68dp"
-                app:cardCornerRadius="250dp">
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="64dp"
-                    android:layout_height="64dp"
-                    android:layout_gravity="center"
-                    app:cardCornerRadius="250dp">
-
-                    <ImageView
-                        android:layout_width="64dp"
-                        android:layout_height="64dp"
-                        android:layout_gravity="center"
-                        android:background="@color/loginTop"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/ic_person_icon" />
-
-                </androidx.cardview.widget.CardView>
-
-            </androidx.cardview.widget.CardView>
-
-            <Button
-                style="@style/changePictureButton"
-                android:layout_width="170dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="140dp"
-                android:layout_marginTop="75dp"
-                android:text="Change Picture">
-
-            </Button>
-
-        </RelativeLayout>
+        <TextView
+            android:id="@+id/profileTitleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:gravity="top"
+            android:lineSpacingExtra="-1sp"
+            android:text="@string/profileText"
+            android:textAppearance="@style/walletTitle"
+            android:textColor="@color/colorTitle"
+            />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="150dp"
+            android:layout_marginTop="80dp"
             android:background="@color/profileTextBackground"
             android:gravity="top"
             android:lineSpacingExtra="-1sp"
@@ -82,19 +38,19 @@
 
 
         <RelativeLayout
-            android:id="@+id/surnameLayout"
+            android:id="@+id/emailLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="190dp">
+            android:layout_marginTop="120dp">
 
             <TextView
-                android:id="@+id/surnameTextView"
+                android:id="@+id/emailTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_marginStart="20dp"
                 android:lineSpacingExtra="6sp"
-                android:text="@string/surnameText"
+                android:text="@string/email"
                 android:textAppearance="@style/loginDesc"
                 android:textColor="@color/loginTextView"
                 android:translationY="-2.92sp"
@@ -103,7 +59,56 @@
 
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/surnameOutlinedTextField"
+                android:id="@+id/emailOutlinedTextField"
+                style="@style/TextInputLayoutStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="22dp"
+                android:layout_marginEnd="20dp"
+                app:startIconContentDescription="EmailIcon"
+                app:startIconDrawable="@drawable/ic_person_icon">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/emailTextInputEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/emailHelper"
+                    android:inputType="textEmailAddress"
+                    android:maxLength="100"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/departmentLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="230dp">
+
+            <TextView
+                android:id="@+id/departmentTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="20dp"
+                android:lineSpacingExtra="6sp"
+                android:text="@string/departmentTextView"
+                android:textAppearance="@style/loginDesc"
+                android:textColor="@color/loginTextView"
+                android:translationY="-2.92sp"
+
+                />
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/departmentOutlinedTextField"
                 style="@style/TextInputLayoutStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -116,10 +121,153 @@
                 app:startIconDrawable="@drawable/ic_person_icon">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/surnameTextInputEditText"
+                    android:id="@+id/departmentTextInputEditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/Seyi"
+                    android:hint="@string/departmentHelper"
+                    android:inputType="text"
+                    android:maxLength="100"
+
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/facultyLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="340dp">
+
+            <TextView
+                android:id="@+id/facultyTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="20dp"
+                android:lineSpacingExtra="6sp"
+                android:text="@string/facultyTextView"
+                android:textAppearance="@style/loginDesc"
+                android:textColor="@color/loginTextView"
+                android:translationY="-2.92sp"
+
+                />
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/facultyOutlinedTextField"
+                style="@style/TextInputLayoutStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="22dp"
+                android:layout_marginEnd="20dp"
+                app:startIconContentDescription="PersonIcon"
+                app:startIconDrawable="@drawable/ic_person_icon">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/facultyTextInputEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/facultyHelper"
+                    android:inputType="text"
+                    android:maxLength="50"
+
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/levelLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="450dp">
+
+            <TextView
+                android:id="@+id/levelTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="20dp"
+                android:lineSpacingExtra="6sp"
+                android:text="@string/levelTextView"
+                android:textAppearance="@style/loginDesc"
+                android:textColor="@color/loginTextView"
+                android:translationY="-2.92sp"
+
+                />
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/levelOutlinedTextField"
+                style="@style/TextInputLayoutStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="22dp"
+                android:layout_marginEnd="20dp"
+                app:startIconContentDescription="PersonIcon"
+                app:startIconDrawable="@drawable/ic_person_icon">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/levelTextInputEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/levelHelper"
+                    android:inputType="text"
+                    android:maxLength="50"
+
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/courseAdviserLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="560dp">
+
+            <TextView
+                android:id="@+id/courseAdviserTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="20dp"
+                android:lineSpacingExtra="6sp"
+                android:text="@string/courseAdviserTextView"
+                android:textAppearance="@style/loginDesc"
+                android:textColor="@color/loginTextView"
+                android:translationY="-2.92sp"
+
+                />
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/courseAdviserOutlinedTextField"
+                style="@style/TextInputLayoutStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="22dp"
+                android:layout_marginEnd="20dp"
+                app:startIconContentDescription="PersonIcon"
+                app:startIconDrawable="@drawable/ic_person_icon">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/courseAdviserTextInputEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/courseAdviserHelper"
                     android:inputType="text"
                     android:maxLength="100"
 
@@ -130,19 +278,19 @@
 
 
         <RelativeLayout
-            android:id="@+id/firstNameLayout"
+            android:id="@+id/unionPositionLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="300dp">
+            android:layout_marginTop="670dp">
 
             <TextView
-                android:id="@+id/firstnameTextView"
+                android:id="@+id/unionPositionTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_marginStart="20dp"
                 android:lineSpacingExtra="6sp"
-                android:text="@string/firstnameText"
+                android:text="@string/unionPositionTextView"
                 android:textAppearance="@style/loginDesc"
                 android:textColor="@color/loginTextView"
                 android:translationY="-2.92sp"
@@ -151,7 +299,7 @@
 
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/firstnameOutlinedTextField"
+                android:id="@+id/unionPositionOutlinedTextField"
                 style="@style/TextInputLayoutStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -164,234 +312,31 @@
                 app:startIconDrawable="@drawable/ic_person_icon">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/firstnameTextInputEditText"
+                    android:id="@+id/unionPositionTextInputEditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/martins"
-                    android:inputType="text"
-                    android:maxLength="100" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-
-        </RelativeLayout>
-
-
-        <RelativeLayout
-            android:id="@+id/otherNameLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="410dp">
-
-            <TextView
-                android:id="@+id/othernameTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_marginStart="20dp"
-                android:lineSpacingExtra="6sp"
-                android:text="@string/othernameText"
-                android:textAppearance="@style/loginDesc"
-                android:textColor="@color/loginTextView"
-                android:translationY="-2.92sp"
-
-                />
-
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/othernameOutlinedTextField"
-                style="@style/TextInputLayoutStyle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="22dp"
-                android:layout_marginEnd="20dp"
-                app:startIconContentDescription="PersonIcon"
-                app:startIconDrawable="@drawable/ic_person_icon">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/othernameTextInputEditText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/ola"
+                    android:hint="@string/unionPositionHelper"
                     android:inputType="text"
                     android:maxLength="100"
+
                     />
 
             </com.google.android.material.textfield.TextInputLayout>
-
         </RelativeLayout>
 
-        <RelativeLayout
-            android:id="@+id/genderLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="520dp">
-
-            <TextView
-                android:id="@+id/genderTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_marginStart="20dp"
-                android:lineSpacingExtra="6sp"
-                android:text="@string/genderTextview"
-                android:textAppearance="@style/loginDesc"
-                android:textColor="@color/loginTextView"
-                android:translationY="-2.92sp"
-
-                />
-
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/genderOutlinedTextField"
-                style="@style/TextInputDropDown"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="22dp"
-                android:layout_marginEnd="20dp"
-                app:startIconContentDescription="PersonIcon"
-                app:startIconDrawable="@drawable/ic_person_icon">
-
-                <AutoCompleteTextView
-                    android:id="@+id/genderDropDown"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/genderHelper"
-                    android:inputType="none" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/dobLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="630dp">
-
-            <TextView
-                android:id="@+id/DOBTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_marginStart="20dp"
-                android:lineSpacingExtra="6sp"
-                android:text="@string/dobText"
-                android:textAppearance="@style/loginDesc"
-                android:textColor="@color/loginTextView"
-                android:translationY="-2.92sp"
-
-                />
-
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/DOBOutlinedTextField"
-                style="@style/TextInputLayoutStyle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="22dp"
-                android:layout_marginEnd="20dp"
-                app:startIconContentDescription="DateIcon"
-                app:startIconDrawable="@drawable/ic_calender_icon"
-                app:endIconMode="custom"
-                app:endIconDrawable="@drawable/ic_dropdown_icon"
-                app:endIconContentDescription="DropdownIcon">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/DOBTextInputEditText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/dobHelper"
-                    />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/stateOfOriginLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="740dp">
-
-            <TextView
-                android:id="@+id/stateOfOriginTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_marginStart="20dp"
-                android:lineSpacingExtra="6sp"
-                android:text="@string/stateOfOr"
-                android:textAppearance="@style/loginDesc"
-                android:textColor="@color/loginTextView"
-                android:translationY="-2.92sp"
-
-                />
-
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/stateOfOriginOutlinedTextField"
-                style="@style/TextInputDropDown"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="22dp"
-                android:layout_marginEnd="20dp"
-                app:startIconContentDescription="StateIcon"
-                app:startIconDrawable="@drawable/ic_state_of_origin_icon">
-
-                <AutoCompleteTextView
-                    android:id="@+id/stateOfOriginDropDown"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/stateOfOr"
-                    android:inputType="none"
-                    />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-        </RelativeLayout>
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/saveAndContinueBtn"
+            android:id="@+id/saveBtn"
             style="@style/onbBtn"
             android:layout_width="335dp"
             android:layout_height="67dp"
-            android:text="@string/saveAndContinue"
+            android:text="@string/saveBtnText"
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
             android:layout_marginStart="19dp"
             android:layout_marginEnd="19dp"
-            android:layout_marginTop="850dp"/>
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/saveAndGoBtn"
-            style="@style/changePictureButton"
-            android:layout_width="335dp"
-            android:layout_height="67dp"
-            android:text="@string/saveAndGo"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="19dp"
-            android:layout_marginEnd="19dp"
-            android:layout_marginTop="940dp"/>
-
-
+            android:layout_marginTop="780dp"/>
 
     </RelativeLayout>
-
-
 
 </androidx.core.widget.NestedScrollView>

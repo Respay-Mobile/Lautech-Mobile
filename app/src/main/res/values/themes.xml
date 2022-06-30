@@ -214,4 +214,13 @@
         <item name="cornerSize">16dp</item>
     </style>
 
+    <!-- Personal info activity -->
+    <style name="changePictureButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="shapeAppearance">@style/CourseCardShapeAppearance</item>
+        <item name="textAppearanceButton">@style/NewsTabText</item>
+        <item name="textAllCaps">false</item>
+        <item name="strokeColor">@color/frame_view</item>
+        <item name="android:textColor">@color/frame_view</item>
+    </style>
+
 </resources>

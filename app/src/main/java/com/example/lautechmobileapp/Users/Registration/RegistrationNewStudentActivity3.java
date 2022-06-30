@@ -123,7 +123,7 @@ public class RegistrationNewStudentActivity3 extends AppCompatActivity {
     }
 
 
-    // method to validate phone
+    // method to validate email
     public boolean validateMail() {
         if (emailTextInput.getEditText().getText().toString().trim().isEmpty()) {
             emailTextInput.setError("Required");

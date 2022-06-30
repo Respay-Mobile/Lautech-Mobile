@@ -12,6 +12,19 @@
         android:layout_height="150dp"
         android:background="@drawable/ic_top_ellipse">
 
+        <TextView
+            android:id="@+id/profileTitleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="30dp"
+            android:gravity="top"
+            android:lineSpacingExtra="-1sp"
+            android:text="@string/profileText"
+            android:textAppearance="@style/walletTitle"
+            android:textColor="@color/colorTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <RelativeLayout
             android:id="@+id/profileRelativeLayout"
@@ -105,19 +118,7 @@
 
         </RelativeLayout>
 
-        <TextView
-            android:id="@+id/profileTitleText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="30dp"
-            android:gravity="top"
-            android:lineSpacingExtra="-1sp"
-            android:text="@string/profileText"
-            android:textAppearance="@style/walletTitle"
-            android:textColor="@color/colorTitle"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+
 
 
     </RelativeLayout>

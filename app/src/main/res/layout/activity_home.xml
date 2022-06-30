@@ -33,7 +33,7 @@
                     android:layout_height="44dp"
                     android:scaleType="centerCrop"
                     android:layout_gravity="center"
-                    android:backgroundTint="@color/profile_picture_click"
+                    android:background="@color/profile_picture_click"
                     android:src="@drawable/ic_person_icon" />
 
             </androidx.cardview.widget.CardView>

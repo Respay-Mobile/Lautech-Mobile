@@ -130,4 +130,22 @@
     <string name="schoolId">School ID Card QR</string>
     <string name="cgpaPlanner">CGPA Planner</string>
     <string name="result">Results</string>
+
+    <!-- Personal information activity -->
+    <string name="editInfo">EDIT INFORMATION</string>
+    <string name="saveAndGo">Save and Go Back</string>
+    <string name="saveAndContinue">Save and Continue</string>
+
+    <!-- Personal Information Activity 2 -->
+    <string name="departmentTextView">Department</string>
+    <string name="departmentHelper">Computer Science</string>
+    <string name="facultyTextView">Faculty</string>
+    <string name="facultyHelper">Science</string>
+    <string name="levelTextView">Level</string>
+    <string name="levelHelper">300 Level</string>
+    <string name="courseAdviserTextView">Course Adviser</string>
+    <string name="courseAdviserHelper">Dr, Akinola</string>
+    <string name="unionPositionTextView">Union Position</string>
+    <string name="unionPositionHelper">NIL</string>
+    <string name="saveBtnText">Save</string>
 </resources>
