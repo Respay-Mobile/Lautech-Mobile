@@ -98,7 +98,7 @@
                     android:gravity="top"
                     android:lineSpacingExtra="-1sp"
                     android:text="229/201/03"
-                    android:textAppearance="@style/CourseDesc"
+                    android:textAppearance="@style/NewsDesc"
                     android:textColor="@color/loginDesc" />
 
             </RelativeLayout>
@@ -429,12 +429,11 @@
             </RelativeLayout>
 
 
-
             <RelativeLayout
                 android:id="@+id/resultsLayout"
-                android:layout_marginTop="435dp"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
+                android:layout_marginTop="435dp"
                 android:background="@color/news_card_click"
                 android:clickable="true"
                 android:focusable="true">
@@ -442,9 +441,9 @@
                 <androidx.cardview.widget.CardView
                     android:layout_width="32dp"
                     android:layout_height="32dp"
+                    android:layout_marginStart="30dp"
                     android:layout_marginTop="5dp"
                     android:layout_marginBottom="5dp"
-                    android:layout_marginStart="30dp"
                     app:cardBackgroundColor="@color/loginTop"
                     app:cardCornerRadius="10dp">
 
@@ -462,24 +461,24 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="90dp"
-                    android:layout_marginEnd="120dp"
                     android:layout_marginTop="10dp"
-                    android:lineSpacingExtra="-1sp"
+                    android:layout_marginEnd="120dp"
                     android:gravity="top"
+                    android:lineSpacingExtra="-1sp"
                     android:text="@string/result"
-                    android:textColor="@color/timeTableCard"
-                    android:textAppearance="@style/seeAllText"/>
+                    android:textAppearance="@style/seeAllText"
+                    android:textColor="@color/timeTableCard" />
 
                 <ImageView
                     android:id="@+id/resultsArrowIcon"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
-                    android:layout_marginEnd="25dp"
                     android:layout_marginTop="10dp"
+                    android:layout_marginEnd="25dp"
+                    android:background="@drawable/ic_right_arrow_icon"
                     android:clickable="true"
-                    android:focusable="true"
-                    android:background="@drawable/ic_right_arrow_icon" />
+                    android:focusable="true" />
 
             </RelativeLayout>
 

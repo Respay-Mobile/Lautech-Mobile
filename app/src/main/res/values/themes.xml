@@ -138,19 +138,10 @@
         <item name="android:fontFamily">@font/mulish</item>
     </style>
 
-    <style name="unitText">
-        <item name="android:textSize">12sp</item>
-        <item name="android:fontFamily">@font/mulish</item>
-    </style>
 
     <style name="CourseCardShapeAppearance" parent="ShapeAppearance.MaterialComponents.MediumComponent">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">4dp</item>
-    </style>
-
-    <style name="CourseDesc">
-        <item name="android:textSize">12sp</item>
-        <item name="android:fontFamily">@font/mulish</item>
     </style>
 
     <!-- Course Activity -->
@@ -221,6 +212,13 @@
         <item name="textAllCaps">false</item>
         <item name="strokeColor">@color/frame_view</item>
         <item name="android:textColor">@color/frame_view</item>
+    </style>
+
+    <!-- Result activity -->
+    <style name="CGPANumber">
+        <item name="android:textSize">40sp</item>
+        <item name="android:fontFamily">@font/mulish_bold</item>
+        <item name="android:textStyle">bold</item>
     </style>
 
 </resources>

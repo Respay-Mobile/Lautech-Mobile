@@ -1,8 +1,10 @@
-package com.example.lautechmobileapp.Profile;
+package com.example.lautechmobileapp.Profile.Results;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,43 +13,38 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.RelativeLayout;
-import android.widget.TextView;
 
 import com.example.lautechmobileapp.Courses.CourseActivity;
 import com.example.lautechmobileapp.Dashboard.HomeActivity;
-import com.example.lautechmobileapp.DigitalExamPassActivity;
+import com.example.lautechmobileapp.News.AllNewsFragmentRecyclerView.AllNewsAdapter;
+import com.example.lautechmobileapp.News.AllNewsFragmentRecyclerView.AllNewsItem;
 import com.example.lautechmobileapp.News.NewsActivity;
-import com.example.lautechmobileapp.Profile.Results.ResultsActivity;
-import com.example.lautechmobileapp.Profile.SchholIDCard.SchoolIdCardQrActivity;
+import com.example.lautechmobileapp.Profile.PersonalInfoActivity;
+import com.example.lautechmobileapp.Profile.ProfileActivity;
+import com.example.lautechmobileapp.Profile.Results.ParentRecyclerView.ParentSemesterResultAdapter;
+import com.example.lautechmobileapp.Profile.Results.ParentRecyclerView.ParentSemesterResultItem;
 import com.example.lautechmobileapp.R;
 import com.example.lautechmobileapp.Tasks.TaskActivity;
-import com.example.lautechmobileapp.Users.LoginActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
-public class ProfileActivity extends AppCompatActivity {
+import java.util.ArrayList;
+import java.util.List;
 
-    private TextView logOutText;
-    private RelativeLayout profileLayout, schoolIdCardLayout, digitalExamLayout, resultLayout;
+public class ResultsActivity extends AppCompatActivity {
+
+    private RelativeLayout profileLayout;
+    private RecyclerView resultParentRecyclerView;
+    private ParentSemesterResultAdapter parentAdapter;
+    private List parentResultDataList = new ArrayList<>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_profile);
+        setContentView(R.layout.activity_results);
 
-        logOutText = findViewById(R.id.logOutTextView);
-        profileLayout = findViewById(R.id.profileRelativeLayout);
-        schoolIdCardLayout = findViewById(R.id.schoolIdCardLayout);
-        digitalExamLayout = findViewById(R.id.digitalExamLayout);
-        resultLayout = findViewById(R.id.resultsLayout);
-
-        //Onclick listener for logout text
-        logOutText.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
-                startActivity(intent);
-            }
-        });
+        profileLayout = findViewById(R.id.resultProfileRelativeLayout);
+        resultParentRecyclerView = findViewById(R.id.parentSemesterResultRecyclerView);
 
         //Onclick listener for profile relative layout
         profileLayout.setOnClickListener(new View.OnClickListener() {
@@ -58,34 +55,16 @@ public class ProfileActivity extends AppCompatActivity {
             }
         });
 
-        //Onclick listener for school ID card relative layout
-        schoolIdCardLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), SchoolIdCardQrActivity.class );
-                startActivity(intent);
-            }
-        });
-
-        //Onclick listener for digital exam relative layout
-        digitalExamLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), DigitalExamPassActivity.class );
-                startActivity(intent);
-            }
-        });
-
-        //Onclick listener for result relative layout
-        resultLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), ResultsActivity.class );
-                startActivity(intent);
-            }
-        });
-
         setTopBarColor();
+
+        //Object for parentResultAdapter
+        parentAdapter = new ParentSemesterResultAdapter(parentResultDataList, getApplicationContext());
+        resultParentRecyclerView.setAdapter(parentAdapter);
+        resultParentRecyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()) );
+
+        //Use the method declared below
+        setResultData();
+
 
         //Onclick listener for bottom navigation view
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
@@ -127,6 +106,21 @@ public class ProfileActivity extends AppCompatActivity {
         });
     }
 
+    public void setResultData(){
+        ParentSemesterResultItem data = new ParentSemesterResultItem("100 Level", "1st Semester", "4.63", "(74/16)");
+        parentResultDataList.add(data);
+
+        data = new ParentSemesterResultItem("100 Level", "2nd Semester", "4.44", "(71/16)");
+        parentResultDataList.add(data);
+
+        data = new ParentSemesterResultItem("200 Level", "1st Semester", "4.63", "(74/16)");
+        parentResultDataList.add(data);
+
+        data = new ParentSemesterResultItem("200 Level", "2nd Semester", "4.44", "(71/16)");
+        parentResultDataList.add(data);
+
+    }
+
     public void setTopBarColor(){
         //set status bar color
         Window window = this.getWindow();
@@ -140,4 +134,7 @@ public class ProfileActivity extends AppCompatActivity {
         // finally change the color
         window.setStatusBarColor(ContextCompat.getColor(this,R.color.dashboardTitle));
     }
+
+
+
 }

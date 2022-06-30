@@ -55,4 +55,9 @@
     <color name="courseTextColor">#504E4E</color>
     <color name="matricTextColor">#838181</color>
 
+    <!-- results activity -->
+    <color name="cgpaNumberColor">#18B00A</color>
+    <color name="resultCardColor">#FCFFF4</color>
+    <color name="resultCourseCodeColor">#2D2B2B</color>
+
 </resources>

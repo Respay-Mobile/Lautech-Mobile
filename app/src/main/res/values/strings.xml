@@ -154,4 +154,7 @@
 
     <!-- Digital exam pass activity -->
     <string name="digitalExamPassText">Digital Exam Pass</string>
+
+    <!-- Results activity -->
+    <string name="cgpaText">CGPA</string>
 </resources>

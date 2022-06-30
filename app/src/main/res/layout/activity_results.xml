@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Profile.Results.ResultsActivity">
+
+    <RelativeLayout
+        android:id="@+id/RelativeLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="@drawable/ic_top_ellipse">
+
+        <TextView
+            android:id="@+id/profileTitleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="30dp"
+            android:gravity="top"
+            android:lineSpacingExtra="-1sp"
+            android:text="@string/result"
+            android:textAppearance="@style/walletTitle"
+            android:textColor="@color/colorTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <RelativeLayout
+            android:id="@+id/resultProfileRelativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="75dp"
+            android:background="@color/profile_picture_click"
+            android:clickable="true"
+            android:focusable="true">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/profilePicturecardView"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="8dp"
+                app:cardCornerRadius="250dp">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:layout_gravity="center"
+                    app:cardCornerRadius="250dp">
+
+                    <ImageView
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:layout_gravity="center"
+                        android:background="@color/loginTop"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_person_icon" />
+
+                </androidx.cardview.widget.CardView>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="90dp"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/nameTextview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="top"
+                    android:lineSpacingExtra="-1sp"
+                    android:text="Seyi Martins"
+                    android:textAppearance="@style/DashboardItemDesc"
+                    android:textColor="@color/colorTitle" />
+
+                <TextView
+                    android:id="@+id/courseTextview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="top"
+                    android:lineSpacingExtra="-1sp"
+                    android:text="Computer Engineering"
+                    android:textAppearance="@style/LecturerName"
+                    android:textColor="@color/timeTableCard" />
+
+                <TextView
+                    android:id="@+id/matricNumTextview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:gravity="top"
+                    android:lineSpacingExtra="-1sp"
+                    android:text="229/201/03"
+                    android:textAppearance="@style/NewsDesc"
+                    android:textColor="@color/loginDesc" />
+
+            </RelativeLayout>
+
+
+            <ImageView
+                android:id="@+id/profileArrowIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="25dp"
+                android:background="@drawable/ic_right_arrow_icon"
+                android:clickable="true"
+                android:focusable="true" />
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="160dp"
+        android:layout_marginBottom="65dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="116dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                app:shapeAppearance="@style/walletCardShapeAppearance"
+                app:cardElevation="3dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingExtra="7sp"
+                    android:translationY="-3.43sp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="20dp"
+                    android:textAppearance="@style/seeAllText"
+                    android:textColor="@color/timeTableCard"
+                    android:text="@string/cgpaText"
+                    android:alpha="0.9"/>
+
+                <TextView
+                    android:id="@+id/cgpaNum"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingExtra="8sp"
+                    android:translationY="-3.8sp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="40dp"
+                    android:textAppearance="@style/CGPANumber"
+                    android:textColor="@color/cgpaNumberColor"
+                    android:text="4.53"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingExtra="7sp"
+                    android:translationY="-3.43sp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="90dp"
+                    android:textAppearance="@style/seeAllText"
+                    android:textColor="@color/timeTableCard"
+                    android:text="100 Level, 2nd Semester"
+                    android:alpha="0.9"/>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/parentSemesterResultRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="160dp"/>
+        </RelativeLayout>
+
+
+
+    </androidx.core.widget.NestedScrollView>
+
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/bottom_nav_menu" />
+
+
+</RelativeLayout>

@@ -56,6 +56,7 @@
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.15081521739130435" />
         <entry key="app/src/main/res/layout/activity_news.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_news_desc.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/activity_news_details.xml" value="0.1875" />
         <entry key="app/src/main/res/layout/activity_on_boarding_screen.xml" value="0.12269938650306748" />
         <entry key="app/src/main/res/layout/activity_otpactivity.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_personal_info.xml" value="0.3098958333333333" />
@@ -69,11 +70,14 @@
         <entry key="app/src/main/res/layout/activity_registration_staff.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/activity_registration_staff2.xml" value="0.15070921985815602" />
         <entry key="app/src/main/res/layout/activity_registration_student2.xml" value="0.23177083333333334" />
+        <entry key="app/src/main/res/layout/activity_results.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_school_id_card_qr.xml" value="0.2" />
         <entry key="app/src/main/res/layout/activity_setup_account.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_task.xml" value="0.23177083333333334" />
         <entry key="app/src/main/res/layout/activity_wallet.xml" value="0.15070921985815602" />
         <entry key="app/src/main/res/layout/assignment_layout.xml" value="0.18931159420289856" />
+        <entry key="app/src/main/res/layout/child_layout_resulta.xml" value="0.30885416666666665" />
+        <entry key="app/src/main/res/layout/child_results_layout.xml" value="0.24583333333333332" />
         <entry key="app/src/main/res/layout/course_card.xml" value="0.1" />
         <entry key="app/src/main/res/layout/course_detail_requirements_texts.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/fragment_all_news.xml" value="0.24583333333333332" />
@@ -90,6 +94,9 @@
         <entry key="app/src/main/res/layout/news_card.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/news_layout.xml" value="0.30885416666666665" />
         <entry key="app/src/main/res/layout/overview_list_view.xml" value="0.2028985507246377" />
+        <entry key="app/src/main/res/layout/parent_results_layout.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/results_layout.xml" value="0.24583333333333332" />
+        <entry key="app/src/main/res/layout/reult_layout.xml" value="0.2115036231884058" />
         <entry key="app/src/main/res/layout/sam.xml" value="0.14814814814814814" />
         <entry key="app/src/main/res/layout/search_layout.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/slide_layout.xml" value="0.1" />
