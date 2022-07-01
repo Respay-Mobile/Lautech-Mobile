@@ -157,4 +157,6 @@
 
     <!-- Results activity -->
     <string name="cgpaText">CGPA</string>
+    <string name="dash">---</string>
+    <string name="comma">,</string>
 </resources>
