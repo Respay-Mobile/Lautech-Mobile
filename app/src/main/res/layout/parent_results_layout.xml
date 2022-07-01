@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="25dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="25dp">
+
+        <TextView
+            android:id="@+id/levelTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lineSpacingExtra="-1sp"
+            android:text="@string/dash"
+            android:textAppearance="@style/CourseName"
+            android:textColor="@color/see_all"
+            app:layout_constraintBaseline_toBaselineOf="@+id/textView2"
+            app:layout_constraintEnd_toStartOf="@+id/textView2"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:text="@string/comma"
+            android:textAppearance="@style/CourseName"
+            android:textColor="@color/see_all"
+            app:layout_constraintEnd_toStartOf="@+id/semesterTextView"
+            app:layout_constraintStart_toEndOf="@+id/levelTextView"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/semesterTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lineSpacingExtra="-1sp"
+            android:text="@string/dash"
+            android:textAppearance="@style/CourseName"
+            android:textColor="@color/see_all"
+            app:layout_constraintBaseline_toBaselineOf="@+id/textView2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textView2" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="28dp"
+        app:layout_constraintEnd_toStartOf="@+id/constraint1"
+        app:layout_constraintStart_toStartOf="@+id/constraint1">
+
+        <TextView
+            android:id="@+id/gpaTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:lineSpacingExtra="-1sp"
+            android:text="@string/dash"
+            android:textAppearance="@style/CourseName"
+            android:textColor="@color/see_all"
+            app:layout_constraintBaseline_toBaselineOf="@+id/gpaTextView2"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/gpaTextView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:lineSpacingExtra="-1sp"
+            android:text="@string/dash"
+            android:textAppearance="@style/seeAllText"
+            android:textColor="@color/see_all"
+            app:layout_constraintStart_toEndOf="@+id/gpaTextView"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/resultCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="5dp"
+        app:cardBackgroundColor="@color/resultCardColor"
+        app:cardElevation="3dp"
+        app:shapeAppearance="@style/ShapeAppearance.Lautech.MediumComponent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/childCourseResultRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"/>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</RelativeLayout>

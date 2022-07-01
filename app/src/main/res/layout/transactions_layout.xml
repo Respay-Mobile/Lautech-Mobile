@@ -88,7 +88,7 @@
             android:layout_alignParentEnd="true"
             android:layout_marginEnd="10dp"
             android:textColor="@color/transactionSubtitle"
-            android:textAppearance="@style/CourseDesc"
+            android:textAppearance="@style/NewsDesc"
             android:translationY="-0.24sp"/>
 
         <ImageView

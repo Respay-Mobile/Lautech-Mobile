@@ -125,6 +125,7 @@ public class ResultsActivity extends AppCompatActivity {
         //set status bar color
         Window window = this.getWindow();
 
+
         // clear FLAG_TRANSLUCENT_STATUS flag:
         window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
 

@@ -26,7 +26,7 @@
             android:gravity="top"
             android:text="-------"
             android:lineSpacingExtra="-1sp"
-            android:textAppearance="@style/unitText"
+            android:textAppearance="@style/NewsDesc"
             android:textColor="@color/unitCOlor" />
 
         <TextView
